@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<style type="text/css">
+	* {
+		box-sizing: border-box;
+	}
+	body, html {
+		height: 100%;
+	}
+	body { margin: 0; }
+	div {
+ 
+		background-color: #d2d2d2;
+		display: inline-block;
+		width: 32.9vw;
+		height: 33vh;
+		margin-bottom: 1%;
+		border: solid 1px #a2a2a2;
+	}
+	.relative-l {
+		position: relative;
+		top: 50px;
+		left: 100px;
+	}	
+	.relative-r {
+		position: relative;
+		top: 50px;
+		right: 100px;
+	}	
+	.relative-t {
+		position: relative;
+		left: 5px;
+		top: -50px; 
+	}
+</style>
+<body>
+
+     <div>  1  </div>
+     <div class="relative-l">  
+ 		position: relative;
+		top: 50px;
+		left: 100px;
+	 </div>
+     <div>  3  </div>
+     <div class="relative-t">  		
+    	 position: relative;
+		left: 5px;
+		top: -50px;  
+		</div>
+     <div>  5  </div>
+     <div class="relative-r">  
+		position: relative;
+		top: 50px;
+		right: 100px;
+    </div>
+</body>
+</html>

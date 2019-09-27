@@ -1,0 +1,22 @@
+ Sveiki,
+
+Užduotis 1)
+susirasyti i komputeri programas kaip: GoogleChrome (narsykle), Atom arba Visual Studio Code (programavimo redaktorius),
+
+Užduotis 1.1: (atliksime klaseje, bet galite ir savarankiskai)
+Isijungus Atom programa - parsisiusti iskiepius (Plugin)
+
+Isirasyti iskiepius: Atom -> FIle ->settings ->install
+
+autoclose-html
+linter
+linter-htmlhint 
+linter-jshint 
+linter-sass-lint
+
+Atom: papildomi iskiepiai
+beautify // ivykdo ctrl + ALT + B
+color-picker // ijungimas ctrl + Alt + C
+jQuery-snippets
+jquery
+Files->Packages -> autosave -> settings -> varnele uzdeti
