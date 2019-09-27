@@ -1,0 +1,17 @@
+﻿Parašyti programą su WinForms sandėlio turiniui aprašyti ir valdyti.
+Reikalavimai programai:
+* galimybė palaikyti kelis sandėlius;
+* kiekvienas sandėlys suskirstytas į vieną ar kelias teritorijas;
+* teritorijose saugomi paketai, kurių kiekvienas turi tris išmatavimus, svorį ir vertę;
+* pasirinkus sandėlį, leidžiama pasirinkti teritorija;
+* pasirinkus teritoriją sandėlyje, turi būti išvardijami joje esantys paketai.
+
+Galimybės vartotojui:
+* pridėti naują ar panaikinti esamą paketą;
+* sukurti naują ar sunaikinti esamą sandėlį;
+* sandėlyje sukurti naujas ar panaikinti esamas teritorijas.
+
+Duomenys gali būti saugomi viename ar keliuose failuose, kaip Jums patogiau.
+
+Neprivaloma užduotis papildomam balui:
+Apdoroti visas galimas klaidas (Exceptions handling)

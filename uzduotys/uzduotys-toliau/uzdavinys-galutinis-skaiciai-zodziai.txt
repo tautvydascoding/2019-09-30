@@ -1,0 +1,12 @@
+﻿LINQ funkcijų ir LAMBDA išraiškų uždavinys
+
+Vartotojas įveda skaičių masyvą. 
+Tame masyve kievienam nariui pritaikyti formulę ((x*x)+17) % 10, kur x yra tas narys. 
+Gautus skaičius išreikšti žodžiais ir išvesti šį žodžių sąrašą.
+
+Pavyzdys:
+Įvestis:
+15 75 1 35 12 20
+
+Išvestis:
+Du Du Astuoni Du Vienas Septyni

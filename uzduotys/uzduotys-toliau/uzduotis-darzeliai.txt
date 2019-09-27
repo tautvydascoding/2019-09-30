@@ -1,0 +1,18 @@
+﻿Duota:
+Sąrašas vaikų, norinčių patekti į darželį faile U3.txt
+Prie kiekvieno vaiko nurodytas:
+ vardas, pavardė, atstumas (metrais) nuo namų iki darželio, kiek vaikų iš viso yra šeimoje, kiek tos šeimos vaikų jau lanko darželį ir ar šeima yra socialiai remtina; 
+laisvų vietų darželyje skaičius;
+vietos darželyje skyrimo prioritetai keturių skaičių eilute.
+
+Rasti:
+Sąrašą vaikų, patenkančių į darželį, remiantis nurodytais prioritetais. Išspausdinti rezultatus į failą U3Rez.txt.
+
+Pavyzdys:
+Lina Genytė 500 4 0 False
+Aurimas Stumbrys 100 3 2 True
+Sandra Strazdaitė 1000 1 0 False
+2
+4312
+
+Aurimas Stumbrys, Lina Genytė

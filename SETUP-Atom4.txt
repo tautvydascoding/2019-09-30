@@ -1,0 +1,83 @@
+Parsisiusti: GoogleChrome
+
+Parsisiusti: Atom
+Isirasyti iskiepius: Atom -> FIle ->settings ->install
+linter
+linter-htmlhint
+linter-jshint 
+linter-sass-lint
+
+autoclose-html
+
+ Atom: papildomi iskiepiai
+beautify       // ivykdo ctrl + ALT + B
+color-picker   // ijungimas ctrl + Alt + C
+jQuery-snippets
+jquery
+Files->Packages -> autosave -> settings -> varnele uzdeti
+
+
+
+ Goto-definition   - PHP f-ju atidarymui
+atom-autocomplete-php
+linter-php
+jQuery-snippets
+jquery
+emmet
+
+
+=========short-cuts=============:
+p, a, button, header, footer, section … - HTML 5 auto elementu kurimas
+idea  - komentaro isvedimui 
+lorem - isveda Lorem Ipsum lotyniska teksta
+ctrl + /   - uzkomentuoja/atkomentuoja visas apibraktas eilutes 
+ctrl + rodykles (virsu/ zemyn) - perkelia koda lyg “CUT” komanda
+ctrl + d - dublicate row's
+ctrl + shift + P 
+emmet
+log - java script logo isvedimui
+ctrl + shift + D   - copy - paste visa eilute
+
+========== Setting ==========
+Plugins -> autosave -> ON
+Settings -> Editor -> SoftWrap  // visas kodas kuris netips  atvaiduoti ekrane, bus nukeltas i kita eilute
+
+
+Images:
+GIMP, KRITA, online photoshop, 
+https://www.wnsoft.com/en/pixbuilder/?fbclid=IwAR3aifGz6LFEAY5QyBFb2gevREDw2-7HG8L7_8UleFnFncoXZaTlnDSRa1U
+ 
+
+
+
+--------TERMINAL-------:
+SourceTree: terminala pakeisti i "vim" redaktoriu
+
+git config --global core.editor "vim"
+
+// John Doe - jusu username is www.GIThub.com puslapio
+git config --global user.name "tautvydascoding"
+git config --global user.name "tautvydascoding@gmail.com"
+ 
+
+Kad neprasytu passwordo per git bash terminala:
+PALESITI KOMANDA: 
+git config credential.helper store
+TADA
+PALESITI KOMANDA:
+git pull
+git push
+provide user-name and password and those details will be remembered later. The credentials are stored in the disk, with the disk permissions.
+
+if you want to change password later
+PALESITI KOMANDA:
+git config credential.helper store
+TADA
+PALESITI KOMANDA:
+git pull
+git push
+provide new password and it will work like before.
+
+
+--------automatinis programu ijungimas isijunginat kompiuteri:--------
+C:\Users\User\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup

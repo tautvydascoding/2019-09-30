@@ -1,0 +1,32 @@
+---------html----------
+
+        <h1>  MOkaus CSS </h1>
+
+    <section>
+        <article class="plotis-50     ">
+            <h2> 1 Dviratis </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </article>
+
+        <article class=" plotis-50      ">
+            <h2> 2 Dviratis </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </article>
+        <article class="plotis-50  f ">
+            <h2 > 3 Dviratis </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </article>
+    </section>
+
+
+----------CSS------
+/*  uzduotis 1.0: isideti html i savo index.html faila */
+/*  uzduotis 1.1: sukurti 3 klases CSS faile:
+.aukstis-200
+.fonas-pilkas
+.plotis-50  */
+
+/*  uzduotis 1.2: panaudoti susikurtas klases ant "article" elementu */
+
+/*  uzduotis 1.3: visas 3 antrastes nudazyti skirtingom spalvom */
+/*  uzduotis 1.4: visus paragrafu teksta - sumazinti ir  centruoti  */
