@@ -77,7 +77,7 @@
 
 // 4.2 UZDUOTIS
 // parasyti f-ja, kuri skaiciuoja 6-kiu mokiniu pazymiu vidurki
-// "getKlasesPazymiuVidurkis(y1, y2, y3, y4, y5, y6)"
+// "getKlasesPazymiuVidurkis()"
 // f-ja apskaiciuoja vidurki is paduotu 5 menesiu pazymiu
 // (ir grazina atsakyma i iskvietimo vieta! "return atskymas;")
 // turi "return" zodeli.
