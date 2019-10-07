@@ -1,4 +1,4 @@
-<!--
+﻿<!--  
     KAIP SURASTI, KODEL failas neveikia?
     1. blogas kelias/pavadinimas iki failo:
     Patikrinimas:  puslapyje->Inspect -> Console
@@ -14,7 +14,7 @@
     b) pasiziureti (desineje Styles) ar elementas turi suprogramuotus spakeitimus
  
     5. ar tikrai programuoti i failus, kurie paleisti narsykleje?
-    patikrinimas:  uzdaryti failus Atome, atsiradyti juos per nauja ir paleisti narsykleje per nauja
+    patikrinimas:  uzdaryti failus Atome, atsiradyti juos per nauja ir paleisti narsykleje per nauja  
 -->
 
 
