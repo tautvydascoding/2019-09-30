@@ -16,7 +16,7 @@ function skiciuotiPlota() {
     let ivedimoLaukas = document.querySelector('#plotis');
     let ivedimoLaukas2 = document.querySelector('#aukstis');
     // console.log( ivedimoLaukas  ); // test
-    // console.log( ivedimoLaukas2  ); // test
+    // console.log( ivedimoLaukas2  ); // test 
 
     // 2. paimti is ivedimo lauko ivesta reiksme
     let plotis = document.querySelector('#plotis').value;
