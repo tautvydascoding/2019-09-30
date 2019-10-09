@@ -148,7 +148,7 @@ console.log("vardas, pavarde:" + getVardasPavarde());
 // C) patikrinti ar veikia f-ja
 
 function getPelnas(){
-  pajamos = 12500;
+  pajamos = 12500; //lokalus kintamieji
   islaidos = 7500;
   pelnas = pajamos - islaidos;
   return pelnas;
@@ -185,6 +185,9 @@ console.log("vidurkis" + pazymiuVidurkis2(5, 6, 7, 8, 9));
 // (ir grazina atsakyma i iskvietimo vieta! "return atskymas;")
 // turi "return" zodeli.
 
+function getKlasesPazymiuVidurkis(y1, y2, y3, y4, y5, y6){
+  let vidurkis3 = (y1 + y2 + y3 + y4 + y5 + y6) / 6
+}
 
 // 5 UZDUOTIS
 // A) sukurti h1 su tekstu viduje  (HTML faile)
