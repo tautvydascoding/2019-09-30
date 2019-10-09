@@ -1,9 +1,9 @@
 //==============TEORIJA ++ / -- ==========
-    var x = 10;
-    x = x + 3;  // x = 13
-    x += 3;     // tas pats kad x = x + 3;
-    x++;       //  tas pats kas x = x + 1;
-  
+var x = 10;
+x = x + 3;  // x = 13
+x += 3;     // tas pats kad x = x + 3;
+x++;       //  tas pats kas x = x + 1;
+
 //=============FOR   LOOP====================
 // teo:  https://www.w3schools.com/js/js_loop_for.asp
 //  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
@@ -11,8 +11,15 @@
 // 1 UZDUOTIS
 // isvesti 30 kartu zodi "Azuolas" i konsole  (! bandant tai padaryti, atsiras skaicius 50)
 
+for (i=0; i<30; i++ ){
+    let medis = "Azuolas" + i;
+    console.log(medis);
+}
+
 // 1.1 UZDUOTIS
 // isvesti i ekrana "<h3> Azuolas </h3>" su document.write arba innerHTML
+
+document.querySelector('h3').innerHTML = 'Azuolas';
 
 // 1.2 UZDUOTIS
 // (HTML faile susikurti <article> elementa)
