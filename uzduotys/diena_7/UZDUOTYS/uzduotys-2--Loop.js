@@ -3,7 +3,7 @@
     x = x + 3;  // x = 13
     x += 3;     // tas pats kad x = x + 3;
     x++;       //  tas pats kas x = x + 1;
-
+  
 //=============FOR   LOOP====================
 // teo:  https://www.w3schools.com/js/js_loop_for.asp
 //  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration

@@ -32,7 +32,7 @@ for (var i = 0; i < 40; i++) {
 // 1.3 UZDUOTIS
 // (HTML faile susikurti <ul> elementa)
 // isvesti 6 kartu zodi "<li> elementas 1 </li> " i <ul> elementa su  innerHTML pagalba
-
+ 
 // 1.4 UZDUOTIS
 // (HTML faile susikurti <header> elementa)
 // isvesti 10 kartu zodi "<p> Aprasymas x </p> " i <header> elementa su  innerHTML pagalba (kur x - yra skaicius "i" nuo 0 iki 9 atsisrandantis automatiskai)
