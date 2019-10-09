@@ -33,22 +33,44 @@ for (var i = 0; i < 30; i++) {
 // (HTML faile susikurti <ul> elementa)
 // isvesti 6 kartu zodi "<li> elementas 1 </li> " i <ul> elementa su  innerHTML pagalba
 
+for (var i = 0; i < 6; i++) {
+  document.querySelector("ul").innerHTML += "<li> elementas 1 </li> ";
+}
+
 // 1.4 UZDUOTIS
 // (HTML faile susikurti <header> elementa)
 // isvesti 10 kartu zodi "<p> Aprasymas x </p> " i <header> elementa su  innerHTML pagalba (kur x - yra skaicius "i" nuo 0 iki 9 atsisrandantis automatiskai)
 
+for (var i = 0; i < 10; i++) {
+  document.querySelector("header").innerHTML += "<p> Aprasymas </p>" + i;
+}
 // 1.5 UZDUOTIS
 // (HTML faile susikurti <div> elementa)
 // isvesti 6 kartu zodi "<li> elementas X </li> " i <div> elementa su  innerHTML pagalba (kur x - yra skaicius "i" nuo 1 iki 6 atsisrandasntis automatiskai)
+for (var i = 1; i < 6; i++) {
+  document.querySelector("div").innerHTML += "<li> elementas </li>" + i;
+}
 
 // 2.0 UZDUOTIS
 // sukurti f-ja "print()", kuri  i browser langa atspausdins  teksta "atspausdintas su f-ja" (panaudojanti document.write arba innerHTML)
+function print() {
+  document.querySelector("div").innerHTML = "atspausdintas su f-ja";
+}
+  print()
 
 // 2.1 UZDUOTIS
 // sukurti f-ja "printX(xx)", kuri  i browser langa atspausdins paduota "xx" teksta (panaudojanti document.write arba innerHTML)
 
+function printX(x) {
+  var tekstas=x;
+  document.querySelector("p").innerHTML = tekstas;
+}
+printX("paduodu xx teksta")
+
 // 2.2 UZDUOTIS
 // paleisti f-ja "printX(xx)" 100 kartu
+
+
 
 // 2.3 UZDUOTIS
 // paleisti f-ja "printX(xx)" 12 kartu ir atspausdinti <img ...
