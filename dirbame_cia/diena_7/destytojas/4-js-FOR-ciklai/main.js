@@ -19,24 +19,30 @@ for (var i = 0; i < 30; i++) {
 
 // 1.1 UZDUOTIS
 // isvesti i ekrana "<h3> Azuolas </h3>" su document.write arba innerHTML
-for (var i = 0; i < 30; i++) {
-    document.querySelector('body').innerHTML += "<h3>Azuolaas</h3>";
-}
+// for (var i = 0; i < 30; i++) {
+//     document.querySelector('body').innerHTML += "<h3>Azuolaas</h3>";
+// }
 
 // 1.2 UZDUOTIS
 // (HTML faile susikurti <article> elementa)
 // isvesti 40 kartu zodi "<h2> Azuolas</h2> " i <article> elementa su  innerHTML pagalba
-for (var i = 0; i < 40; i++) {
-    document.querySelector('article').innerHTML += "<h2>aaaaaa</h2>";
-}
+// for (var i = 0; i < 40; i++) {
+//     document.querySelector('article').innerHTML += "<h2>Aaaaaa</h2>";
+// }
 // 1.3 UZDUOTIS
 // (HTML faile susikurti <ul> elementa)
 // isvesti 6 kartu zodi "<li> elementas 1 </li> " i <ul> elementa su  innerHTML pagalba
- 
+for (var i = 0; i < 6; i++) {
+    // console.log( document.querySelector('ul') );
+    document.querySelector('ul').innerHTML += "<li>elementas 1</li>";
+}
 // 1.4 UZDUOTIS
 // (HTML faile susikurti <header> elementa)
 // isvesti 10 kartu zodi "<p> Aprasymas x </p> " i <header> elementa su  innerHTML pagalba (kur x - yra skaicius "i" nuo 0 iki 9 atsisrandantis automatiskai)
-
+for (var i = 0; i < 10; i++) {
+    let tekstas = "<p> Aprasymas" + i + " </p> ";
+    document.querySelector('header').innerHTML  +=  tekstas;
+}
 // 1.5 UZDUOTIS
 // (HTML faile susikurti <div> elementa)
 // isvesti 6 kartu zodi "<li> elementas X </li> " i <div> elementa su  innerHTML pagalba (kur x - yra skaicius "i" nuo 1 iki 6 atsisrandasntis automatiskai)
