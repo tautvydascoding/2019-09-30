@@ -11,3 +11,6 @@ kitos imones islaidos = 3400
  visuDarbuotojuAtlyginimai (neprivaloma f-ja)
  imonesPelnas
  isvesti pelna i console ar ekrana
+
+
+ 
