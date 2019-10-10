@@ -19,3 +19,12 @@ wp-content/plugins/hello.php
 
 /*.DS_Store
 *.DS_Store
+
+*.idea
+.idea
+dirbame_cia/.idea/
+dirbame_cia/.idea
+
+.vscode
+.vscode/
+*.vscode
