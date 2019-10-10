@@ -40,6 +40,16 @@ for (var i = 0; i < 50; i++) {
 console.log( masyvas );
 
 // 5.1  sukurti masyva naudojant WHILE (50 ilgumo) ir uzpildyti visa skaiciumi 1;
+
+let mas = [];
+let k = 0;
+while ( k < 50) {
+    mas[k] = 1;
+    k++;
+}
+console.log( mas );
+console.log( "su while masyvas:",    mas.join(", ") );
+
 // 5.2: kas antra ^ masyvo elementa pakeisti i "3"
 // [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, ....
 // for (var i = 1; i < 50; i+=2) {
@@ -57,6 +67,16 @@ console.log( masyvas );
 
 // 5.3: kas 5-ta ^ masyvo elementa pakeisti i "9"
 // [1, 3, 1, 3, 9, 3, 1, 3, 1, 9, ....
-
+// for (var i = 4; i < masyvas.length; i+=5) {
+//     masyvas[i] = 9;
+// }
+// console.log( masyvas );
+//ARBA
+for (var i = 1; i < masyvas.length; i++) {
+    if (i % 5 == 0   ) {
+        masyvas[i-1] = 9;
+    }
+}
+console.log( masyvas );
 
 //=============bootstrap---sm-md-lg-xl (30-60m)==========
