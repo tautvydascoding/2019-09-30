@@ -1,0 +1,9 @@
+﻿ NaN  - Not a Number
+  ( taisymas - bandai atlinkti matematinius veiksmus ne su skaiciumi)
+  gali buti jusu x = undefined (neturiu duomenu)
+  gali budi judu x = "99" (string)
+
+not defined x - kintamasis 'x' nerastas (rasybos klaidos arba jis local)
+not defenind function spausdinti - nerasta f-ja (rasybos klaidos)
+syntax error - pamirsote ";" "," ")"  (sioje arba auksciau eilute)
+index  tomas - to stalciaus masyve nera

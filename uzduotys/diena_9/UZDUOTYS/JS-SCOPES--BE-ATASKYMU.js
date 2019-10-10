@@ -6,9 +6,9 @@ function suma () {
     let x = 20;
 }
 
-console.log( x );
+console.log( x ); //
 suma();
-console.log( x );
+console.log( x ); //
 
 x = 10;
 function suma2 () {
@@ -27,7 +27,7 @@ suma3(30);
 console.log( x );
 //-----------------
 x = 10;
-function suma4 (x) {  
+function suma4 (x) {
       console.log( x );
       x = 20;
       console.log( x );
