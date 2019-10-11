@@ -1,8 +1,10 @@
+console.log("labas");
+
+
+
+//
 // apsilimui
 
-var masyvas = [];
-var min = 10;
-var max = 100;
 // 0 UZDUOTIS - pasikartoti:
 // sukurti masyva 20 ilgumo ir stalcius (index) kurie yra lyginiai i pakeisti i zodi "lyginis"
 
@@ -10,6 +12,15 @@ var max = 100;
 // 1 UZDUOTIS:
 // kursime nauja masyva uzpildyta, atsitiktiniais skaiciais nuo 10 - 100.
 // masyvo ilgis 60
+var masyvas = [];
+var min = 10;
+var max = 100;
+// let gaminiuSkaicius = (Math.random() * 90) + 10; // nuo 10 iki 100
+for (var i = 0; i < 60; i++) {
+    masyvas[i] =  (Math.random() * 90) + 10; // nuo 10 iki 100
+}
+console.log(masyvas);
+
 
 // 2 UZDUOTIS:
 // burtu keliu masyvo narius, su 10 % tikimybe paversti negiamais  ( padauginti is  -1)

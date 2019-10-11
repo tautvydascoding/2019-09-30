@@ -1,0 +1,13 @@
+div h1 {
+     color: red;
+
+}
+.super {
+     color: red;
+     width:50%;
+     border: solid 1px red;
+    margin-left:auto;
+    margin-right:auto;
+
+    text-align: center;
+}
