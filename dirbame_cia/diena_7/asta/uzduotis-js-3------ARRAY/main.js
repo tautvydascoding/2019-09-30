@@ -47,6 +47,14 @@ for (i=0; i<50; i++){
 console.log(skaiciai);
 
 // 5.1  sukurti masyva naudojant WHILE (50 ilgumo) ir uzpildyti visa skaiciumi 1;
+let vienetai = [];
+i=0;
+while (i<50) {
+  vienetai[i] = 1;
+  i = i + 1;
+}
+console.log("su while masyvas vienetai:" + vienetai);
+
 // 5.2: kas antra ^ masyvo elementa pakeisti i "3"
 // [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, ....
 // for (i=1; i<50; i=i+2){
@@ -60,9 +68,21 @@ for (var i=1; i < 50; i++) {
     skaiciai[i] = 3;
   }
 }
-console.log(skaiciai);
+console.log("su masyvas:", skaiciai.join (","));
 // 5.3: kas 5-ta ^ masyvo elementa pakeisti i "9"
 // [1, 3, 1, 3, 9, 3, 1, 3, 1, 9, ....
+
+
+for (i = 1; i<skaiciai.length; i++){
+  if ( i %5 == 0) {
+    skaiciai[i-1] = 9;
+  }
+}
+
+console.log("kas penktas:", skaiciai.join (","));
+
+
+
 
 
 //=============bootstrap---sm-md-lg-xl (30-60m)==========

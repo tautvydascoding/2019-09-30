@@ -144,6 +144,7 @@ for (i = 0; i<=kiekMenesiu; i++) {
 console.log(algaPo10Metu());  
 }
 
+
 // return Math.round(naujasAtlyginimas);
 
 // ==============SCSS============================
