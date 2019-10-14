@@ -1,0 +1,55 @@
+============WIN===================
+einam MAMP/bin/mysql/bin
+randame mysql.exe ir ant jo spaudizma DPK -  Send To  Desctop
+ant to failiuko, kuri nusiuntem mysql.exe
+spaudzima DPK - > Properties
+....exe -u root -p
+//arba
+....exe -u root -p  --default-character-set=utf8    // nebutina
+
+pasisitkrinti:
+!!!
+1) isijungti MAMP
+2)  pasileisti mysql.exe
+3) ivesti slaptazodi: root
+NOTE: jeigu issijungia, MAMP'e pasikeiskita portus i 80 arba su PrintScreen mygtuku pagauti error
+4) ivesti komanda: show databases;
+
+
+!!! jeigu neveikia
+MAMP-> Preference -> PORTS
+Spaudziame pakeisti i 80 porta:  Set web & Mysql porsts to 80 ...
+arba
+perkrauti MAMP ir palaukti kol narsykleje automatiskai isijungs:
+ http://localhost/MAMP/
+
+
+//===========ARBA=========
+
+mysql.exe per properties pakeisti reiksme:
+C:\MAMP\bin\mysql\bin\mysql.exe -u root -p
+
+// -u User
+// -p password
+
+//================= MAC================
+Start MAMP or MAMP PRO
+Start the server
+Open Terminal (Applications -> Utilities)
+Type in: (one line)
+sudo ln -s /Applications/MAMP/Library/bin/mysql /usr/bin/mysql
+
+mysql -uroot -proot
+
+
+// OR
+1) Start MAMP or MAMP PRO
+2) Start Mysql the server ( ar dega zalia lempute)
+3) Open Terminal (Applications -> Utilities)
+Type in: (one line)
+  4) /Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot
+ARBA
+?/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot
+
+pasitikrinti:
+5) ivesti komanda: show databases;
