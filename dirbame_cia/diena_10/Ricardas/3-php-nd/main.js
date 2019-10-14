@@ -213,3 +213,11 @@ document.main.appendChild(art); ///>>>>>>>???????????????
 // LOGO keliauja i desine ir virsu ekrano puse
 // tampa permatomas 0.5
 //
+
+let duPasirinkti = [4, 9];
+
+let result = duPasirinkti.reduce(function(a, b) {
+    return a * b;
+})
+
+console.log(result)
