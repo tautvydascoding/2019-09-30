@@ -4,7 +4,7 @@ var masyvas = [];
 var min = 10;
 var max = 100;
 // 0 UZDUOTIS - pasikartoti:
-// skaicius, kurie yra lyginiai i pakeisti i zodi "lyginis"
+// sukurti masyva 20 ilgumo ir stalcius (index) kurie yra lyginiai i pakeisti i zodi "lyginis"
 
 
 // 1 UZDUOTIS:

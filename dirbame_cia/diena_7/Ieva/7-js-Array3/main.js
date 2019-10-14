@@ -53,6 +53,16 @@ console.log(skaiciukai);
 
 // 5.1  sukurti masyva naudojant WHILE (50 ilgumo) ir uzpildyti visa skaiciumi 1;
 
+let skaiciukai2 = [];
+var i = 0;
+
+while (i < 50) {
+  skaiciukai2[i] = 1; 
+  i++;
+}
+
+console.log("su while masyvas: ", skaiciukai2.join(", "));
+
 
 // 5.2: kas antra ^ masyvo elementa pakeisti i "3"
 // [1, 3, 1, 3, 1, 3, 1, 3, 1, 3, ....
@@ -73,12 +83,27 @@ console.log(skaiciukai);
 //III BUDAS
 for (var i = 0; i < 50; i++) {
   if (i % 2 == 1) {
-      skaiciukai[i] = 3;
+      skaiciukai2[i] = 3;
   }
 }
 
-console.log(skaiciukai);
+console.log("kas antras skaicius 3: ", skaiciukai2.join(", "));
 
 
 // 5.3: kas 5-ta ^ masyvo elementa pakeisti i "9"
 // [1, 3, 1, 3, 9, 3, 1, 3, 1, 9, ....
+
+
+for (var i = 1; i < skaiciukai2.length; i++) {
+  if (i % 5 == 0) {
+      skaiciukai2[i-1] = 9;
+  }
+}
+
+
+// for (var i = 4; i < skaiciukai2.length; i+=5) {
+//      skaiciukai2[i] = 9;
+//   }
+
+
+console.log(skaiciukai2);
