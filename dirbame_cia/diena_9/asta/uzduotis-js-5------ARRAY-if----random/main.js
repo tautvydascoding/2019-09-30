@@ -7,7 +7,6 @@ var max = 100;
 // 0 UZDUOTIS - pasikartoti:
 // skaicius, kurie yra lyginiai i pakeisti i zodi "lyginis"
 
-
 // 1 UZDUOTIS:
 // kursime nauja masyva uzpildyta, atsitiktiniais skaiciais nuo 10 - 100.
 // masyvo ilgis 60.....
@@ -16,9 +15,11 @@ var min = 10;
 var max = 100;
 let gaminiuskaicius = (Math.random() * 90) + 10; //nuo 10 iki 100
 for (var i = 0; i <60; i++) {
-  masyvas[i] =.....
+  gaminiuskaicius = (Math.random() * 90) + 10;
+  n = Math.round(gaminiuskaicius);
+  masyvas.push (n);
 }
-
+console.log(masyvas);
 
 // 2 UZDUOTIS:
 // burtu keliu masyvo narius, su 10 % tikimybe paversti negiamais  ( padauginti is  -1)
