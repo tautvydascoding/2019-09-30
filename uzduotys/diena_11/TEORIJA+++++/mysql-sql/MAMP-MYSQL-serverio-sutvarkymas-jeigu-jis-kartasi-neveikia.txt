@@ -1,0 +1,18 @@
+1) STOP MAMP
+2) backup all (atsargine kopija)  mysql-bin.* (including mysql-bin.index file.)
+ In  folder C:\MAMP\db\mysql\ (if C:\MAMP\ is your installation directory).
+2.2) DELETE all mysql-bin.*
+3) START MAMP
+4) jei MAMP Apache ir Mysql dega zaliai:
+uzdraudziam siu failu kurima (You'll now try to disable binary log-bin in MAMP)
+
+4.1) STOP MAMP servers
+4.2) koreguosim faila: C:\MAMP\conf\mysql\my.ini
+
+4.3) surasti faile eilute: ,,log-bin" ir uzkomentuoti simboliu ,,#"
+( Find following text: log-bin
+Comment this line by adding # character at start of line. #log-bin=mysql-bin)
+pvz.: #log-bin=mysql-bin
+
+4.4 START MAMP servers
+?? 4.5 Grazinti issisaugotus failus...hmmm... ar tikrai to reik?? (After that put the mysql-bin.* files back in their place.)
