@@ -1,6 +1,6 @@
 CREATE DATABASE `hospital9`;
 
-show databases;   
+show databases;
 
 -- ` -  db/tables  pavadinimams
 -- '  - tekstui/reikmems/values
@@ -80,19 +80,21 @@ use hospital10; // nurodome darbine duomenu base (DB)
 
 
   //-------------DOCTORS----------
-INSERT INTO doctors  VALUES  ('', 'Tom', 'Opsa');
-INSERT INTO doctors  VALUES  ('', 'Paul', 'Tor');;
-INSERT INTO doctors  VALUES  ('', 'Jo', 'Oto');
-INSERT INTO doctors  VALUES  ('', 'Lili', 'Lekso');
-INSERT INTO doctors  VALUES  ('', 'Timy', 'So');
+  --                         id     name   lname
+  INSERT INTO doctors VALUES ("", "Tim", "Logan");
+  INSERT INTO doctors VALUES ("", "Paul", "Leo");
+  INSERT INTO doctors VALUES ("", "Ona", "Onutaite");
+  INSERT INTO doctors VALUES ("", "Lite", "Rene");
+  INSERT INTO doctors VALUES ("", "Koris", "Pitas");
 //-------------patients---------------
-	INSERT INTO patients  VALUES  ('', 'Ari', 'Amon' , '2' );
-	INSERT INTO patients  VALUES  ('', 'Tim', 'Taros' , '1' );
-	INSERT INTO patients  VALUES  ('', 'Ana', 'Tomson' , '1' );
-	INSERT INTO patients  VALUES  ('', 'Tom', 'Alis' , '3' );
-	INSERT INTO patients  VALUES  ('', 'Karis', 'Katis' , '2' );
-	INSERT INTO patients  VALUES  ('', 'Jo', 'Oporas' , '2' );
-//-------------IMG---------------
+INSERT INTO patients VALUES ("", "Mark", "John", 2);
+INSERT INTO patients VALUES ("", "Tom", "karlos", 2 );
+INSERT INTO patients VALUES ("", "Aris", "Tiedo", 1 );
+INSERT INTO patients VALUES ("", "Tom", "Kori", 3 );
+INSERT INTO patients VALUES ("", "Co", "Jo", 1 );
+INSERT INTO patients VALUES ("", "Tom", "Naro", 5 );
+INSERT INTO patients VALUES ("", "Jili", "Joli", 4 );
+s//-------------IMG---------------
 INSERT INTO img  VALUES  ('', 'pic-46.jpg', '5');
 INSERT INTO img  VALUES  ('', 'pic-46.PNG', '1');
 INSERT INTO img  VALUES  ('', 'pic-456.jpg', '3');
