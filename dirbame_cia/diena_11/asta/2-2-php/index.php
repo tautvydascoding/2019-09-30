@@ -9,7 +9,22 @@
     </head>
     <body>
         <h1>Isijunk console (narsykleje)</h1>
+<?php
+        $kaina = 50;
+        $antraste = "telefonas";
+        $aprasymas = "grazus, patogus";
 
+
+        for ($i=0; $i<6; $i++){
+          include('template-preke.php');
+        }
+
+
+
+         ?>
+
+
+        <script type="text/javascript" src='libs/jquery-3.4.1.min.js'> </script>
         <!-- mano js failas visada pats zemiausias -->
         <script type="text/javascript" src='main.js'> </script>
     </body>
