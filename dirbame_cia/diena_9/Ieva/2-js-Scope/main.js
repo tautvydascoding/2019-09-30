@@ -229,6 +229,10 @@ console.log("labas, la la");
 
 ////////////////////////////////////////////////////////////////////////////
 
+// 
+
+// console.log("labas");
+
 let x = 10;
 
 function suma () {
@@ -243,59 +247,61 @@ x = 10;
 function suma2 () {
       x = 20;
 }
-console.log( '10', x );
+console.log('10', x );
 suma2();
-console.log( '20', x );
-// //-----------------
-x = 10;
-function suma3 (x) { //
-      x = 20;  //
-}
-console.log( '10', x );
-suma3(30);
-console.log('10', x );
-// //-----------------
-x = 10;
-function suma4 (x) {
-      console.log('10', x );
-      x = 20;
-      console.log( '20', x );
-}
-console.log('10', x );
-suma4( x );
-console.log('10', x );
-//-----------------
-x = 10;
-function suma5 () {
-      let x = 20;    //
-      console.log('10', this.x );
-      this.x = 30;
-      console.log('20', x );
-}
-suma5(  );
-console.log('30', x );
-// //----------sunki-------
-x = 10;
-function suma6 ( y = 0) {
-    x = y;
-}
-suma6(  );
-console.log('0', x );
-suma6( 20 );
-console.log( '20', x );
-//---------- -------
-x = 10;
-function suma9 ( x = 0) {
-      console.log('0, 20', x );
-}
-suma9(  );
-suma9( 20 );
-//----------sunki-------
-x = 10;
-function suma7 ( x = 0) {
-      this.x = x;
-      console.log('20', x );
-}
-console.log('10', x );
-suma7( 20 );
 console.log('20', x );
+//-----------------
+// x = 10;
+// function suma3 (x) { //
+//       x = 20;  //
+// }
+// console.log('10', x );
+// suma3(30);
+// console.log('10', x );
+// //-----------------
+// x = 10;
+// function suma4 (x) {
+//       console.log('10', x );
+//       x = 20;
+//       console.log('20', x );
+// }
+// console.log('10', x );
+// suma4( x );
+// console.log('10', x );
+//-----------------
+// x = 10;
+// function suma5 () {
+//       let x = 20;    //
+//       console.log('10', this.x );
+//       this.x = 30;
+//       console.log('20', x );
+// }
+// suma5(  );
+// console.log('30', x );
+// //----------sunki-------
+// x = 10;
+// function suma6 ( y = 0) {
+//     x = y;
+// }
+// suma6(  );
+// console.log('0', x );
+// suma6( 20 );
+// console.log('20', x );
+//---------- -------
+// x = 10;
+// function suma9 ( x = 0) {
+//       console.log('0,20', x );
+// }
+// suma9(  );
+// suma9( 20 );
+//----------sunki-------
+// x = 10;
+// function suma7 ( x = 0) {
+//       this.x = x;
+//       console.log('20', x );
+// }
+// console.log('10', x );
+// suma7( 20 );
+// console.log('20', x );
+
+
