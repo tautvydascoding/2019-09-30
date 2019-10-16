@@ -1,0 +1,12 @@
+h1 {
+     color: blue;
+}
+
+div.prekes {
+     margin: 10px;
+}
+
+div.preke {
+     display: inline-block;
+     width:33%;
+}
