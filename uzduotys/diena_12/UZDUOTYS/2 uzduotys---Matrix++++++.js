@@ -36,7 +36,15 @@
 
     // A. sukurti masyva preke: Antraste, img pavadinimas, prekes aprasymas, kaina
     // B. i masyva visosPrekes, ideti "preke" masyva
-    // C. atvaizduodi kiekvienoje eiluteje po 3 prekes (naudojant for arba foreach) ir bootstrap dizaina
+    // C. atvaizduodi kiekvienoje eiluteje po 3 prekes (naudojant for arba foreach)
+    // ir bootstrap dizaina
+    <article clas='col-...'>
+        <h2> ...
+        <img>
+        <p>...
+        <button> ...
+        <a class="btn btn-lg  bg-info"> </a>
+    </article>
 
 
        // 3 budai nuotraukoms

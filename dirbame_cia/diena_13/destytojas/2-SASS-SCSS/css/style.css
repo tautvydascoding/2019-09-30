@@ -1,0 +1,25 @@
+body {
+  background-color: #c69e00;
+}
+
+h1 {
+  font-size: 36px;
+  color: black;
+  background-color: #c99;
+}
+
+p {
+  font-size: 22px;
+}
+
+section {
+  font-family: "Time new roman", serif;
+}
+
+section h2 {
+  font-family: 'Ariel', sans-serif;
+}
+
+section .big {
+  font-size: 60px;
+}
