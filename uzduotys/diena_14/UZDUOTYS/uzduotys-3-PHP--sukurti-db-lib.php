@@ -6,7 +6,8 @@
 // 3. suprogramuoti f-jas:
 // 4. getDoctor($nr)
 
-// UZDUOTIS 1.1: susikurti nauja projekta ir issivesti gydytoja is DB naudojant foreach ir getDoctor($nr) f-ja
+// UZDUOTIS 1.1: susikurti nauja projekta ir issivesti gydytoja
+is DB naudojant foreach ir getDoctor($nr) f-ja
 
 // UZDUOTIS 1.2:
 // be foreach atspausdinti visa gydytojo info
