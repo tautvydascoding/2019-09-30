@@ -1,0 +1,17 @@
+body {
+  background-color: #c69e00; }
+
+h1 {
+  font-size: 36px;
+  color: black;
+  background-color: #c90; }
+
+p {
+  font-size: 22px; }
+
+section {
+  font-family: "Time new roma", serif; }
+  section h2 {
+    font-family: 'Ariel', sans-serif; }
+    section h2 .big {
+      font-size: 60px; }

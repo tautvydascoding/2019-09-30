@@ -1,5 +1,5 @@
 
-
+<h2>parduotuve</h2>
 <h2> <?php echo $antraste;  ?> </h2>
 
 <p>

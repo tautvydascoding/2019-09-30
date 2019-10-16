@@ -1,0 +1,32 @@
+//mokinames scss
+
+//kintamieji
+$mainColorDark: #c69e00;
+$mainColorLight: #c90;
+$textTitle: 36px;
+$textSecond:22px;
+
+body{
+  background-color:$mainColorDark;
+}
+h1 {
+    font-size: $textTitle;
+     color: black;
+          background-color: $mainColorLight;
+    }
+
+    p{
+      font-size: $textSecond;
+    }
+
+section {
+font-family:"Time new roma", serif;
+  h2{
+    font-family:'Ariel', sans-serif;
+    .big{
+      font-size:60px;
+    }
+
+      }
+    }
+  
