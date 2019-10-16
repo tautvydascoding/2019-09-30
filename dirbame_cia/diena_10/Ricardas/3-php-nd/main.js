@@ -87,14 +87,20 @@ $('section h1').toggleClass('aukstis-200');
 // 2. Patikrinti ar h1 turi klase 'bg-info':
 // jeigu NETURI  uzdeti klase "bg-success"
 // jeigu TURI  uzdeti klase "bg-danger"
-
-$('section h1').addClass('bg-success');
+if($('section h1').hasClass('bg-info')) {
+    $('section h1').addClass('bg-danger');
+} else {
+    $('section h1').addClass('bg-success');
+}
 
 // 3. Patikrinti ar 'section' turi klase 'aukstis-200':
 // jeigu NETURI  uzdeti klase "aukstis-200"
 // jeigu TURI  uzdeti klase "aukstis-500"
-
-$('section h1').addClass('aukstis-500');
+if($('section:last-child').hasClass("aukstis-200")) {
+$('section:last-child').addClass('aukstis-500');
+} else {
+    $('section:last-child').addClass('aukstis-200');
+}
 
 // UZDUOTIS
 // 1.0
@@ -194,8 +200,8 @@ document.querySelector('body').innerHTML += '<article><h2>Atraste</h2><p>Textas<
 // 1.7
 //  ideti 1.6 <article> elementa (kuris laiko savyne <h2> ir <p>)  i <main> elementa
 
-const art = document.querySelector('article')[1];
-document.main.appendChild(art); ///>>>>>>>???????????????
+// const art = document.querySelector('article')[1];
+// document.main.appendChild(art); ///>>>>>>>???????????????
 
 // 1.8
 // perkelti LOGOTIPA i kita vieta naudojant js
