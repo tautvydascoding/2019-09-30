@@ -19,7 +19,7 @@ d.classList.toggle('otherclass');
 
 $("h1").addClass(" bg-info ");
 $( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" );
-$("h1").toggleClass('change_me newClass');
+$("h1").toggleClass('yourClass');
 $('h2').hasClass(" mt-2 "); // tikrinu ar 'h2' elementas turi klase 'mt-2'
 $('h2').is(' .mt-2');   // tikrinu ar 'h2' elementas turi klase 'mt-2'
 
@@ -30,9 +30,9 @@ $("button").click(function(){
 
 
 //Given an unordered list with two <li> elements, this example adds the class "item-0" to the first <li> and "item-1" to the second.
-// $( "ul li" ).addClass(function( index ) {
-//    return "item-" + index;
-// });
+$( "ul li" ).addClass(function( index ) {
+   return "item-" + index;
+});
 
 
 // $("h1").addClass( function( index, currentClass ) {
@@ -58,7 +58,7 @@ if ( $('#MyElement').hasClass('MyClass') ) {}
 // arba
 $( 'p' ).is( ".blue, .red" );
 
-//$( "div"  ).on( "click", function() {
+// $( "div"  ).on( "click", function() {
 //   if ( $( this ).is( ":first-child" ) ) {
 //     $( "p" ).text( "It's the first div." );
 //   } else if ( $( this ).is( ".blue,.red" ) ) {
@@ -67,7 +67,7 @@ $( 'p' ).is( ".blue, .red" );
 //     $( "p" ).text( "It's Peter!" );
 //   }
 //   });
-//
+
 // <div></div>
 // <div class="blue"></div>
 // <div></div>

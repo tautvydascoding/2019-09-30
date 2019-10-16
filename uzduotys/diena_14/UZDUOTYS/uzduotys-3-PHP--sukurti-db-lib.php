@@ -1,5 +1,5 @@
 // UZDUOTIS
-// google CRUD
+// google php CRUD
 
 // 1. sukurti faila:  db_functions.php
 // 2. parasysi PHP faile mysqli prisijungima prie DB
