@@ -1,0 +1,33 @@
+// mokinames SCSS komentaras
+
+//kintamieji
+$mainColorDark: rgb(206, 130, 15);
+$mainColorLight: rgb(211, 193, 93);
+$textTitle: 36px;
+$textSecond: 22px;
+
+body {
+     background-color: $mainColorDark;
+}
+
+h1 {
+     font-size: $textTitle;
+     color: black;
+     background: $mainColorLight;
+}
+
+p {
+     font-size: $textSecond;
+}
+
+section {
+     font-family: "Time new roman", serif;
+     h2 {
+          font-family: "Ariel", sans-serif;
+          
+     }
+     .big {
+          font-size: 60px;
+     }
+
+}

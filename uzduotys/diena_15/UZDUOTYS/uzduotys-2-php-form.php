@@ -7,6 +7,7 @@
 pvz.:
 print_r( $_GET);
 
+
 // PASIBANDYTI PAPILDOMAI
 pvz.: print_r( $GLOBALS)
 

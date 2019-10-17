@@ -11,7 +11,8 @@
     echo $gydytojas["name"] .  $gydytojas['lname'] ;
 
 
-// 3. pasileisti Narsykleje si puslapi (doctor.php ne index.php, Narsykles adreso ivedimo lange (paciam gale) prirasyti : doctor.php)
+// 3. pasileisti Narsykleje si puslapi (doctor.php ne index.php,
+// Narsykles adreso ivedimo lange (paciam gale) prirasyti : doctor.php)
 // 3.1 istaisyti klaida: function 'getDoctors' not found
 // 3.1.1 isideti i projekta faila: db_functions.php
 
