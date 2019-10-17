@@ -9,7 +9,13 @@
         <link rel="stylesheet"  href="css/style.css">
     </head>
     <body>
-        <h1>Isijunk console (narsykleje)</h1>
+        <h1>Mokomes pasitikrinti ivedimo lauka su PHP</h1>
+
+        <form  action="subscribe.php" method="get">
+          <label for="">Jusu el.pastas</label>
+        <input type="text" name="elpastas" >
+          <button type="submit" >Registruotis</button>
+        </form>
 
 
 

@@ -48,12 +48,18 @@ function getDoctor($prisijungimas, $nr) {
     return $masyvas;
 }
 
-//echo getDoctor($prisijungimas, 3);
-//$gydytojasArray = getDoctor($prisijungimas, 3);
-//print_r($gydytojasArray);
-//echo "Vardas".$gydytojasArray['name']."<br>";
+$gydytojasArray = getDoctor($prisijungimas, 4); // test papimam id=4 gydytoja
+print_r($gydytojasArray); // test
+echo "Vardas: " . $gydytojasArray['name'] . "<br>";
+echo "Vardas:  {$gydytojasArray['name']}  <br>";
 
 
-
+function getPatient($prisijungimas, $nr){
+  $rez = mysqli_query($prisijungimas,"SELECT * FROM patients WHERE id = '$nr'");
+  $masyvas = mysqli_fetch_assoc($rez);
+  return $masyvas;
+}
+$pacientasArray = getPatient($prisijungimas, 3);
+print_r($pacientasArray);
 
 //}
