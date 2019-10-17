@@ -19,35 +19,45 @@ define('DB_HOST', 'localhost');
 
 // -------------------------------------------
 $prisijungimas = mysqli_connect( DB_HOST, MYSQL_VARTOTOJAS, MYSQL_SLAPTAZPDIS, DB_VARDAS);
-if ($prisijungimas) {   // $prisijungimas == true
-    if($debug_mode > 1) {
-        echo "Prisijungte prie DB sekmingai! <br />";
+
+
+/*
+    prisijungia prie DB ir grazina connection
+    return - DB prisijungima
+*/
+function getPrisijungimas() {
+    global $prisijungimas, $debug_mode; // paima global variables
+
+    if ($prisijungimas) {   // $prisijungimas == true
+        if($debug_mode > 1) {
+            echo "Prisijungte prie DB sekmingai! <br />";
+        }
+        return $prisijungimas;
+    } else {
+        echo "ERROR nepavyko prisijugnti prie DB: <br>" . mysqli_connect_error();
     }
-} else {
-    echo "ERROR nepavyko prisijugnti prie DB: <br>" . mysqli_connect_error();
 }
-
-
+getPrisijungimas();
 /*
     is DB paima gydytoja pagal jo ID
     $prisij - DB prisijungimas
     $nr     - gydytojo ID duomenu bazeje
     return  - array rasto gydytojo
 */
-function getDoctor($prisij, $nr) {
-    $rezultataiMysqlObjektas = mysqli_query($prisij, "SELECT * FROM doctors WHERE id ='$nr'  ");
+function getDoctor( $nr) {
+    $rezultataiMysqlObjektas = mysqli_query(getPrisijungimas(), "SELECT * FROM doctors WHERE id ='$nr'  ");
     // tikrinu ar grizo is DB duomenys
     if ($rezultataiMysqlObjektas) {  //   mysqli_num_rows($rezultataiMysqlObjektas) > 0
         // mysqli_fetch_assoc - is grizusiu duomenu paima TIK viena Eilute
         $rezultataiArray = mysqli_fetch_assoc($rezultataiMysqlObjektas);
         return $rezultataiArray;
     } else {
-        echo "ERROR: nepavyko paimit gydytojo: $nr. " . mysqli_error($prisij);
+        echo "ERROR: nepavyko paimit gydytojo: $nr. " . mysqli_error(getPrisijungimas());
         return NULL;
     }
 }
 // test
-// $gydytojasArray = getDoctor($prisijungimas, 1); // test papimam id=4 gydytoja
+// $gydytojasArray = getDoctor( 1); // test papimam id=4 gydytoja
 // print_r($gydytojasArray); // test
 // echo "Vardas: " . $gydytojasArray['name'] . "<br>";
 // echo "Vardas:  {$gydytojasArray['name']}  <br>";
