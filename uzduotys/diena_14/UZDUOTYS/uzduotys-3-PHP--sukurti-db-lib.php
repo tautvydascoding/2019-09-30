@@ -1,12 +1,13 @@
 // UZDUOTIS
-// google CRUD
+// google php CRUD
 
 // 1. sukurti faila:  db_functions.php
 // 2. parasysi PHP faile mysqli prisijungima prie DB
 // 3. suprogramuoti f-jas:
 // 4. getDoctor($nr)
 
-// UZDUOTIS 1.1: susikurti nauja projekta ir issivesti gydytoja is DB naudojant foreach ir getDoctor($nr) f-ja
+// UZDUOTIS 1.1: susikurti nauja projekta ir issivesti gydytoja
+is DB naudojant foreach ir getDoctor($nr) f-ja
 
 // UZDUOTIS 1.2:
 // be foreach atspausdinti visa gydytojo info
