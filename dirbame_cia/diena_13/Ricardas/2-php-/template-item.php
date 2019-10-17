@@ -1,0 +1,1 @@
+<?php print_r("<h2 class='bg-info col-md-4 m-1'>{$masyvas1['name']} {$masyvas1['lname']}</h2>");
