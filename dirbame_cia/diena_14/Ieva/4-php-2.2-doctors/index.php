@@ -10,7 +10,7 @@
     </head>
     <body>
         <h1>Isijunk console (narsykleje)</h1>
-        
+
 
 
         <script type="text/javascript" src='libs/jquery-3.4.1.min.js'> </script>
