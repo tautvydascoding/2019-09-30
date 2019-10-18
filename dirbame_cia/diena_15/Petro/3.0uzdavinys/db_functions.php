@@ -79,35 +79,35 @@ function getPrisijungimas (){
 //print_r($gydytojasArray);
 
 
-//function createDoctor ($name, $lname) {
-//    $create = mysqli_query(getPrisijungimas(), "INSERT INTO doctors (id,name,lname)
-//                                                      VALUES (NULL, '$name', '$lname');
-//                                                      ");
-//   if ($create){
-//       echo "Ikelti gydytoja pavyko";
-//   } else{
-//       echo "NEPAVYKO ikelti gydytojo";
-//   }
-//
-//}
+function createDoctor ($name, $lname) {
+    $create = mysqli_query(getPrisijungimas(), "INSERT INTO doctors (id,name,lname)
+                                                      VALUES (NULL, '$name', '$lname');
+                                                      ");
+   if ($create){
+       echo "Ikelti gydytoja pavyko";
+   } else{
+       echo "NEPAVYKO ikelti gydytojo";
+   }
+
+}
 
 //createDoctor('Antanas','Brilius');
 
 
 
 
-//function deleteDoctor ($id) {
-//    $delete = mysqli_query(getPrisijungimas(), "DELETE FROM doctors
-//                                                      WHERE id = '$id'
-//                                                      LIMIT 1;
-//                                                      ");
-//    if ($delete){
-//        echo "Istrinti gydytoja pavyko";
-//    } else{
-//        echo "NEPAVYKO istrinti gydytojo";
-//    }
-//
-//}
+function deleteDoctor ($id) {
+    $delete = mysqli_query(getPrisijungimas(), "DELETE FROM doctors
+                                                      WHERE id = '$id'
+                                                      LIMIT 1;
+                                                      ");
+    if ($delete){
+        echo "Istrinti gydytoja pavyko";
+    } else{
+        echo "NEPAVYKO istrinti gydytojo";
+    }
+
+}
 //
 //deleteDoctor(14);
 //
