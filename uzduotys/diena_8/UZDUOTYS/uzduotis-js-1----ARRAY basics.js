@@ -15,3 +15,7 @@
 	// 3.1  padaryti 3) uzdaviniui f-ja sukeistiMasyvo2elementus(x, y)
 
 	var prekiautojai = []; // empty array
+prekiautojai [0] = senukai;
+prekiautojai [1] = maxima;
+prekiautojai [2] = norfa;
+con

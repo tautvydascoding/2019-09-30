@@ -48,7 +48,14 @@ for (var i = 0; i<50 ; i++){
 }
 console.log(masyvas);
 
+let masyvaswhile = [];
+let k = 0;
+    while (k<20){
+    masyvaswhile [i] = 1;
+    k++;
 
+    }
+ console.log("masyvas su while: ",   masyvaswhile);
 
 // 5.1  sukurti masyva naudojant WHILE (50 ilgumo) ir uzpildyti visa skaiciumi 1;
 // 5.2: kas antra ^ masyvo elementa pakeisti i "3"
@@ -66,5 +73,13 @@ console.log(masyvas);
 // 5.3: kas 5-ta ^ masyvo elementa pakeisti i "9"
 // [1, 3, 1, 3, 9, 3, 1, 3, 1, 9, ....
 
-
 //=============bootstrap---sm-md-lg-xl (30-60m)==========
+
+
+for (var i = 1; i<masyvas.length ; i++){
+    if (i % 5 == 0){
+        masyvas [i-1] = "9";
+    }
+
+}
+console.log(masyvas);

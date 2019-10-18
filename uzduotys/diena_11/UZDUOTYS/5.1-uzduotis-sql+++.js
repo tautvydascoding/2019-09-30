@@ -5,8 +5,9 @@
 // uzduotis 4: gauti paciento "Mark" daktaro pavarde
 
 
+DELETE FROM doctors WHERE name = "Koris"
 
-
-
+SELECT * FROM doctors, patients
+    WHERE doctors.lname Like "L%"    -- isveda
 
 //
