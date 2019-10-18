@@ -10,8 +10,15 @@
     </head>
     <body>
         <h1>Isijunk console (narsykleje)</h1>
-        
+   
+        <form action = "subscribe.php" method = "get">
+            <label for = "emailField">Email</label>
+            <input name = "elPastas" type = "email" placeholder="Enter your email address" id="emailField">
+            <br>
 
+            <input name="submitEmail" type="submit" value="Subscribe!">
+
+        </form>
 
         <script type="text/javascript" src='libs/jquery-3.4.1.min.js'> </script>
         <!-- mano js failas visada pats zemiausias -->
