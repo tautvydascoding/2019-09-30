@@ -14,12 +14,14 @@ $visigydytojaiObjektas = getdoctors();
 
 $gydytojasArray = mysqli_fetch_assoc($visigydytojaiObjektas);
 while ($gydytojasArray){
-  print_r($gydytojasArray);
-  echo "<a href='#'>VARDAS PAVARDE</a>";
+  //print_r($gydytojasArray);
+  echo "<a href='doctor.php?nr={$gydytojasArray['id']}'>
+              {$gydytojasArray['name']}  {$gydytojasArray['lname']}
+       </a> <br />";
   $gydytojasArray = mysqli_fetch_assoc($visigydytojaiObjektas);
 }
      ?>
   </body>
 </html>
 
-<a href='#'>VARDAS PAVARDE</a>
+<a href='#'>VARDAS PAVARD</a>

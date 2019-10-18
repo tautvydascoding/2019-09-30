@@ -1,7 +1,8 @@
+<h1> Gydytojo asmeninis puslapis</h1>
 <?php
 include('db-functions.php');
 
-$numeris = $_GET['nr'];
+$numeris = $_GET['nr'];   //gydytojo id DBazeje
 $gydytojas = getDoctor( $numeris);
 
 
