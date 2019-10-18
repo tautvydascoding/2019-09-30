@@ -15,4 +15,4 @@ $zinute = "Woop woop pavyko";
 $GLOBALS['zinute']="Woop woop pavyko";
 
 // PHP redirect
-header("Location: index.php");
+header("Location: index.php?zinute=Sekmingai uzregistruotas pakeitimas");

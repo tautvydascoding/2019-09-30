@@ -11,7 +11,7 @@
 
         <h1>Poliklinika - visi gydytojai</h1>
 
-        <div id="zinute"><?=$GLOBALS['zinute'];?></div>
+        <div class='alert alert-primary zinute'><?=$_GET['zinute'];?></div>
 
 
         <a href='create-doctor-form.php' class="btn btn-outline-success new"> Naujas Gydytojas</a>
@@ -26,9 +26,9 @@
 
         while ($gydytojas_Array) {
             // print_r( $gydytojas_Array); //test
-            echo "<h4> <a href='doctor.php?nr={$gydytojas_Array['id']}'> {$gydytojas_Array['name']} {$gydytojas_Array['lname']} </a> </h4>";
-            echo "<a href='edit-doctor-form.php?id={$gydytojas_Array['id']}' class='btn btn-outline-warning'> Atnaujinti </a>";
-            echo "<a href='trintiGydytoja.php?id={$gydytojas_Array['id']}' class='btn btn-outline-danger'> Trinti </a>";
+            echo "<h3> <a href='doctor.php?nr={$gydytojas_Array['id']}'> {$gydytojas_Array['name']} {$gydytojas_Array['lname']} </a> </h3>";
+            // echo "<a href='edit-doctor-form.php?id={$gydytojas_Array['id']}' class='btn btn-outline-warning'> Atnaujinti </a>";
+            // echo "<a href='trintiGydytoja.php?id={$gydytojas_Array['id']}' class='btn btn-outline-danger'> Trinti </a>";
             echo "<hr>";
 
             $gydytojas_Array = mysqli_fetch_assoc($visiGydytojai_Objektas);
@@ -41,6 +41,6 @@
        
         <script type="text/javascript" src='libs/jquery-3.4.1.min.js'> </script>
         <!-- mano js failas visada pats zemiausias -->
-        <script type="text/javascript" src='main.js'> </script>
+        <script type="text/javascript" src='js/main.js'> </script>
     </body>
 </html>

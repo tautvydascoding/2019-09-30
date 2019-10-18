@@ -11,5 +11,4 @@ createDoctor($vard, $parv);
 //$GLOBALS['zinute']="Woop woop pavyko";
 
 // PHP redirect
-header("Location: index.php");
-die();
+header("Location: index.php?zinute=Sekmingai sukurtas naujas gydytojas");
