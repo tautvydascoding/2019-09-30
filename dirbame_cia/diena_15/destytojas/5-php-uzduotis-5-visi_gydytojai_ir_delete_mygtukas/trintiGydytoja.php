@@ -1,15 +1,14 @@
-<h1>Tikriausiai sekmingai sukurtas naujas gydytojas</h1>
+<h1>Tikriausiai sekmingai istrintas   gydytojas</h1>
 
 <?php
     include('db_functions.php');
-    // print_r($_GET); // test
-    $vard = $_GET['vardas'];
-    $parv = $_GET['pavarde'];
-    createDoctor($vard, $parv);
+    $x = $_GET['numeris'];
+    deleteDoctor($x);
+
 
 
  ?>
-<h2>Sekmingai sukurta!!!!</h2>
+<h2>Sekmingai istrinta!!!!</h2>
 
 
 <!-- js redirect: -->
