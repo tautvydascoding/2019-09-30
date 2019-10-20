@@ -1,6 +1,6 @@
 Vartotojui paspaudus "registruotis" mygtuka - ivestus duomenis issaugoti DB.
 
-index.php faile, sukurti gydytoju registracijos  forma (pvz: registracija.php )
+index.php faile, sukurti gydytoju registracijos  form'a (pvz: registracija.php )
 Vartotojui paspaudus "registruotis" mygtuka - vartotoja perkelti i registracija.php faila (HINT: action='registracija.php')
 
 registracija.php faile:

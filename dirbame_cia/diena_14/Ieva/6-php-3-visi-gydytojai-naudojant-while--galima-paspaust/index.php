@@ -25,7 +25,7 @@
             $gydytojas_Array = mysqli_fetch_assoc($visiGydytojai_Objektas);
             }
             
-            printf("Siandien %s ejo i %s", "ji", "miska");
+            
         ?>
 
        
