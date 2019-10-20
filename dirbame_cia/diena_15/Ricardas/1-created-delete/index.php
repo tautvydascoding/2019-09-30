@@ -24,7 +24,8 @@
         }
 
         ?>
-        
+        <button><a href='naujasGydytojas.php?vardas=Jonatanas&pavarde=Jonsonas'> Kurti Nauja</a></button>
+        <button><a href='trintiGydytoja.php?id=13'>Trinti</a></button>
         <?php
         // $x = $_GET['aaa'];
         // echo $x;

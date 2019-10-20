@@ -20,6 +20,7 @@
 
         while($mas = mysqli_fetch_assoc($visiGydytojai_obj)){ //priskiriam prie kintamojo ir istraukiam viena stalciu
             echo "<a href='doctor.php?nr={$mas['id']}'>{$mas['name']} {$mas['lname']}</a>"; //idedam kintamaji ir parasom column pavadinimus
+            echo "<button><a href='trintiGydytoja.php?nr={$mas['id']}'>Salinti</a></button>";
             echo '<br>';            //^^ nr(galimas betkoks zodis) priskiriamas id stalcius, kuri panaudosiu doctors.php faile
         }
 

@@ -11,9 +11,9 @@
     <body>
         <h1>Poliklinika - visi gydytojai</h1>
         <?php
-        include('db_functions.php');
+        include('registracija.php');
         $visiGydytojai_obj = returnDoctors(); //issaukiam mysql objekta panaudodami funkcija is db_functions
-
+        
         // for($i = 0; $i < 100; $i++) {
         //     print_f("<li>$visiGydytojai_obj[$i][$lname]</li>");
         // }
@@ -24,7 +24,11 @@
         }
 
         ?>
-        
+       <form class="" action="registracija.php" method="get">
+            <input type="text" name="vardas" value="">
+            <input type="text" name="pavarde" value="">
+            <input type="submit" name="" value="Registracija">
+        </form>
         <?php
         // $x = $_GET['aaa'];
         // echo $x;
