@@ -14,45 +14,46 @@ require 'libs/PHPMailer-master/PHPMailerAutoload.php';
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
-try {
+try {   
+    // papildomi PhpMailer nustatymia, jeigu neveikia su standartiniais
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true
+        )
+    );
+    $mail->Host = 'tls://smtp.gmail.com:587'; 
+    $mail->SMTPSecure = 'ssl';                              // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 465;                                      // TCP port to connect to
+
+    //Server settings
+    $mail->SMTPDebug = 1;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'testascoding@gmail.com';                 // gmail username
+    $mail->Password = 'slaptazodis';                            //gmail password
+
+    
 
 
-$mail->SMTPOptions = array(
-    'ssl' => array(
-    'verify_peer' => false,
-    'verify_peer_name' => false,
-    'allow_self_signed' => true
-    )
-);
-$mail->Host = 'tls://smtp.gmail.com:587'; 
-$mail->SMTPSecure = 'ssl';                              // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 465;                                      // TCP port to connect to
 
 
-//Server settings
-$mail->SMTPDebug = 1;                                 // Enable verbose debug output
-$mail->isSMTP();                                      // Set mailer to use SMTP
+    //Recipients
+    $mail->setFrom('testascoding@gmail.com', 'Puslapiu kurejai');
+    $mail->addAddress('testascoding@gmail.com', 'Puslapiu kurejai');     // Add a recipient
 
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'testascoding@gmail.com';                 // SMTP username
-$emai->Password = 'slaptazodis';
+    $mail->addReplyTo($klientoEmailas, $klientoVardas);
 
-                            // TCP port to connect to
+        // Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = $klientoKlausimoTema;
+    $mail->Body    = $klientoKlausimoTema;
+    $mail->AltBody = $klientoKlausimoTema;
 
-//Recipients
-$mail->setFrom('prezidentas@gmail.com', 'Prezidentas');
-$mail->addAddress('testascoding@gmail.com', 'puslapiu kurejai');     // Add a recipient
-$mail->addReplyTo($klientoEmailas, $klientoVardas);
-
-
-// Content
-$mail->isHTML(true);                                  // Set email format to HTML
-$mail->Subject = "$klientoKlausimoTema";
-$mail->Body    = "$klientoKlausimas";
-$mail->AltBody = "$klientoKlausimas";
-
-$mail->send();
-echo 'Message has been sent';
+    $mail->send();
+    echo 'WOOP WOOP, laiskas issiustas sekmingai!';
 } catch (Exception $e) {
-echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo "<h3 class='bg-danger'>Oooops nepavyko issiusti laisko </h3> </br>. Mailer Error: {$mail->ErrorInfo}";
 }
