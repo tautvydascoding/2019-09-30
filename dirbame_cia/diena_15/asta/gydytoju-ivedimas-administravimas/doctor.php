@@ -7,5 +7,7 @@ $gydytojas = getDoctor( $numeris);
 
 
 echo $gydytojas["name"] .  $gydytojas['lname'] ;
+
 ?>
+<button type="button"><a href='trintiGydytoja.php?nr=<?php echo $numeris?>'>Trinti</a></button>;
 <!-- isveda pageidaujamo gydytojo informacija reikia irasyti ?nr=2 arba bet koks kitas gydytoju masyvo iraso numeris -->
