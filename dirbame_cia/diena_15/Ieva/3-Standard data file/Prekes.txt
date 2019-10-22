@@ -1,0 +1,3 @@
+Katinukas;5;15;mazas ir juodas, mielai zaidzia;
+Peliukas;2;7;pilkas, su ilga odega;
+Sunukas;8;25;veislinis, aukso spalvos, mielas su vaikais;
