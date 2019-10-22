@@ -7,6 +7,8 @@
     <title>admin panel</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/style.css">
+    <?php include("config/connectToDB.php"); 
+          include("model/users.php");?>
 </head>
 <body>
     <div>
@@ -22,9 +24,34 @@
         
         <!-- Tab content -->
         <div id="Users" class="tabcontent">
-                <h3>User Info</h3>
-                <p>User list</p>
-        </div>
+                <h3>Users List</h3>
+
+                <div class="users"> 
+                  <?php      
+                        $userObject = getUsers();
+                        // print_r($userObject); //TEST
+                        $usersList = mysqli_fetch_assoc($userObject);
+                        // print_r($usersList); // TEST
+
+                        while ($usersList) {
+                            echo "<h4> 
+                                    {$usersList['id']}
+                                    {$usersList['user_name']} 
+                                    {$usersList['email']} 
+                                    {$usersList['name']} 
+                                    {$usersList['lname']} 
+                                    {$usersList['rights']}
+                                    {$usersList['registration_time']} 
+                                    {$usersList['last_login']} 
+                                </h4>";
+                           echo "<hr>";
+
+                           $usersList = mysqli_fetch_assoc($userObject);
+                        }
+                        ?> 
+                </div>   <!-- Users list is closed -->
+
+        </div> <!--Tab users is closed -->
 
         <div id="Challenges" class="tabcontent">
             <h3>Challenges</h3>

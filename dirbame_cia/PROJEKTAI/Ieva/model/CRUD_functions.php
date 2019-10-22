@@ -1,6 +1,6 @@
 <?php 
 
-//prisijungimas
+//prisijungimas // --------config??????????????
 
 $debug_mode = 0;
 
@@ -23,21 +23,7 @@ function getConnect() {
 }    
 }
 
-getConnect();
-
 //---------------GET FUNCTION------------------------------------------DONE - TEST
-//get user
-
-function getUser($nr) {
-    $resultMysqlObject = mysqli_query(getConnect(),"SELECT * FROM users WHERE id = '$nr'");
-        if ($resultMysqlObject) { //mysqli_num_rows($rezultataiMysqlObjektas) > 0, ar is viso yra eiluciu
-            $resultArray = mysqli_fetch_assoc($resultMysqlObject);
-        return $resultArray; 
-        } else {
-            echo "ERROR: Cannot get user: $nr.". mysqli_error(getConnect());
-            return NULL;
-        }
-}
 
 //get challenge
 
@@ -80,11 +66,17 @@ function getAbout($nr) {
 
 //---------------CREATE FUNCTION--------------------------------------------- NOT FINISHED
 
-//create user (for registration) -----KAIP KODUOJASI PASSWORD??????????????????????????? AR TEISINGAI NAUDJAMAS NOW?
+//create user (for registration) AR TEISINGAI NAUDJAMAS NOW? - gali but ir kabutese
 
 function createUser ($user_name, $email, $password, $name, $lname) {
+    $user_name = htmlspecialchars(trim($user_name), ENT_QUOTES);
+    $email = htmlspecialchars(trim($user_name), ENT_QUOTES);
+    $password = password_hash($password, 'PASSWORD_DEFAULT');
+    $name = htmlspecialchars(trim($user_name), ENT_QUOTES);
+    $lname = htmlspecialchars(trim($user_name), ENT_QUOTES);
+
     $mySQL_string = "INSERT INTO users 
-                            VALUES (NULL, '$user_name', '$email', '$password', '$name', '$lname', '0', NOW(), NOW())";
+                            VALUES (NULL, '$user_name', '$email', '$password', '$name', '$lname', 'default', NOW(), NOW())";
     $itemCreated = mysqli_query(getConnect(), $mySQL_string);
     if (!$itemCreated) {
         echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
@@ -92,9 +84,19 @@ function createUser ($user_name, $email, $password, $name, $lname) {
     }
 }
 
+//kodavimas - kurimo ir atnaujinimo metu
+// koduoti viska, slaptazodziui reiketu
+ // $password = md5( $password); //senovinis budas
+    // $password = md5(md5( $password."5"));// siek tiek geresnis
+// prisiloginimui
+//login funkcija
+
+
+
 //create challenge
 
-function createChallenge($title, $description, $tag) {////img_id
+function createChallenge($title, $description, $tag) {////img_id ar sitoj vietoj naudoti inner join?
+    
     $mySQL_string = "INSERT INTO doctors 
                             VALUES (NULL,'$title','$description','$tag')";///img_id
     $itemCreated = mysqli_query(getConnect(), $mySQL_string);
@@ -129,20 +131,6 @@ function createAbout($title, $description) { ///// gal padaryti papildoma stulpe
 }
 
 //---------------DELETE FUNCTION--------------------------------------------- DONE - TEST
-
-//delete user
-
-function deleteUser($nr) {
-    $mySQL_string = "DELETE FROM users 
-                            WHERE id = '$nr' 
-                            LIMIT 1
-                    ";
-    $itemDeleted = mysqli_query(getConnect(), $mySQL_string);
-    if (!$itemDeleted ) {
-        echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
-        return NULL;
-    }
-}
 
 //delete challenge
 
@@ -188,7 +176,7 @@ function deleteAbout($nr) {
 
 //---------------UPDATE FUNCTION---------------------------------------------//NOT STARTED
 
-//update user (ir admin(tik teises) my profile(password, name, lname))
+//update user (ir admin(tik teises) my profile(password, name, lname)) /// ar reikia dvieju atskiru funkciju? TAIP
 
 function updateUser ($nr, $name, $lname) {
     $mySQL_string = "UPDATE users 
@@ -203,18 +191,18 @@ function updateUser ($nr, $name, $lname) {
     }
 }
 
-// update challenge
+//update challenge
 
 //update suggestion (NEREIKIA)
 
 //update about
 
-//---------------GET LIST FUNCTION---------------------------------------------//NOT STARTED
+//---------------GET LIST FUNCTION---------------------------------------------//IN PROGRESS
 
-// get user list
+// get challenge list
 
-function getUsers($count = 9999) {
-    $mySQL_string = "SELECT * FROM users LIMIT $count";
+function getChallenges($count = 9999) {
+    $mySQL_string = "SELECT * FROM challenges LIMIT $count";
     $getList = mysqli_query(getConnect(), $mySQL_string);
     if (!$getList ) {
         echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
@@ -222,13 +210,33 @@ function getUsers($count = 9999) {
     } return  $getList;
 } 
 
+$challengeObject = getChallenges();
 
-// $gydytojuSarasas = getDoctors();
+$challengesList = mysqli_fetch_assoc($challengeObject);
 
-// $gydytojas_Array = mysqli_fetch_assoc($gydytojuSarasas);
+while ($challengesList) {
+   print_r($challengesList);
+   echo "<br>";
+   $challengesList = mysqli_fetch_assoc($challengeObject);
+}
 
-// while ($gydytojas_Array) {
-//    print_r($gydytojas_Array);
-//    echo "<br>";
-//    $gydytojas_Array = mysqli_fetch_assoc($gydytojuSarasas);
-// }
+//get suggested challenges
+
+function getSuggestions($count = 9999) {
+    $mySQL_string = "SELECT * FROM suggested_challenges LIMIT $count";
+    $getList = mysqli_query(getConnect(), $mySQL_string);
+    if (!$getList ) {
+        echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
+            return NULL;
+    } return  $getList;
+} 
+
+$suggestionObject = getSuggestions();
+
+$suggestionsList = mysqli_fetch_assoc($suggestionObject);
+
+while ($suggestionsList) {
+   print_r($suggestionsList);
+   echo "<br>";
+   $suggestionsList = mysqli_fetch_assoc($suggestionObject);
+}
