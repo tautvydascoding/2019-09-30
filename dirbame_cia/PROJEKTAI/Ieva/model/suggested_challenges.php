@@ -23,14 +23,16 @@ function getSuggestion($nr) {
  
 //create suggestion (for user - suggestion input) 
 
-function createSuggestion($user_id, $suggestion) {
+function createSuggestion($user_id, $title, $suggestion) {
     $user_id = htmlspecialchars(trim($user_id), ENT_QUOTES);
+    $title = htmlspecialchars(trim($title), ENT_QUOTES);
     $suggestion = htmlspecialchars(trim($suggestion), ENT_QUOTES);
 
     $mySQL_string = "INSERT INTO suggested_challenges
                             VALUES (
                                 NULL,
                                 '$user_id',
+                                '$title',
                                 '$suggestion')
                                 ";
     $itemCreated = mysqli_query(getConnect(), $mySQL_string);
@@ -40,7 +42,7 @@ function createSuggestion($user_id, $suggestion) {
     }
 }
 
-// createSuggestion(2, "Familia iz Familia what pew pew pew stuff");
+// createSuggestion(2, Kitty,"Familia iz Familia what pew pew pew stuff");
 
 //---------------DELETE FUNCTION--------------------------------------------- DONE - TEST - WORKS
 

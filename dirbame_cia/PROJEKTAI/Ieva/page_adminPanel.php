@@ -7,8 +7,7 @@
     <title>admin panel</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/style.css">
-    <?php include("config/connectToDB.php"); 
-          include("model/users.php");?>
+    <?php include("config/connectToDB.php");?>
 </head>
 <body>
     <div>
@@ -25,47 +24,96 @@
         <!-- Tab content -->
         <div id="Users" class="tabcontent">
                 <h3>Users List</h3>
-
+                
                 <div class="users"> 
-                  <?php      
+                  <?php    
+                        include("model/users.php");   
                         $userObject = getUsers();
-                        // print_r($userObject); //TEST
+                      
                         $usersList = mysqli_fetch_assoc($userObject);
-                        // print_r($usersList); // TEST
 
                         while ($usersList) {
-                            echo "<h4> 
-                                    {$usersList['id']}
-                                    {$usersList['user_name']} 
+                            echo "<h4> <a href='user-details.php?id={$usersList['id']}'>
+                                    {$usersList['user_name']}
                                     {$usersList['email']} 
-                                    {$usersList['name']} 
-                                    {$usersList['lname']} 
-                                    {$usersList['rights']}
-                                    {$usersList['registration_time']} 
-                                    {$usersList['last_login']} 
-                                </h4>";
-                           echo "<hr>";
+                                </a> <h4>";
 
                            $usersList = mysqli_fetch_assoc($userObject);
                         }
                         ?> 
-                </div>   <!-- Users list is closed -->
+                </div>   <!-- Users list is closed --> 
 
         </div> <!--Tab users is closed -->
 
         <div id="Challenges" class="tabcontent">
             <h3>Challenges</h3>
-            <p>Challenge list</p>
-        </div>
+           
+            <div class="challenges"> 
+                <?php      
+                    include("model/challenges.php");
+                    $challengeObject = getChallenges();
+
+                    $challengesList = mysqli_fetch_assoc($challengeObject);
+
+                    while ($challengesList) {
+                        echo "<h4> <a href='#'>
+                        {$challengesList['title']}
+                        {$challengesList['tag']}
+                        </a> <h4>";
+
+                    $challengesList = mysqli_fetch_assoc($challengeObject);
+                    }
+
+                    ?> 
+            </div>   <!-- Challenges list is closed -->
+
+        </div> <!--Tab Challenges is closed -->
         
         <div id="Suggested" class="tabcontent">
             <h3>Suggested Challenges</h3>
-            <p>Suggested Challenges list</p>
+            
+            <div class="suggested"> 
+                <?php      
+                   include("model/suggested_challenges.php"); 
+                   $suggestionObject = getSuggestions();
+
+                    $suggestionsList = mysqli_fetch_assoc($suggestionObject);
+
+                    while ($suggestionsList) {
+                        echo "<h4> <a href='#'>
+                        {$suggestionsList['title']}
+                        {$suggestionsList['user_id']}
+                        </a> <h4>";
+
+                    $suggestionsList = mysqli_fetch_assoc($suggestionObject);
+                    }
+
+                    ?> 
+            </div>   <!-- Suggested Challenges list is closed -->
+            
         </div>
         
         <div id="About" class="tabcontent">
-            <h3>About</h3>
-            <p>About-page item list</p>
+            <h3> About-page items</h3>
+           
+            <div class="aboutItems"> 
+                <?php      
+                   include("model/aboutItems.php");
+
+                   $aboutItemsObject = getAboutItems();
+
+                   $aboutItemsList = mysqli_fetch_assoc($aboutItemsObject);
+
+                   while ($aboutItemsList) {
+                      echo "<h4> <a href='#'>
+                      {$aboutItemsList['title']}
+                      </a> </h4>";
+
+                      $aboutItemsList = mysqli_fetch_assoc($aboutItemsObject);
+                   }
+
+                    ?> 
+            </div>   <!-- About-page items list is closed -->
     </div> 
 
 

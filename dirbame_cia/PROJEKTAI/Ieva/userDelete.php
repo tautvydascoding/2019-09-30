@@ -1,11 +1,12 @@
 <?php
+include("config/connectToDB.php");
+include('model/users.php');
 
-include('users.php');
+$nr = $_GET['id'];
+// print_r($nr);//test
 
-// $nr = $_GET['id'];
+deleteUser($nr);
 
-//TEST
-// $nr=;
-// deleteUser($nr);
+header("Location: page_adminPanel.php");
 
-// header("Location: index.php?zinute=Sekmingai istrintas gydytojas");
+// header("Location: page_adminPanel.php?zinute=Sekmingai istrintas gydytojas");
