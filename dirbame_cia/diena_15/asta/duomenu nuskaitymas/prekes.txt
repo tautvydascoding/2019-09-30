@@ -1,0 +1,3 @@
+Dviratis;199;21;Kalnu dviratis;
+Riedlente;79;15;Tinka miesto keliukams;
+Paspirtukas;320;10;Elektrinis

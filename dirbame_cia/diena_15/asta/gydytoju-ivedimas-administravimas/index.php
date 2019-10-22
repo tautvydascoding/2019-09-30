@@ -30,7 +30,7 @@ while ($gydytojasArray){
 
      ?>
 
-<a href='doctor.php?nr=$gydytojasArray['id']'>
+<!-- <a href='doctor.php?nr=$gydytojasArray['id']'> -->
      <!--
      $gyt = getDoctor(6);
      <form   action="registracija.php" method="get">

@@ -1,0 +1,3 @@
+Dviratis, 200, 20, geras dviratis
+Triratis, 300, 15, greitas triratis
+Keturratis, 150, 10, geriausias leciausias
