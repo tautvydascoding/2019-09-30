@@ -16,6 +16,12 @@ class Zmogus {
     private $ugis = 0;
     private $vardas = "Ivesti varda";
 
+    function __construct($u=0, $v="bevardis") {
+        $this->ugis = $u;
+        $this->vardas = $v;
+        // echo $u." ".$v; testavimas
+    } 
+
     function getManoUgis() {
        return $this->ugis;
     }
@@ -30,7 +36,10 @@ class Zmogus {
 
     function setManoVardas($naujasVardas) {
         $this->vardas = $naujasVardas;
+
     }
 
 }
+
+
 
