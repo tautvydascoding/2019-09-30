@@ -49,8 +49,8 @@ console.log(tekstas);
 
 // 11.2 ka isves i consol?
 for ( i = 0 ; i > 5; i++ ) {
-    tekstas += "Zivile "
-    return;
+    break;
+    tekstas += "Zivile ";
 }
 console.log(tekstas);
 
@@ -127,3 +127,14 @@ for ( i = 0 ; i > 3; i++ ) {
         console.log("vejuota");
     }
 }
+// ----------------------f-jos---------------
+let kk = function() {
+    console.log("Juodas");
+}
+function isveskTeksta(x, y) {
+    console.log(x);
+    if (y != null && y != undefined) {
+        y();
+    }
+}
+isveskTeksta('baltas', kk );
