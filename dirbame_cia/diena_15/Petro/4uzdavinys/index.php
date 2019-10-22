@@ -31,6 +31,29 @@
         <br>
         <input type="submit" value="Istrinti gydytoja">
     </form>
+    <br>
+
+    <!-- index.php faile, isvesti visus gydytojus panaudojant while ir getDoctors(); -->
+
+    <?php
+    include ('db_functions.php');
+    $visiGydytojaiMYSQL_Objektas = getDoctors();
+
+// su fetch paimam pirma MYSQL objekto eilute ir paverciam i tvarkinga pirmos eilutes masyva
+$gydytojas_Masyvas = mysqli_fetch_assoc($visiGydytojaiMYSQL_Objektas);
+
+
+// su while ciklu atspausdinsim visus gydytu masyvus
+while ($gydytojas_Masyvas){
+    print_r($gydytojas_Masyvas['name'].$gydytojas_Masyvas['lname']);
+    echo "<h3> {$gydytojas_Masyvas['name']} {$gydytojas_Masyvas['lname']}</h3>";
+    echo "<br>";
+    $gydytojas_Masyvas = mysqli_fetch_assoc($visiGydytojaiMYSQL_Objektas);
+}
+
+
+
+    ?>
 
 
 
