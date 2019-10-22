@@ -1,12 +1,14 @@
 <?php
 
-// include("config/connectToDB.php"); - include in every file.
+// include("../config/connectToDB.php"); //- include in every file.
 
-//---------------GET FUNCTION------------------------------------------DONE - TEST
+//---------------GET FUNCTION------------------------------------------DONE - TEST - WORKS
+
+// get challenge
 
 function getChallenge($nr) {
     $resultMysqlObject = mysqli_query(getConnect(),"SELECT * FROM challenges WHERE id = '$nr'");
-        if ($resultMysqlObject) { //mysqli_num_rows($rezultataiMysqlObjektas) > 0, ar is viso yra eiluciu
+        if (mysqli_num_rows($resultMysqlObject) > 0) {
             $resultArray = mysqli_fetch_assoc($resultMysqlObject);
         return $resultArray; 
         } else {
@@ -15,31 +17,24 @@ function getChallenge($nr) {
         }
 }
 
-// print_r(getChallenge($nr));
+// print_r(getChallenge(2));
 
 //---------------CREATE FUNCTION--------------------------------------------- DONE - TEST - WORKS
+ 
+//create challenge
 
-//create user (for registration)
+function createChallenge($title, $description, $tag) {
+    $title = htmlspecialchars(trim($title), ENT_QUOTES);
+    $description = htmlspecialchars(trim($description), ENT_QUOTES);
+    $tag = htmlspecialchars(trim($tag), ENT_QUOTES);
 
-function createUser ($user_name, $email, $password, $name, $lname) {
-    $user_name = htmlspecialchars(trim($user_name), ENT_QUOTES);
-    $email = htmlspecialchars(trim($email), ENT_QUOTES);
-    $password = password_hash($password, PASSWORD_DEFAULT);
-    $name = htmlspecialchars(trim($name), ENT_QUOTES);
-    $lname = htmlspecialchars(trim($lname), ENT_QUOTES);
-
-    $mySQL_string = "INSERT INTO users 
+    $mySQL_string = "INSERT INTO challenges
                             VALUES (
-                                NULL, 
-                                '$user_name', 
-                                '$email', 
-                                '$password', 
-                                '$name', 
-                                '$lname', 
-                                'default', 
-                                NOW(), 
-                                NOW())
-                            ";
+                                NULL,
+                                '$title',
+                                '$description',
+                                '$tag')
+                                ";
     $itemCreated = mysqli_query(getConnect(), $mySQL_string);
     if (!$itemCreated) {
         echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
@@ -48,53 +43,44 @@ function createUser ($user_name, $email, $password, $name, $lname) {
 }
 
 
-// createUser ('TestUser', 'test@test.com', 'test123', 'Tomas', 'Testauskas'); 
-
-
-//kodavimas - kurimo ir atnaujinimo metu
-// koduoti viska, slaptazodziui reiketu
-// $password = md5( $password); //senovinis budas
-// $password = md5(md5( $password."5"));// siek tiek geresnis
-// prisiloginimui if (pas destytoja 5uzd)
+// createChallenge("Meditation day", "Meditacija – tai paleisti pyktį iš praeities, praeities įvykius ir visus ateities planus. Meditacija – tai priimti šią akimirką ir giliai išgyventi kiekvieną akimirką. Poilsis medituojant gilesnis už giliausią miegą, nes medituodami išsilaisviname nuo visų minčių ir troškimų. Siūlau meditaciją pradėti atpalaiduojant kūną. Pajausk kūną nuo kojų pirštelių iki pat viršugalvio (iš lėto). Jei mintys pradės klysti į šalį, įsigilint į savo kvepavimą.", "Relax");
 
 //---------------DELETE FUNCTION--------------------------------------------- DONE - TEST - WORKS
 
-function deleteUser($nr) {
-    $mySQL_string = "DELETE FROM users 
+//delete challenge
+
+function deleteChallenge($nr) {
+    $mySQL_string = "DELETE FROM challenges
                             WHERE id = '$nr' 
                             LIMIT 1
-                    ";
-    $itemDeleted = mysqli_query(getConnect(), $mySQL_string);
+                            ";
+    $itemDeleted  = mysqli_query(getConnect(), $mySQL_string);
     if (!$itemDeleted ) {
         echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
         return NULL;
     }
 }
 
-// deleteUser(1);
+// deleteChallenge(1);
 
 //---------------UPDATE FUNCTION--------------------------------------------- DONE - TEST - WORKS
 
-//update user (admin)
+//update challenge(admin)
 
-function updateUserAdmin ($nr, $user_name, $email, $name, $lname, $rights) {
+function updateChallenge ($nr, $title, $description, $tag) {
     $nr = htmlspecialchars(trim($nr), ENT_QUOTES);
-    $user_name = htmlspecialchars(trim($user_name), ENT_QUOTES);
-    $email = htmlspecialchars(trim($email), ENT_QUOTES);
-    $name = htmlspecialchars(trim($name), ENT_QUOTES);
-    $lname = htmlspecialchars(trim($lname), ENT_QUOTES);
-    $rights = htmlspecialchars(trim($rights), ENT_QUOTES);
+    $title = htmlspecialchars(trim($title), ENT_QUOTES);
+    $description = htmlspecialchars(trim($description), ENT_QUOTES);
+    $tag = htmlspecialchars(trim($tag), ENT_QUOTES);
 
-    $mySQL_string = "UPDATE users 
+    $mySQL_string = "UPDATE challenges
                         SET 
-                            user_name = '$user_name',
-                            email = '$email',
-                            name = '$name', 
-                            lname = '$lname', 
-                            rights = '$rights' 
+                        title = '$title', 
+                        description = '$description',
+                        tag = '$tag'
                         WHERE id = '$nr' 
                         LIMIT 1
-                    ";
+                        ";
     $itemUpdated = mysqli_query(getConnect(), $mySQL_string);
     if (!$itemUpdated) {
         echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
@@ -102,43 +88,16 @@ function updateUserAdmin ($nr, $user_name, $email, $name, $lname, $rights) {
     }
 }
 
-// updateUserAdmin(3, 'Juozas44', 'jonas@jonaitis.com', 'Juozas', 'Juozaitis', 'default');
-
-
-// update user my profile(password, name, lname);
-
-function updateUserProfile ($nr, $email, $name, $lname, $password) {
-    $email = htmlspecialchars(trim($email), ENT_QUOTES);
-    $password = password_hash($password, PASSWORD_DEFAULT);
-    $name = htmlspecialchars(trim($name), ENT_QUOTES);
-    $lname = htmlspecialchars(trim($lname), ENT_QUOTES);
-
-    $mySQL_string = "UPDATE users 
-                        SET 
-                            name = '$name', 
-                            lname = '$lname', 
-                            password = '$password' 
-                        WHERE id = '$nr' 
-                        LIMIT 1
-                    ";
-    $itemUpdated = mysqli_query(getConnect(), $mySQL_string);
-    if (!$itemUpdated) {
-        echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
-        return NULL;
-    }
-}
-
-// updateUserProfile (4, 'emailas', 'Ona', 'Onute', 'test456');
+// updateChallenge (2, "Intresting questions", "do you even like your Friends lets find out", "Random");
 
 //---------------GET LIST FUNCTION--------------------------------------------- DONE - TEST - WORKS
 
-// get user list
+// get challenges list
 
-function getUsers($count = 9999) {
-    $mySQL_string = "SELECT * FROM users 
-                            LIMIT $count
-                            ";
-
+function getChallenges($count = 9999) {
+    $mySQL_string = "SELECT * FROM challenges 
+                                LIMIT $count
+                                ";
     $getList = mysqli_query(getConnect(), $mySQL_string);
     if (!$getList ) {
         echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
@@ -146,13 +105,14 @@ function getUsers($count = 9999) {
     } return  $getList;
 } 
 
-// $userObject = getUsers();
+// $challengeObject = getChallenges();
 
-// $usersList = mysqli_fetch_assoc($userObject);
+// $challengesList = mysqli_fetch_assoc($challengeObject);
 
-// while ($usersList) {
-//    print_r($usersList);
+// while ($challengesList) {
+//    print_r($challengesList);
 //    echo "<br>";
-//    $usersList = mysqli_fetch_assoc($userObject);
+//    $challengesList = mysqli_fetch_assoc($challengeObject);
 // }
+
 

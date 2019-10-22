@@ -39,7 +39,7 @@ function createUser ($user_name, $email, $password, $name, $lname) {
                                 'default', 
                                 NOW(), 
                                 NOW())
-                            ";
+                                ";
     $itemCreated = mysqli_query(getConnect(), $mySQL_string);
     if (!$itemCreated) {
         echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
@@ -63,7 +63,7 @@ function deleteUser($nr) {
     $mySQL_string = "DELETE FROM users 
                             WHERE id = '$nr' 
                             LIMIT 1
-                    ";
+                            ";
     $itemDeleted = mysqli_query(getConnect(), $mySQL_string);
     if (!$itemDeleted ) {
         echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
@@ -94,7 +94,7 @@ function updateUserAdmin ($nr, $user_name, $email, $name, $lname, $rights) {
                             rights = '$rights' 
                         WHERE id = '$nr' 
                         LIMIT 1
-                    ";
+                        ";
     $itemUpdated = mysqli_query(getConnect(), $mySQL_string);
     if (!$itemUpdated) {
         echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
@@ -120,7 +120,7 @@ function updateUserProfile ($nr, $email, $name, $lname, $password) {
                             password = '$password' 
                         WHERE id = '$nr' 
                         LIMIT 1
-                    ";
+                        ";
     $itemUpdated = mysqli_query(getConnect(), $mySQL_string);
     if (!$itemUpdated) {
         echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
