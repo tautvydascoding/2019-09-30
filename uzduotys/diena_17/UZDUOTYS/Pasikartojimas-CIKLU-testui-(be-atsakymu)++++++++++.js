@@ -6,45 +6,45 @@ let tekstas = "";
 
 // 1. ka isves i consol?
 for ( i = 1; i < 5; i++) {
-    console.log("Karolis"); // 4x kart
+    console.log("Karolis");
 }
 
 // 1.2 ka isves i consol?
 for ( i = 1; i < 5; i++) {
     tekstas = "Karolis2";
 }
-console.log(tekstas); // 1 x Karolis2
+console.log(tekstas);
 
 // 2. ka isves i consol?
 for ( i = 5; i < 0; i--) {
-    console.log("Antanas");  // 6x   begalinis  neivieno  => ats: nei vieno
+    console.log("Antanas");
 }
 
 // 2.2 ka isves i consol?
 for ( i = 5; i > 0; i--) {
-    console.log("Antanas2");   // 5x Antanas2
+    console.log("Antanas2");
 }
 
 // 3 ka isves i consol?
 for ( i = 0; i < 5; i+=2) {
-    console.log("Sonata");  //   0, 2, 4 = 3x
+    console.log("Sonata");
 }
 
 // 4 ka isves i consol?
 for ( i = 0, k = 0; i < 5; i++) {
-    console.log("Romanas" + k);  // 5x  "Romanas0"
+    console.log("Romanas" + k);
 }
 
 // 4.2 ka isves i consol?
-for ( i = 0, k = 0; i > 5; i++, k+=5) {
-    console.log("Romanas" + k);    // nieko
+for ( i = 0, k = 0; i < 5; i++, k+=5) {
+    console.log("Romanas" + k);
 }
 
 // 11.1 ka isves i consol?
 for ( i = 0 ; i < 5; i++ ) {
-    tekstas = "Mazvydas2 ";
+    tekstas = "Mazvydas2 "
 }
-console.log(tekstas);   // 1x
+console.log(tekstas);
 
 
 // 11.2 ka isves i consol?
@@ -52,31 +52,31 @@ for ( i = 0 ; i < 5; i++ ) {
     break;
     tekstas += "Zivile ";
 }
-console.log(tekstas);  // nieko
+console.log(tekstas);
 
 // 5 ka isves i consol?
 for ( i = 0 ; i < 5; i++ ) {
     // nieko
 }
-console.log(i);   // 5
+console.log(i);
 
 
 // 7.1 ka isves i console
 i = 0;
 while( i != 4 ) {
     i++;
-    console.log("ruškana");  // 4x
+    console.log("ruškana");
 }
 
 // 7.2 ka isves i console
 while( true ) {
     break;
-    console.log("uraganas"); // niekada
+    console.log("uraganas");
 }
 
 // 7.3 ka isves i console
 do {
-    console.log("saulelydis");   // 1x
+    console.log("saulelydis");
 } while ( 5 != 5)
 
 
@@ -84,7 +84,7 @@ do {
 for ( i = 0 ; i < 5; i++ ) {
     tekstas += "Mazvydas "
 }
-console.log(tekstas);  //   "Mazvydas Mazvydas Mazvydas Mazvydas Mazvydas "
+console.log(tekstas);
 
 // 8.3 ka isves i consol?
 for ( i = 0 ; i < 5; i++ ) {
@@ -93,7 +93,7 @@ for ( i = 0 ; i < 5; i++ ) {
     }
     tekstas += "Povilas "
 }
-console.log(tekstas); // "Povilas ""Povilas ""Povilas "
+console.log(tekstas);
 
 // 8.4 ka isves i consol?
 for ( i = 0 ; i < 3; i++ ) {
@@ -102,7 +102,7 @@ for ( i = 0 ; i < 3; i++ ) {
     }
     tekstas += "Povilas "
 }
-console.log(tekstas); // 2x Povilas
+console.log(tekstas);
 
 
 // 9.1 ka isves i consol?
@@ -112,7 +112,6 @@ for ( i = 0 ; i < 2; i++ ) {
         console.log("sninga");
     }
 }
-// lyja sninga sninga sninga ,  lyja sninga sninga sninga
 
 // 9.2 ka isves i consol?
 for ( i = 0 ; i < 3; i++ ) {
@@ -120,21 +119,22 @@ for ( i = 0 ; i < 3; i++ ) {
     for ( k = 0 ; k < 2; k++ ) {
         // nieko
     }
-} // sauleta sauleta sauleta
+}
 
 // 9.3 ka isves i consol?
 for ( i = 0 ; i < 3; i++ ) {
     for ( k = 0 ; k < 2; k++ ) {
         console.log("vejuota");
     }
-} // vejuota vejuota,   vejuota vejuota,   vejuota vejuota
-
+}
 // ----------------------f-jos---------------
 let kk = function() {
     console.log("Juodas");
 }
 function isveskTeksta(x, y) {
     console.log(x);
-    y();
+    if (y != null && y != undefined) {
+        y();
+    }
 }
-isveskTeksta('baltas', kk ); // baltas juodas
+isveskTeksta('baltas', kk );

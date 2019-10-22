@@ -6,7 +6,7 @@ let tekstas = "";
 
 // 1. ka isves i consol?
 for ( i = 1; i < 5; i++) {
-    console.log("Karolis");
+    console.log("Karolis");  //  4 x Karolis
 }
 
 // 1.2 ka isves i consol?
