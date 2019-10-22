@@ -32,8 +32,8 @@ try {
     $mail->isSMTP();                                      // Set mailer to use SMTP
     
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'testascoding@gmail.com';                 // gmail username
-    $mail->Password = 'slaptazodis';                            //gmail password
+    $mail->Username = '????????@gmail.com';                 // gmail username
+    $mail->Password = '???????';                            //gmail password
 
     
 
@@ -41,8 +41,8 @@ try {
 
 
     //Recipients
-    $mail->setFrom('testascoding@gmail.com', 'Puslapiu kurejai');
-    $mail->addAddress('testascoding@gmail.com', 'Puslapiu kurejai');     // Add a recipient
+    $mail->setFrom('?????????????@gmail.com', 'Puslapiu kurejai');
+    $mail->addAddress('?????????????@gmail.com', 'Puslapiu kurejai');     // Add a recipient
 
     $mail->addReplyTo($klientoEmailas, $klientoVardas);
 
