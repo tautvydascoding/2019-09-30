@@ -20,7 +20,7 @@ show databases;  --test
 
 -- sukuriam lentele
 CREATE TABLE IF NOT EXISTS doctors (
-     id INT UNSIGNED     AUTO_INCREMENT PRIMARY KEY,
+     id INT(5) UNSIGNED     AUTO_INCREMENT PRIMARY KEY,
      name VARCHAR(30) not NULL,
      lname VARCHAR(30) NOT NULL
      );
