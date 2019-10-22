@@ -1,0 +1,115 @@
+html, body {
+    height: 100%;
+
+}
+
+h1 {
+    color: rgb(99, 7, 79);
+    font-weight: bold;
+    font-size: 80px;
+    text-align: center;
+    margin-top: 100px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p.main {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center; 
+    font-size: 20px;
+}
+
+nav.main {
+    background-color: transparent;
+    border: none;
+    
+}
+
+nav.user {
+    background-image: linear-gradient(rgb(116, 36, 100), rgb(180, 129, 169));
+    
+}
+
+.container.main {
+    background-image: url("../IMG/eberhard-grossgasteiger-NvesrDbsrL4-unsplash.jpg");
+    height: 100%; 
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    
+}
+
+button.register {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 30%;   
+   background-color: rgba(99, 7, 79, 0.8);
+   border-color: rgb(48, 2, 38);
+   font-size: 18px;
+
+  }
+
+button.log {
+    background-color: rgba(99, 7, 79, 0.8);
+    border-color: rgb(48, 2, 38);
+}
+
+nav.user button {
+    height: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navitem {
+    color: white;
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+     }
+
+.card {
+     border: 1px solid black;
+     }
+
+
+/*-----------------------ADMIN PANEL-------------------------------*/ 
+
+     /* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
