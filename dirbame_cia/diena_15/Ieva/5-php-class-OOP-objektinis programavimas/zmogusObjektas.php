@@ -13,16 +13,16 @@ include('zmogus.php');
 // paleisti f-ja 'einu()'
 
 $Monika = new Zmogus();
-$Monika->ugis = "155";
+$Monika->ugis = 155;
 $Monika->vardas = "Monika";
 echo $Monika->einu();
 
 $Tadas = new Zmogus();
-$Tadas->ugis = "180";
+$Tadas->ugis = 180;
 $Tadas->vardas = "Tadas";
 echo $Tadas->einu();
 
 $Kestas = new Zmogus();
-$Kestas->ugis = "179";
+$Kestas->ugis = 179;
 $Kestas->vardas = "Kestas";
 

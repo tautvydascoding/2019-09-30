@@ -5,7 +5,7 @@
 // f-ja 'einu()', kuri daro echo "Einu einu..."
 
 class Zmogus {
-    public $ugis = "skaicius";
+    public $ugis = 0;
     public $vardas = "vardas";
 
     function einu() {
