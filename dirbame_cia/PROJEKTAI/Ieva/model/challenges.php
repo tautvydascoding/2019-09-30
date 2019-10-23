@@ -17,6 +17,7 @@ function getChallenge($nr) {
         }
 }
 
+
 // print_r(getChallenge(2));
 
 //---------------CREATE FUNCTION--------------------------------------------- DONE - TEST - WORKS
@@ -33,7 +34,8 @@ function createChallenge($title, $description, $tag) {
                                 NULL,
                                 '$title',
                                 '$description',
-                                '$tag')
+                                '$tag',
+                                NOW()
                                 ";
     $itemCreated = mysqli_query(getConnect(), $mySQL_string);
     if (!$itemCreated) {

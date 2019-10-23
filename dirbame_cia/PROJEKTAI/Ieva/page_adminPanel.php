@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>admin panel</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
-    <?php include("config/connectToDB.php");?>
-</head>
-<body>
+<?php require("header.php");?>
+    
+<?php include("config/connectToDB.php");?>
     <div>
         <h2>Hello, Ieva!</h2>
     </div>
@@ -23,7 +14,7 @@
         
         <!-- Tab content -->
         <div id="Users" class="tabcontent">
-                <h3>Users List</h3>
+                <h4>List of Users </h4>
                 
                 <div class="users"> 
                   <?php    
@@ -33,10 +24,10 @@
                         $usersList = mysqli_fetch_assoc($userObject);
 
                         while ($usersList) {
-                            echo "<h4> <a href='user-details.php?id={$usersList['id']}'>
+                            echo "<h5> <a href='user-details.php?id={$usersList['id']}'>
                                     {$usersList['user_name']}
                                     {$usersList['email']} 
-                                </a> <h4>";
+                                </a> </h5>";
 
                            $usersList = mysqli_fetch_assoc($userObject);
                         }
@@ -46,7 +37,7 @@
         </div> <!--Tab users is closed -->
 
         <div id="Challenges" class="tabcontent">
-            <h3>Challenges</h3>
+            <h4>List of Challenges</h4>
            
             <div class="challenges"> 
                 <?php      
@@ -54,23 +45,26 @@
                     $challengeObject = getChallenges();
 
                     $challengesList = mysqli_fetch_assoc($challengeObject);
-
+                    
                     while ($challengesList) {
-                        echo "<h4> <a href='#'>
+                        echo "<h5> <a href='challenge-details.php?id={$challengesList['id']}'>
                         {$challengesList['title']}
                         {$challengesList['tag']}
-                        </a> <h4>";
+                        </a> </h5>";
 
                     $challengesList = mysqli_fetch_assoc($challengeObject);
                     }
-
+                    
                     ?> 
+
             </div>   <!-- Challenges list is closed -->
+           <hr>
+           <a href="challengeCreateForm.php" class="btn btn-outline-success"> Create </a>
 
         </div> <!--Tab Challenges is closed -->
         
         <div id="Suggested" class="tabcontent">
-            <h3>Suggested Challenges</h3>
+            <h4>List of Suggested Challenges</h4>
             
             <div class="suggested"> 
                 <?php      
@@ -80,10 +74,10 @@
                     $suggestionsList = mysqli_fetch_assoc($suggestionObject);
 
                     while ($suggestionsList) {
-                        echo "<h4> <a href='#'>
+                        echo "<h5> <a href='#'>
                         {$suggestionsList['title']}
                         {$suggestionsList['user_id']}
-                        </a> <h4>";
+                        </a> </h5>";
 
                     $suggestionsList = mysqli_fetch_assoc($suggestionObject);
                     }
@@ -94,7 +88,7 @@
         </div>
         
         <div id="About" class="tabcontent">
-            <h3> About-page items</h3>
+            <h4> About-page items</h4>
            
             <div class="aboutItems"> 
                 <?php      
@@ -105,9 +99,9 @@
                    $aboutItemsList = mysqli_fetch_assoc($aboutItemsObject);
 
                    while ($aboutItemsList) {
-                      echo "<h4> <a href='#'>
+                      echo "<h5> <a href='#'>
                       {$aboutItemsList['title']}
-                      </a> </h4>";
+                      </a> </h5>";
 
                       $aboutItemsList = mysqli_fetch_assoc($aboutItemsObject);
                    }

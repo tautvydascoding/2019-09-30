@@ -1,11 +1,12 @@
-<?php require("header.php");?>   
+<?php require("header.php");?>
+
      
         <?php
        
         $nr = $_GET['id'];
         // print_r($nr); //test
         include("config/connectToDB.php");
-        include("model/users.php");  
+        include("model/challenges.php");   
         
         $user = getUser($nr);
         // print_r( $user ); //test
@@ -33,10 +34,11 @@
             <input name = "lname" type = "text" id = "lname" value="<?=$user['lname']?>">
             <br>
 
-
             <label for = "rights"> Rights: </label>
-            <input type="radio" name="rights" value="default" checked> Default
-            <input type="radio" name="rights" value="admin"> Admin
+            <select name = "rights" id = "rights">
+                <option value="default">Default</option>
+                <option value="admin">Admin</option>
+            </select>
 
             <input name = "id" type = "hidden" value="<?= $user['id']?>">
             <hr>
