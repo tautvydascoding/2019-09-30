@@ -2,8 +2,69 @@ html, body {
     height: 100%;
 
 }
+/*----------INDEX---------------------------*/
+.container.main {
+  height: 100%; 
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 
-h1 {
+/*----------HEADER VIDEO--------------------*/
+
+header.main {
+  position: relative;
+  background-color: black;
+  height: 100%;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header.main video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header.main .container {
+  position: relative;
+  z-index: 2;
+}
+
+header.main .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.0;
+  z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  header.main {
+    background: url("../IMG/eberhard-grossgasteiger-NvesrDbsrL4-unsplash.jpg") black no-repeat center center scroll;
+  }
+  header.main video {
+    display: none;
+  }
+}
+
+
+/*----------HEADER-------------------------*/
+/*--main class for index.php*/
+h1.main {
     color: rgb(99, 7, 79);
     font-weight: bold;
     font-size: 80px;
@@ -22,22 +83,7 @@ p.main {
 nav.main {
     background-color: transparent;
     border: none;
-    
-}
-
-nav.user {
-    background-image: linear-gradient(rgb(116, 36, 100), rgb(180, 129, 169));
-    
-}
-
-.container.main {
-    background-image: url("../IMG/eberhard-grossgasteiger-NvesrDbsrL4-unsplash.jpg");
-    height: 100%; 
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    
+    z-index: 3; 
 }
 
 button.register {
@@ -56,20 +102,62 @@ button.log {
     border-color: rgb(48, 2, 38);
 }
 
-nav.user button {
-    height: 40px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+a.contactMain {
+  font-size:18px;
+  color:rgb(48, 2, 38);
+  font-weight: bold;
 }
 
-.navitem {
-    color: white;
-    font-size: 16px;
+/*---------------CONTACT-------------------------*/
+
+h3.contact {
+    color: rgb(99, 7, 79);
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 1%;
 }
+
+p.contact {
+  text-align: center; 
+  font-size: 18px;
+}
+
+form.contact label {
+  color: rgb(99, 7, 79);
+}
+
+form.contact button {
+  background-color: rgba(99, 7, 79, 0.8);
+  border-color: rgb(48, 2, 38);
+  font-size: 14px;
+}
+
+/*---------------FOOTER-------------------------*/
 
 footer {
-    text-align: center;
-     }
+  margin-top: 2%;
+  background-color: rgb(51, 42, 49);
+  color: white;
+}
+
+.copyright {
+  background-color: rgb(24, 19, 23);
+}
+
+/*---------------USER-------------------------*/
+
+.userWindow {
+  padding:0;
+  height: 100%;
+  width: 100%;
+}
+
+nav.user {
+  background-color: rgb(99, 7, 79);
+  color:white;
+}
+
 
 .card {
      border: 1px solid black;
