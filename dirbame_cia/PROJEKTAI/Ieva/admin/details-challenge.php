@@ -30,6 +30,7 @@
         <h4> Tag: <?= $challenge['tag']; ?> </h4>
         <h4> Description: </h4>
         <h5> <?= $challenge['description']; ?> </h5>
+        <h4> Challenge images: <?= "labas" ?></h4>
         <h4> Creation time: </h4>
         <h5> <?= $challenge['creation_time']; ?> </h5>
 
@@ -38,7 +39,7 @@
 
 <?php 
 
-            // echo "<a href='action-form/challengeUpdateForm.php?id={$challenge['id']}' class='btn btn-outline-primary'> Update </a>";
+            // echo "<a href='forms/challengeUpdateForm.php?id={$challenge['id']}' class='btn btn-outline-primary'> Update </a>";
             echo "<a href='action-form/challengeDelete.php?id={$challenge['id']}' class='btn btn-outline-danger'> Delete </a>";
             
         ?>

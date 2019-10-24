@@ -20,7 +20,7 @@
             <button class="tablinks" onclick="openInfo(event, 'Challenges')">Challenges</button>
             <button class="tablinks" onclick="openInfo(event, 'Suggested')">Suggested Challenges</button>
             <button class="tablinks" onclick="openInfo(event, 'About')">About</button>
-        </div>
+    </div>
         
         <!-- Tab content -->
         <div id="Users" class="tabcontent">
@@ -69,7 +69,7 @@
 
             </div>   <!-- Challenges list is closed -->
            <hr>
-           <a href="challengeCreateForm.php" class="btn btn-outline-success"> Create </a>
+           <a href="forms/challengeCreateForm.php" class="btn btn-outline-success"> Create </a>
 
         </div> <!--Tab Challenges is closed -->
         

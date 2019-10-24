@@ -12,46 +12,55 @@
 
 <?php
        
-        $nr = $_GET['id'];
-        // print_r($nr); //test
         include("../../config/connectToDB.php");
         include("../../model/challenges.php");    
-        
-        $user = getUser($nr);
-        // print_r( $user ); //test
-        echo "<a href='details-challenge.php?id=$nr' class='btn btn-outline-warning'> Back </a><hr>";
+
+        echo "<a href='../adminPanel.php' class='btn btn-outline-warning'> Back </a><hr>";
 
 ?>
         
-        <h3> <?= $user['user_name'];?></h3>
+        <h3> Create new challenge</h3>
 
-        <form action = "userUpdate.php" method = "get">
+        <form action = "../action-form/challengeCreate.php" method = "get">
            
-            <label for = "user_name"> User Name: </label>
-            <input name = "user_name" type = "text" id = "user_name" value="<?=$user['user_name']?>">
+            <label for = "title"> Title: </label>
+            <input name = "title" type = "text" id = "title" placeholder="Enter challenge title">
             <br>
             
-            <label for = "email"> Email: </label>
-            <input name = "email" type = "email" id = "email" value="<?=$user['email']?>">
+            <label for="description">Description:</label><br>
+            <textarea name="description" id = "description" placeholder="Enter challenge description.." rows="10" cols="100"></textarea>
             <br>
 
-            <label for = "name"> Name: </label>
-            <input name = "name" type = "text" id = "name" value="<?=$user['name']?>">
+            <label for = "tag"> Tag: </label>
+            <select name = "tag" id = "tag">
+                <option value="Active">Active</option>
+                <option value="Relaxation">Relaxation</option>
+                <option value="Random">Random</option>
+            </select>
             <br>
 
-            <label for = "lname"> Last Name: </label>
-            <input name = "lname" type = "text" id = "lname" value="<?=$user['lname']?>">
-            <br>
+            <label for = "imgID"> Images for challenges: </label>
+            <select name = "imgID" id = "imgID">
+                <?php      
+                        include("../../model/img.php");
+                        
+                        $imgObject = getIMGlist();
 
-            <label for = "rights"> Rights: </label>
-            <select name = "rights" id = "rights">
-                <option value="default">Default</option>
-                <option value="admin">Admin</option>
+                        $imgList = mysqli_fetch_assoc($imgObject);
+
+                        while ($imgList) {
+                            echo "<option value='{$imgList['id']}'>{$imgList['name']}</option>";
+
+                            $imgList = mysqli_fetch_assoc($imgObject);
+                        }
+                        
+                ?>                 
             </select>
 
-            <input name = "id" type = "hidden" value="<?= $user['id']?>">
+
+            <input name = "id" type = "hidden" value="<?= $imgList['id']?>">
             <hr>
-            <button type = "Submit" name = "updateUser" class="btn btn-outline-success">Update</button>
+            <button type = "Submit" name = "createChallenge" class="btn btn-outline-success">Create</button>
                 
 
         </form>
