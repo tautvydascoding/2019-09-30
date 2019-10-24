@@ -38,7 +38,7 @@
 
 <?php 
 
-            // echo "<a href='action-form/challengeUpdateForm.php?id={$challenge['id']}' class='btn btn-outline-primary'> Update </a>";
+            // echo "<a href='forms/challengeUpdateForm.php?id={$challenge['id']}' class='btn btn-outline-primary'> Update </a>";
             echo "<a href='action-form/challengeDelete.php?id={$challenge['id']}' class='btn btn-outline-danger'> Delete </a>";
             
         ?>

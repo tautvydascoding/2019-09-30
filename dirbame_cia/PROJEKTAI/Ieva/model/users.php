@@ -22,7 +22,7 @@ function getUser($nr) {
 //create user (for registration)
 
 function createUser ($user_name, $email, $password, $name, $lname) {
-    $user_name = htmlspecialchars(trim($user_name), ENT_QUOTES);
+    $user_name = htmlspecialchars(trim($user_name), ENT_QUOTES); //strip tags
     $email = htmlspecialchars(trim($email), ENT_QUOTES);
     $password = password_hash($password, PASSWORD_DEFAULT);
     $name = htmlspecialchars(trim($name), ENT_QUOTES);
