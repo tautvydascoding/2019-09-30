@@ -26,9 +26,9 @@
         <hr/>
 
         <div class="imgDetails">
-            <img src="../IMG/Challenges/<?= $img['name'];?>" placeholder="<?= $img['name'];?>">
+            <img src="../IMG/Challenges/<?= $img['name'];?>" placeholder="<?= $img['name'];?>" style="height: 150px;">
             <h4> <?= $img['name'];?> </h4>
-            <hr>
+            <br>
             <h5>Used in these challenges: </h5>
              <?
              $ChallengeforIMGobject = getChallengeforImage($nr);

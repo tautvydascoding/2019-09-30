@@ -41,13 +41,13 @@ function createChallengeIMGtable ($challenge_id, $img_id) {
 
 // createChallengeIMGtable (19, 3);
 
-//---------------DELETE FUNCTION---------------------------------------------
+//---------------DELETE FUNCTION FOR CHALLENGES---------------------------------------------
 
-function deleteUserkeist($nr) {
-    $mySQL_string = "DELETE FROM img 
-                            WHERE id = '$nr' 
-                            LIMIT 1
-                            ";
+function deleteChallengeWithRelatedIMG($nr) {
+    $mySQL_string = "DELETE FROM challenge_images 
+                        WHERE challenge_id = '$nr'
+                        ";
+
     $itemDeleted = mysqli_query(getConnect(), $mySQL_string);
     if (!$itemDeleted ) {
         echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
@@ -55,7 +55,22 @@ function deleteUserkeist($nr) {
     }
 }
 
-// deleteUser(5);
+// deleteImagesChallengeTableRow(16);
+
+function deleteIMGwithRelatedChallenges($nr) {
+    $mySQL_string = "DELETE FROM challenge_images 
+                        WHERE img_id = '$nr'
+                        ";
+
+    $itemDeleted = mysqli_query(getConnect(), $mySQL_string);
+    if (!$itemDeleted ) {
+        echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
+        return NULL;
+    }
+}
+
+
+//---------------DELETE FUNCTION FOR IMAGES---------------------------------------------
 
 //---------------UPDATE FUNCTION--------------------------------------------- // 
 

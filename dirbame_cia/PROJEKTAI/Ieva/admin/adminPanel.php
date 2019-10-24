@@ -86,10 +86,10 @@
                    $imgList = mysqli_fetch_assoc($imgObject);
                    
                    while ($imgList) {
-                      echo "<h5> <a href=details-img.php?id={$imgList['id']}>
-                      {$imgList['name']}
-                      </a> </h5>";
-                   
+                      echo "<a href=details-img.php?id={$imgList['id']}>";
+                      echo "<img src='../IMG/Challenges/{$imgList['name']}' placeholder='{$imgList['name']}' style='height: 150px; margin: 3px;'>";
+                      echo "</a>";
+                     
                     $imgList = mysqli_fetch_assoc($imgObject);
                    }
 

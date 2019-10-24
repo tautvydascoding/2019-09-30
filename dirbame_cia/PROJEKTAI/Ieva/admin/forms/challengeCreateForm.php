@@ -28,11 +28,9 @@
             <br>
 
             <label for = "tag"> Tag: </label>
-            <select name = "tag" id = "tag">
-                <option value="Active">Active</option>
-                <option value="Relaxation">Relaxation</option>
-                <option value="Random">Random</option>
-            </select>
+                <input type="radio" name="tag" value="Active"> Active
+                <input type="radio" name="tag" value="Relaxation"> Relaxation
+                <input type="radio" name="tag" value="Random"> Random
             <br>
 
             <label for = "imgID1"> Images for challenges: </label>
