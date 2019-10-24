@@ -9,6 +9,7 @@
 
 // ----------nustaytmai---------------------
 $debug_mode = 0; // 1, 2, 3
+$publish_mode = false; // 1, 2, 3
 // konstantos - nekintantys kintamieji
 define('MYSQL_VARTOTOJAS', 'root');
 define('MYSQL_SLAPTAZPDIS', 'root');
@@ -72,7 +73,7 @@ function createDoctor($vardas, $pavarde, $password){
     $password = md5(md5($password . "1")); // uzkoduoji, pusiau geras
 
 // naujesnis uzkodavimas (nepamirskit  "password_verify()")
-$password = password_hash($password, 'PASSWORD_DEFAULT');
+$password = password_hash($password, PASSWORD_DEFAULT);
     // PATIKRINIMAS Query the database for username and password
     // if(password_verify($password, $hashed_password)) {
     //     // If the password inputs matched the hashed password in the database

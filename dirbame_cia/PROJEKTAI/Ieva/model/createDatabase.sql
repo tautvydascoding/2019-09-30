@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS users (
       password VARCHAR(255) not NULL, 
       name VARCHAR(60) NOT NULL,
       lname VARCHAR(60) NOT NULL,
-      rights VARCHAR(30) NOT NULL,
+      rights VARCHAR(30) NOT NULL, /* default- paprastos teises, admin- adminPanel */
       registration_time TIMESTAMP NOT NULL,
       last_login TIMESTAMP NOT NULL
 	  );
@@ -44,7 +44,8 @@ CREATE TABLE IF NOT EXISTS img (
 	 );
 
 CREATE TABLE IF NOT EXISTS suggested_challenges(
-	 user_id INT NOT NULL,
-	 suggestion VARCHAR(255) not NULL
+	 id INT UNSIGNED     AUTO_INCREMENT PRIMARY KEY,
+       user_id INT NOT NULL,
+	 suggestion VARCHAR(800) not NULL
 	 );
 
