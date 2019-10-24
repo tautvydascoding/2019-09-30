@@ -21,7 +21,7 @@
         
         <h3> Create new challenge</h3>
 
-        <form action = "challengeCreate.php" method = "get">
+        <form action = "../action-form/challengeCreate.php" method = "get">
            
             <label for = "title"> Title: </label>
             <input name = "title" type = "text" id = "title" placeholder="Enter challenge title">
@@ -40,14 +40,27 @@
             <br>
 
             <label for = "img"> Images for challenges: </label>
-            <select name = "rights" id = "rights">
-                <option value="default">Default</option>
-                <option value="admin">Admin</option>
+            <select name = "img" id = "img">
+                <?php      
+                        include("../../model/img.php");
+                        
+                        $imgObject = getIMGlist();
+
+                        $imgList = mysqli_fetch_assoc($imgObject);
+
+                        while ($imgList) {
+                            echo "<option value='{$imgList['id']}'>{$imgList['name']}</option>";
+
+                            $imgList = mysqli_fetch_assoc($imgObject);
+                        }
+                        
+                ?>                 
             </select>
 
-            <input name = "id" type = "hidden" value="<?= $challenge['id']?>">
+
+            <input name = "id" type = "hidden" value="<?= $imgList['id']?>">
             <hr>
-            <button type = "Submit" name = "updateUser" class="btn btn-outline-success">Update</button>
+            <button type = "Submit" name = "createChallenge" class="btn btn-outline-success">Create</button>
                 
 
         </form>

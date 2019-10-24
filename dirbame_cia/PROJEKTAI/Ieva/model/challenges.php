@@ -17,6 +17,20 @@ function getChallenge($nr) {
         }
 }
 
+function getChallenge2($title, $description, $tag) {
+    $resultMysqlObject = mysqli_query(getConnect(),"SELECT id FROM challenges 
+                                                            WHERE title = '$title' AND
+                                                                description = '$description' AND
+                                                                  tag = '$tag'
+                                                            ");
+    if (mysqli_num_rows($resultMysqlObject) > 0) {
+            $resultArray = mysqli_fetch_assoc($resultMysqlObject);
+        return $resultArray; 
+        } else {
+            echo "ERROR: Cannot get challenge: $nr.". mysqli_error(getConnect());
+            return NULL;
+        }
+}
 
 // print_r(getChallenge(2));
 

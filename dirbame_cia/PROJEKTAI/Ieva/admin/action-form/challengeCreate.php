@@ -1,19 +1,29 @@
 <?php 
 
-include('model/users.php');
+include("../../config/connectToDB.php");
+include("../../model/challenges.php");    
+include('../../model/img.php');
 
-// $vard = $_GET['name'];
-// $parv = $_GET['lname'];
+$title = $_GET['title'];
+$description = $_GET['description'];
+$tag = $_GET['tag'];
 
-$user_name = 'TestUser';
-$email = 'test@test.com';
-$password = 'test123'; 
-$name = 'Tomas';
-$lname = 'Testauskas';
+// echo "labas".$title.$description.$tag.$img_id;//test
 
-createUser ($user_name, $email, $password, $name, $lname);
+createChallenge($title, $description, $tag);
 
-// function getUser(1);
+$challengeArray = getChallenge2($title, $description, $tag);
+$challenge_id = $challengeArray['id'];
+
+// print_r($challenge_id);
+
+$img_id = $_GET['img'];
+
+// print_r($img_id);
+
+createChallengeIMGtable ($challenge_id, $img_id);
+
+
 
 // PHP redirect
 // header("Location: index.php?zinute=Sekmingai sukurtas naujas gydytojas");
