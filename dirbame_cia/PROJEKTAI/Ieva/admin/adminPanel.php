@@ -18,6 +18,7 @@
     <div class="tab">
             <button class="tablinks" onclick="openInfo(event, 'Users')">Users</button>
             <button class="tablinks" onclick="openInfo(event, 'Challenges')">Challenges</button>
+            <button class="tablinks" onclick="openInfo(event, 'IMGadmin')">Images</button>
             <button class="tablinks" onclick="openInfo(event, 'Suggested')">Suggested Challenges</button>
             <button class="tablinks" onclick="openInfo(event, 'About')">About</button>
     </div>
@@ -48,7 +49,7 @@
 
         <div id="Challenges" class="tabcontent">
             <h4>List of Challenges</h4>
-           
+            <a href="forms/challengeCreateForm.php" class="btn btn-outline-success"> Create </a>
             <div class="challenges"> 
                 <?php      
                     include("../model/challenges.php");
@@ -69,9 +70,32 @@
 
             </div>   <!-- Challenges list is closed -->
            <hr>
-           <a href="forms/challengeCreateForm.php" class="btn btn-outline-success"> Create </a>
+           
 
         </div> <!--Tab Challenges is closed -->
+
+        <div id="IMGadmin" class="tabcontent">
+            <h4> List of Images</h4>
+            <a href="forms/imgCreateForm.php" class="btn btn-outline-success"> Create </a>
+            <div class="IMGadmin"> 
+                <?php      
+                   include("../model/img.php");
+
+                   $imgObject = getIMGlist();
+
+                   $imgList = mysqli_fetch_assoc($imgObject);
+                   
+                   while ($imgList) {
+                      echo "<h5> <a href=details-img.php?id={$imgList['id']}>
+                      {$imgList['name']}
+                      </a> </h5>";
+                   
+                    $imgList = mysqli_fetch_assoc($imgObject);
+                   }
+
+                    ?> 
+            </div>   <!-- IMG list is closed -->
+        </div> <!--Tab IMG is closed -->
         
         <div id="Suggested" class="tabcontent">
             <h4>List of Suggested Challenges</h4>
@@ -95,7 +119,7 @@
                     ?> 
             </div>   <!-- Suggested Challenges list is closed -->
             
-        </div>
+        </div> <!--Tab Suggested is closed -->
         
         <div id="About" class="tabcontent">
             <h4> About-page items</h4>
@@ -118,9 +142,8 @@
 
                     ?> 
             </div>   <!-- About-page items list is closed -->
-    </div> 
-
-
+        </div> <!--Tab About is closed -->
+ 
     <script type="text/javascript" src='../libs/jquery-3.4.1.min.js'> </script>
 
     <script src="../JS/main.js"></script>
