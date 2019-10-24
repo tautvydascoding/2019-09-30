@@ -30,6 +30,7 @@
         <h4> Tag: <?= $challenge['tag']; ?> </h4>
         <h4> Description: </h4>
         <h5> <?= $challenge['description']; ?> </h5>
+        <h4> Challenge images: <?= "labas" ?></h4>
         <h4> Creation time: </h4>
         <h5> <?= $challenge['creation_time']; ?> </h5>
 

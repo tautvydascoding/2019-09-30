@@ -27,7 +27,7 @@ function getChallenge2($title, $description, $tag) {
             $resultArray = mysqli_fetch_assoc($resultMysqlObject);
         return $resultArray; 
         } else {
-            echo "ERROR: Cannot get challenge: $nr.". mysqli_error(getConnect());
+            echo "ERROR: Cannot get challenge: $title.". mysqli_error(getConnect());
             return NULL;
         }
 }

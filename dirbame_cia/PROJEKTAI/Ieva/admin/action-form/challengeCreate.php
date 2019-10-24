@@ -17,7 +17,7 @@ $challenge_id = $challengeArray['id'];
 
 // print_r($challenge_id);
 
-$img_id = $_GET['img'];
+$img_id = $_GET['imgID'];
 
 // print_r($img_id);
 

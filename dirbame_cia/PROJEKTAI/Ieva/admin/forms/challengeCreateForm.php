@@ -39,8 +39,8 @@
             </select>
             <br>
 
-            <label for = "img"> Images for challenges: </label>
-            <select name = "img" id = "img">
+            <label for = "imgID"> Images for challenges: </label>
+            <select name = "imgID" id = "imgID">
                 <?php      
                         include("../../model/img.php");
                         
