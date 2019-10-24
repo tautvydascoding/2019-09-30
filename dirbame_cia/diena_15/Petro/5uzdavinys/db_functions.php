@@ -111,20 +111,20 @@ function deleteDoctor ($id) {
 //
 //deleteDoctor(14);
 //
-//function updateDoctor($id,$name,$lname) {
-//    $update = mysqli_query(getPrisijungimas(), "UPDATE doctors
-//                                                      SET name = '$name', lname= '$lname'
-//                                                      WHERE id = '$id';
-//                                                      ");
-//    if ($update){
-//        echo "Pakeisti gydytoja pavyko";
-//    } else{
-//        echo "NEPAVYKO pakeisti gydytojo";
-//    }
-//
-//}
+function updateDoctor($id,$name,$lname) {
+    $update = mysqli_query(getPrisijungimas(), "UPDATE doctors
+                                                      SET name = '$name', lname= '$lname'
+                                                      WHERE id = '$id';
+                                                      ");
+    if ($update){
+        echo "Pakeisti gydytoja pavyko";
+    } else{
+        echo "NEPAVYKO pakeisti gydytojo";
+    }
 
-//updateDoctor('1','Gitanas','Jonauskis');
+}
+
+updateDoctor('1','Gitanas','Jonauskis');
 
 function getDoctors($kiekis = 9999) {
     $getAllDoctors = mysqli_query(getPrisijungimas(), "SELECT * FROM doctors LIMIT $kiekis;");

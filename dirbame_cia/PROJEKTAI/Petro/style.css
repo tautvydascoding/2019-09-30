@@ -1,0 +1,38 @@
+
+/*body {background-color: grey;}*/
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.navbar-inverse{
+    background-color: plum;
+
+}
+
+li {
+    color: black;
+
+}
+.col-sm-3 {
+    background-color: plum;
+    height: 450px;
+    /*border: 5px solid grey;*/
+}
+.col-sm-9 {
+    background-color: white;
+    height: 450px;
+    /*border: 5px solid grey;*/
+
+}
+.col-sm-12 {
+    background-color: green;
+    height: auto;
+    /*border: 5px solid grey;*/
+
+}
+
