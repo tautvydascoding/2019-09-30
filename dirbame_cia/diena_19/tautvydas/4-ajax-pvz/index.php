@@ -17,12 +17,14 @@
         <h1> Isijunk Inspect-console (mokomes js) </h1>
 
 
-        <div id='results'> AAA: </div>
+        <div id='results'> Cia bus atsakymas: </div>
+        <input id="vardas" type="text" name="vard"  placeholder="Jusus vardas">
 
+        <button  onclick="isvestiDuomenis_suAJAX()"> Isvesti Duom.</button>
 
 
         <!-- ------------------------ -->
-        <script type="text/javascript"  src="libs/bootstrap-4/js/bootstrap.min.js">      </script><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script type="text/javascript"  src="libs/bootstrap-4/js/bootstrap.min.js">      </script>
         <script type="text/javascript"  src="libs/jquery.min.js"> </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
         <!-- !!! mano js failas pats zemiausias -->
