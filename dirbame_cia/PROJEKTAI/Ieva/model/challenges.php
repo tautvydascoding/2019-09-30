@@ -1,6 +1,6 @@
 <?php
 
-// include("../config/connectToDB.php"); //- include in every file.
+//include("../config/connectToDB.php"); //- include in every file.
 
 //---------------GET FUNCTION------------------------------------------DONE - TEST - WORKS
 
@@ -16,6 +16,7 @@ function getChallenge($nr) {
             return NULL;
         }
 }
+
 
 // print_r(getChallenge(2));
 
@@ -33,7 +34,8 @@ function createChallenge($title, $description, $tag) {
                                 NULL,
                                 '$title',
                                 '$description',
-                                '$tag')
+                                '$tag',
+                                NOW())
                                 ";
     $itemCreated = mysqli_query(getConnect(), $mySQL_string);
     if (!$itemCreated) {
@@ -42,8 +44,7 @@ function createChallenge($title, $description, $tag) {
     }
 }
 
-
-// createChallenge("Meditation day", "Meditacija – tai paleisti pyktį iš praeities, praeities įvykius ir visus ateities planus. Meditacija – tai priimti šią akimirką ir giliai išgyventi kiekvieną akimirką. Poilsis medituojant gilesnis už giliausią miegą, nes medituodami išsilaisviname nuo visų minčių ir troškimų. Siūlau meditaciją pradėti atpalaiduojant kūną. Pajausk kūną nuo kojų pirštelių iki pat viršugalvio (iš lėto). Jei mintys pradės klysti į šalį, įsigilint į savo kvepavimą.", "Relax");
+//createChallenge("Meditation day", "Meditacija – tai paleisti pyktį iš praeities, praeities įvykius ir visus ateities planus. Meditacija – tai priimti šią akimirką ir giliai išgyventi kiekvieną akimirką. Poilsis medituojant gilesnis už giliausią miegą, nes medituodami išsilaisviname nuo visų minčių ir troškimų. Siūlau meditaciją pradėti atpalaiduojant kūną. Pajausk kūną nuo kojų pirštelių iki pat viršugalvio (iš lėto). Jei mintys pradės klysti į šalį, įsigilint į savo kvepavimą.", "Relax");
 
 //---------------DELETE FUNCTION--------------------------------------------- DONE - TEST - WORKS
 

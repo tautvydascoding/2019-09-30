@@ -21,4 +21,6 @@ function getConnect() {
 }    
 }
 
+mysqli_set_charset($connection, 'utf8');
+
 // getConnect(); //test

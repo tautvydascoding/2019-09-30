@@ -1,5 +1,7 @@
 console.log("Labas :)");
 
+//--------ADMIN PANEL TABS----------------------------------------------
+
 function openInfo(evt, infoName) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -20,3 +22,7 @@ function openInfo(evt, infoName) {
     document.getElementById(infoName).style.display = "block";
     evt.currentTarget.className += " active";
   }
+
+  //--------ADMIN PANEL DELETE CONFIRMATION---------------------------------
+
+  
