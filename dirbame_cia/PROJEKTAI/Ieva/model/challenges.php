@@ -1,6 +1,6 @@
 <?php
 
-//include("../config/connectToDB.php"); //- include in every file.
+// include("../config/connectToDB.php"); //- include in every file.
 
 //---------------GET FUNCTION------------------------------------------DONE - TEST - WORKS
 
@@ -17,8 +17,21 @@ function getChallenge($nr) {
         }
 }
 
+//----get last challenge id 
 
-// print_r(getChallenge(2));
+function getChallengeID() {
+    $resultMysqlObject = mysqli_query(getConnect(),"SELECT MAX(Id)  FROM challenges");
+        if ($resultMysqlObject) {
+            $resultArray = mysqli_fetch_assoc($resultMysqlObject);
+        return $resultArray['MAX(Id)']; 
+        } else {
+            echo "ERROR: Cannot get last challenge id.". mysqli_error(getConnect());
+            return NULL;
+        }
+}
+
+
+// print_r(getChallengeID());//test
 
 //---------------CREATE FUNCTION--------------------------------------------- DONE - TEST - WORKS
  
@@ -105,6 +118,8 @@ function getChallenges($count = 9999) {
             return NULL;
     } return  $getList;
 } 
+
+//test--------------------
 
 // $challengeObject = getChallenges();
 

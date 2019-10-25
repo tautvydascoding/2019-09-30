@@ -1,7 +1,8 @@
 <?php
 
-include("config/connectToDB.php");
-include("model/users.php");  
+include("../../config/connectToDB.php");
+include("../../model/challenges.php");
+include('../../model/challenge_images.php');
 
 // print_r($_GET);//test
 
@@ -18,7 +19,4 @@ $rights = $_GET['rights'];
 
 updateUserAdmin ($nr, $user_name, $email, $name, $lname, $rights);
 
-header("Location: page_adminPanel.php");
-
-// PHP redirect
-// header("Location: index.php?zinute=Sekmingai uzregistruotas pakeitimas");
+header("Location: ../adminPanel.php");
