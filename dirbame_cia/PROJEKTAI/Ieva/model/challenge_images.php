@@ -5,7 +5,7 @@
 //-------------------GET FUNCTION----------------------------------// DONE - TEST - WORKS
 
 function getIMGforChallenge($nr){
-    $resultMysqlObject = mysqli_query(getConnect(),"SELECT name
+    $resultMysqlObject = mysqli_query(getConnect(),"SELECT id, name
                                                         FROM img 
                                                         INNER JOIN challenge_images 
                                                         ON img.id = challenge_images.img_id
@@ -21,8 +21,26 @@ function getIMGforChallenge($nr){
     }
 }
 
+// print_r(getIMGforChallenge(28)); //test
+//-----------------------------------------------------------------------------
 
-// print_r(getIMGforChallenge(16)); //test
+function getIMGforChallenge2($nr){
+    $resultMysqlObject = mysqli_query(getConnect(),"SELECT id, name
+                                                        FROM img 
+                                                        INNER JOIN challenge_images 
+                                                        ON img.id = challenge_images.img_id
+                                                        WHERE challenge_id = '$nr' 
+                                                        ");
+    
+    if (mysqli_num_rows($resultMysqlObject) > 0) {
+        $IMGforChallengeArray = mysqli_fetch_assoc($resultMysqlObject);
+    return $IMGforChallengeArray; 
+    } else {
+        echo "ERROR: Cannot get challenge: $nr.". mysqli_error(getConnect());
+        return NULL;
+    }
+}
+
 
 //-------------------CREATE FUNCTION----------------------------------// DONE - TEST - WORKS
 
@@ -97,7 +115,7 @@ function updateIMGkeist ($nr, $name) {
 //-------------------GET LIST FUNCTION FOR CHALLENGES----------------------------------// DONE - TEST - WORKS
 
     function getImagesforChallenge($nr) {
-        $mySQL_string = "SELECT name
+        $mySQL_string = "SELECT id, name
                             FROM img 
                             INNER JOIN challenge_images 
                             ON img.id = challenge_images.img_id
@@ -110,7 +128,7 @@ function updateIMGkeist ($nr, $name) {
         } return  $getList;
     } 
     
-    // $IMGforChallengeObject = getImagesforChallenge(16);
+    // $IMGforChallengeObject = getImagesforChallenge($nr);
 
     // $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
 

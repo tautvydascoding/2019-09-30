@@ -7,11 +7,10 @@ include('../../model/challenge_images.php');
 // print_r($_GET);//test
 
 $nr = $_GET['id'];
-// $name = $_GET['name'];
-// $lname = $_GET['lname'];
-$user_name = $_GET['user_name'];
-$email = $_GET['email'];
-$name = $_GET['name'];
+
+$title = $_GET['title'];
+$description = $_GET['description'];
+$tag = $_GET['tag'];
 $lname = $_GET['lname']; 
 $rights = $_GET['rights']; 
 

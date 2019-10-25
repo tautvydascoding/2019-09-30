@@ -55,17 +55,16 @@
             <select name = "imgID2" id = "imgID2">
                 <option value='none'>none</option>
                 <?php  
-                        $imgObject = getIMGlist();
+                    $imgObject = getIMGlist();
 
-                        $imgList = mysqli_fetch_assoc($imgObject);
-                        do{
-                                while ($imgList) {
-                                echo "<option value='{$imgList['id']}'>{$imgList['name']}</option>";
+                    $imgList = mysqli_fetch_assoc($imgObject);
 
-                                $imgList = mysqli_fetch_assoc($imgObject);
-                            }
-                        } while ($imgList);
-                            
+                            while ($imgList) {
+                            echo "<option value='{$imgList['id']}'>{$imgList['name']}</option>";
+
+                            $imgList = mysqli_fetch_assoc($imgObject);
+                        }
+
                 ?>                 
             </select>
 
@@ -75,13 +74,12 @@
                         $imgObject = getIMGlist();
 
                         $imgList = mysqli_fetch_assoc($imgObject);
-                        do{
-                                while ($imgList) {
-                                echo "<option value='{$imgList['id']}'>{$imgList['name']}</option>";
+                        
+                            while ($imgList) {
+                            echo "<option value='{$imgList['id']}'>{$imgList['name']}</option>";
 
-                                $imgList = mysqli_fetch_assoc($imgObject);
-                            }
-                        } while ($imgList);     
+                            $imgList = mysqli_fetch_assoc($imgObject);
+                        }
                 ?>                 
             </select>
 

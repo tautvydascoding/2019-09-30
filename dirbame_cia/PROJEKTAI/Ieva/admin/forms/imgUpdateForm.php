@@ -24,7 +24,7 @@
 
         ?>
 
-        <img src="../../IMG/<?= $img['name'];?>" placeholder="<?= $img['name'];?>">
+        <img src="../../IMG/Challenges/<?= $img['name'];?>" placeholder="<?= $img['name'];?>">
         <h4> <?= $img['name'];?></h4>
         <hr>
 

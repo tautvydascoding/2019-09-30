@@ -16,6 +16,7 @@
         include("../../config/connectToDB.php");
         include("../../model/challenges.php");
         include('../../model/challenge_images.php');  
+        include("../../model/img.php");
         
         $challenge = getChallenge($nr);
        
@@ -35,72 +36,130 @@
             <br>
 
             <!--checked="checked" ideti kaip atribute kad butu pazymetas by default-->
-            <label for = "tag"> Tag: </label>
-                <input type="radio" name="tag" value="Active"> Active
-                <input type="radio" name="tag" value="Relaxation"> Relaxation
-                <input type="radio" name="tag" value="Random"> Random
-            <br>
+            <label for = "tag"> Tag: </label> <br>
+               
+                <input type="radio" name="tag" id="Active" value="Active" <?php if ($challenge['tag']=="Active"){echo "checked='checked'";} ?>>
+                <label for = "Active"> Active </label> <br>
+                
+                <input type="radio" name="tag" id="Relaxation" value="Relaxation" <?php if ($challenge['tag']=="Relaxation"){echo "checked='checked'";} ?>>
+                <label for = "Relaxation"> Relaxation </label><br>
+
+                <input type="radio" name="tag" id="Random" value="Random"<?php if ($challenge['tag']=="Random"){echo "checked='checked'";} ?>>
+                <label for = "Random"> Random </label>
+                
             <br>
 
+ 
+
+            <!--selected='selected'getIMGforChallenge($nr)-->
             <label for = "imgID1"> Images for challenges: </label>
             <select name = "imgID1" id = "imgID1">
+
                 <option value='none'>none</option>
-                <?php      
-                        include("../../model/img.php");
-                        
+                <?php   
                         $imgObject = getIMGlist();
 
                         $imgList = mysqli_fetch_assoc($imgObject);
-
-                        while ($imgList) {
-                            echo "<option value='{$imgList['id']}'>{$imgList['name']}</option>";
-
-                            $imgList = mysqli_fetch_assoc($imgObject);
-                        }
                         
+                        $selected='';
+                        $arRadomCHIMG=false;
+                        while ($imgList) {
+
+                            $IMGforChallengeObject = getImagesforChallenge($nr);
+
+                            $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
+                            
+                         
+                        
+                            echo $IMGforChallengeList['id']."<br>";
+
+                            while ($IMGforChallengeList &&  $arRadomCHIMG==false ) {
+
+                                if ($imgList['id']==$IMGforChallengeList['id']) {
+                                    $selected = "selected='selected'";
+                                    $arRadomCHIMG = true;
+                                    break;
+                                }
+                                
+                                $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
+            
+                            }
+                            echo "<option value='{$imgList['id']}' $selected>{$imgList['name']}</option>";
+                            $selected = "";
+                            $imgList = mysqli_fetch_assoc($imgObject);                            
+                        }
+
                 ?>                 
             </select>
             
             <select name = "imgID2" id = "imgID2">
                 <option value='none'>none</option>
                 <?php  
-                        $imgObject = getIMGlist();
+                    $imgObject = getIMGlist();
+
+                    $imgList = mysqli_fetch_assoc($imgObject);
+                    
+                        while ($imgList) {
+                        echo "<option value='{$imgList['id']}'>{$imgList['name']}</option>";
 
                         $imgList = mysqli_fetch_assoc($imgObject);
-                        do{
-                                while ($imgList) {
-                                echo "<option value='{$imgList['id']}'>{$imgList['name']}</option>";
-
-                                $imgList = mysqli_fetch_assoc($imgObject);
-                            }
-                        } while ($imgList);
-                            
+                    }
+                        
                 ?>                 
             </select>
 
             <select name = "imgID3" id = "imgID3">
                 <option value='none'>none</option>
                 <?php  
-                        $imgObject = getIMGlist();
+                    $imgObject = getIMGlist();
 
-                        $imgList = mysqli_fetch_assoc($imgObject);
-                        do{
-                                while ($imgList) {
-                                echo "<option value='{$imgList['id']}'>{$imgList['name']}</option>";
+                    $imgList = mysqli_fetch_assoc($imgObject);
 
-                                $imgList = mysqli_fetch_assoc($imgObject);
-                            }
-                        } while ($imgList);     
+                    while ($imgList) {
+                    echo "<option value='{$imgList['id']}'>{$imgList['name']}</option>";
+
+                    $imgList = mysqli_fetch_assoc($imgObject);
+                }
                 ?>                 
             </select>
 
             <input name = "id" type = "hidden" value="<?= $challenge['id'];?>">
-            <hr>
 
             <button type = "Submit" name = "updateChallenge" class="btn btn-outline-success">Update</button>
-                
 
         </form>
+            <div>
+        <?php 
+            
+            $imgObject = getIMGlist();
+
+            $imgList = mysqli_fetch_assoc($imgObject);
+            
+            while ($imgList) {
+                echo $imgList['id'];
+                echo "<br>";
+                   
+                $imgList = mysqli_fetch_assoc($imgObject);                            
+            }
+
+//----------------
+            $IMGforChallengeObject = getImagesforChallenge($nr);
+
+            $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
+        
+            while ($IMGforChallengeList ) {
+                print_r($IMGforChallengeList);
+                echo $IMGforChallengeList['id'];
+                echo $IMGforChallengeList['name']; 
+                echo "<br>";
+        
+                $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
+                }
+
+
+            ?>
+            </div>
+
 
         <script type="text/javascript" src='../../libs/jquery-3.4.1.min.js'> </script>
 
