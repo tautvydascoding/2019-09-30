@@ -49,19 +49,19 @@ function getPrisijungimas (){
 
 
 
-//funkcija PATIKRINTA VEIKIA
-function createFoto ($id, $prekes_id, $img_small,$img_big) {
-    $manoSQL_String = "INSERT INTO img VALUES ('$id', '$prekes_id', '$img_small', '$img_big') ";
-    $create = mysqli_query(getPrisijungimas(), $manoSQL_String);
-   if ($create){
-       echo "Ikelti foto pavyko";
-   } else{
-       echo "NEPAVYKO ikelti foto". mysqli_error(getPrisijungimas());
-   }
-
-}
-
-createFoto('31' , '3','Brilius', 'aeewwef');
+////funkcija PATIKRINTA VEIKIA
+//function createFoto ($id, $prekes_id, $img_small,$img_big) {
+//    $manoSQL_String = "INSERT INTO img VALUES ('$id', '$prekes_id', '$img_small', '$img_big') ";
+//    $create = mysqli_query(getPrisijungimas(), $manoSQL_String);
+//   if ($create){
+//       echo "Ikelti foto pavyko";
+//   } else{
+//       echo "NEPAVYKO ikelti foto". mysqli_error(getPrisijungimas());
+//   }
+//
+//}
+//
+//createFoto('31' , '3','Brilius', 'aeewwef');
 
 
 
@@ -71,53 +71,53 @@ createFoto('31' , '3','Brilius', 'aeewwef');
 
 
 
-//funkcija PATIKRINTA - VEIKIA
-function deleteFoto ($id) {
-    $delete = mysqli_query(getPrisijungimas(), "DELETE FROM prekes
-                                                      WHERE id = '$id'
-                                                      LIMIT 1;
-                                                      ");
-    if ($delete){
-        echo "Istrinti preke pavyko";
-    } else{
-        echo "NEPAVYKO istrinti prekes". mysqli_error(getPrisijungimas());
-    }
-
-}
+////funkcija PATIKRINTA - VEIKIA
+//function deleteFoto ($id) {
+//    $delete = mysqli_query(getPrisijungimas(), "DELETE FROM prekes
+//                                                      WHERE id = '$id'
+//                                                      LIMIT 1;
+//                                                      ");
+//    if ($delete){
+//        echo "Istrinti preke pavyko";
+//    } else{
+//        echo "NEPAVYKO istrinti prekes". mysqli_error(getPrisijungimas());
+//    }
+//
+//}
 //
 //deletePreke(23);
 //
 
-//funkcija PATIKRINTA - VEIKIA
-function updatePreke($id , $kategorija , $pavadinimas , $aprasymas , $kaina , $nuolaida , $pozicija , $kiekis) {
-    $update = mysqli_query(getPrisijungimas(), "UPDATE prekes
-                                                      SET kategorija = '$kategorija', pavadinimas= '$pavadinimas', aprasymas= '$aprasymas', kaina= '$kaina', nuolaida= '$nuolaida', pozicija= '$pozicija',kiekis= '$kiekis'
-                                                      WHERE id = '$id';
-                                                      ");
-    if ($update){
-        echo "Pakeisti preke pavyko";
-    } else{
-        echo "NEPAVYKO pakeisti prekes". mysqli_error(getPrisijungimas());
-    }
-
-}
+////funkcija PATIKRINTA - VEIKIA
+//function updatePreke($id , $kategorija , $pavadinimas , $aprasymas , $kaina , $nuolaida , $pozicija , $kiekis) {
+//    $update = mysqli_query(getPrisijungimas(), "UPDATE prekes
+//                                                      SET kategorija = '$kategorija', pavadinimas= '$pavadinimas', aprasymas= '$aprasymas', kaina= '$kaina', nuolaida= '$nuolaida', pozicija= '$pozicija',kiekis= '$kiekis'
+//                                                      WHERE id = '$id';
+//                                                      ");
+//    if ($update){
+//        echo "Pakeisti preke pavyko";
+//    } else{
+//        echo "NEPAVYKO pakeisti prekes". mysqli_error(getPrisijungimas());
+//    }
+//
+//}
 
 //updatePreke('24', '3','Jonas', 'aeewwef', '43', '0', '3','50');
 
 
 //funkcija PATIKRINTA - VEIKIA
-function getPrekes($kiekis = 9999) {
-    $getAllPrekes = mysqli_query(getPrisijungimas(), "SELECT * FROM prekes LIMIT $kiekis;");
-
-    if ($getAllPrekes){
-        //echo "Paimti preke pavyko";
-        return $getAllPrekes;
-    } else{
-        echo "NEPAVYKO paimti prekes". mysqli_error(getPrisijungimas());
-        return NULL;
-    }
-
-}
+//function getPrekes($kiekis = 9999) {
+//    $getAllPrekes = mysqli_query(getPrisijungimas(), "SELECT * FROM prekes LIMIT $kiekis;");
+//
+//    if ($getAllPrekes){
+//        //echo "Paimti preke pavyko";
+//        return $getAllPrekes;
+//    } else{
+//        echo "NEPAVYKO paimti prekes". mysqli_error(getPrisijungimas());
+//        return NULL;
+//    }
+//
+//}
 
 //print_r(getPrekes());
 
@@ -125,8 +125,8 @@ function getPrekes($kiekis = 9999) {
 
 //funkcija PATIKRINTA - VEIKIA
 // funkcija     paima prekes pagal kategorija
-function getPrekesPagalKategorija($kategorija) {
-    $getPrekesSuKategorija = mysqli_query(getPrisijungimas(), "SELECT * FROM prekes WHERE kategorija = '$kategorija'");
+function getFotosPagalKategorija($kategorija) {
+    $getFotosSuKategorija = mysqli_query(getPrisijungimas(), "SELECT * FROM img WHERE kategorija = '$kategorija'");
 
     if ($getPrekesSuKategorija){
         //echo "Paimti preke pavyko";

@@ -18,10 +18,8 @@ $kategorija = $_GET['kategorija'];
 
 
 
-//$gydytojas = getDoctor($numeris);
-//print_r($gydytojas);
 
-echo "<h1>Muzikos prekės</h1>"
+echo "<h1>Prekės pagal kategorija</h1>"
 
 $visosPrekesPagalKategoraMYSQL_Objektas = getPrekesPagalKategorija($kategorija);
 
@@ -35,13 +33,13 @@ $PrekesPagalKategorija_Masyvas = mysqli_fetch_assoc($visosPrekesPagalKategoraMYS
 
 while ($PrekesPagalKategorija_Masyvas){
     $idCikle = $PrekesPagalKategorija_Masyvas['id'];
-    $fotoCikle = $PrekesPagalKategorija_Masyvas['foto'];
+    $fotoCikle = $PrekesPagalKategorija_Masyvas['img_small'];
     $fotoKatalogas = $PrekesPagalKategorija_Masyvas['kategorija'];
     //ivesti reiksme is img lenteles getfoto
     echo "<h3>{$PrekesPagalKategorija_Masyvas['pavadinimas']} </h3> <br/>
  <a  href = 'preke.php?id=$idCikle' > <img src='foto/$fotoKatalogas/$fotoCikle'> </a>";
     echo "<br>";
-    $kategorija_Masyvas = mysqli_fetch_assoc($visosKategorijosMYSQL_Objektas);
+    $PrekesPagalKategorija_Masyvas = mysqli_fetch_assoc($visosPrekesPagalKategoraMYSQL_Objektas);
 }
 
 

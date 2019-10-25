@@ -117,18 +117,26 @@ function deletePreke ($id) {
 
 }
 //
-deletePreke(34);
+//deletePreke(34);
 //
 
-//funkcija
-function updatePreke($id , $kategorija , $pavadinimas , $aprasymas , $kaina , $nuolaida , $pozicija , $kiekis) {
+//funkcija PATIKRINTA - VEIKIA  - PAKEICIA IR PREKE IR NUOTRAUKAS
 
-//    $manoSQL_StringUpdateFOTO =
+function updatePreke($id , $kategorija , $pavadinimas , $aprasymas , $kaina , $nuolaida , $pozicija , $kiekis , $img_small , $img_big) {
 
-    $update = mysqli_query(getPrisijungimas(), "UPDATE prekes
-                                                      SET kategorija = '$kategorija', pavadinimas= '$pavadinimas', aprasymas= '$aprasymas', kaina= '$kaina', nuolaida= '$nuolaida', pozicija= '$pozicija',kiekis= '$kiekis'
-                                                      WHERE id = '$id';
-                                                      ");
+    $manoSQL_StringUpdate = "UPDATE prekes SET kategorija = '$kategorija', pavadinimas= '$pavadinimas', aprasymas= '$aprasymas', kaina= '$kaina', nuolaida= '$nuolaida', pozicija= '$pozicija',kiekis= '$kiekis'
+                            WHERE id = '$id'";
+    $manoSQL_StringUpdateFOTO = "UPDATE img SET img_small = '$img_small', img_big= '$img_big' WHERE prekes_id = '$id' ";
+
+    $updateFOTO = mysqli_query(getPrisijungimas(), $manoSQL_StringUpdateFOTO);
+
+    $update = mysqli_query(getPrisijungimas(), $manoSQL_StringUpdate);
+
+    if ($updateFOTO){
+        echo "Pakeisti prekes nuotrauka pavyko";
+    } else{
+        echo "NEPAVYKO pakeisti prekes nuotraukos". mysqli_error(getPrisijungimas());
+    }
     if ($update){
         echo "Pakeisti preke pavyko";
     } else{
@@ -137,7 +145,7 @@ function updatePreke($id , $kategorija , $pavadinimas , $aprasymas , $kaina , $n
 
 }
 
-//updatePreke('24', '3','Jonas', 'aeewwef', '43', '0', '3','50');
+//updatePreke('35', '3','Jonas', 'aeewwef', '43', '0', '3','50','foto10' , 'foto20');
 
 
 //funkcija PATIKRINTA - VEIKIA
@@ -159,15 +167,18 @@ function getPrekes($kiekis = 9999) {
 
 
 //funkcija PATIKRINTA - VEIKIA
-// funkcija     paima prekes pagal kategorija
+// funkcija     paima prekes ir FOTO pagal kategorija
+// funkcija PATIKRINTA - VEIKIA
 function getPrekesPagalKategorija($kategorija) {
-    $getPrekesSuKategorija = mysqli_query(getPrisijungimas(), "SELECT * FROM prekes WHERE kategorija = '$kategorija'");
 
-    if ($getPrekesSuKategorija){
-        //echo "Paimti preke pavyko";
-        return $getPrekesSuKategorija;
+    $uzklausa1 = "SELECT * FROM prekes,img WHERE prekes.kategorija = '$kategorija' AND img.prekes_id = prekes.id";
+    $getPrekesIRFotoSuKategorija = mysqli_query(getPrisijungimas(), $uzklausa1);
+
+    if ($getPrekesIRFotoSuKategorija){
+        //echo "Paimti prekes ir nuotraukas pagal kategorija pavyko";
+        return $getPrekesIRFotoSuKategorija;
     } else{
-        echo "NEPAVYKO paimti prekiu pagal kategorija". mysqli_error(getPrisijungimas());
+        echo "NEPAVYKO paimti prekiu ir nuotrauku pagal kategorija". mysqli_error(getPrisijungimas());
         return NULL;
     }
 

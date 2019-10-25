@@ -54,7 +54,7 @@ DROP CONSTRAINT img_ibfk_1';
 
 DELETE FROM prekes
                                                       WHERE id = 25
--- KLASIKINES GITAROS
+ KLASIKINES GITAROS
 
 INSERT INTO prekes VALUES ( NULL, 'klasik_gitara' , 'Alvarez AD30',
                           'Series: Alvarez Artist;  Top Wood: Solid A+ Sitka Spruce;
@@ -244,9 +244,12 @@ CREATE TABLE IF NOT EXISTS img (
     INSERT INTO img VALUES ( NULL, 'foto3.jpg' , 3);
 
 
-    --
+SELECT prekes.id, prekes.pavadinimas  FROM prekes WHERE prekes.kategorija = 'klasik_gitara';
 
+SELECT * FROM prekes,img WHERE prekes.kategorija = 'klasik_gitara' AND img.prekes_id = prekes.id;
 
+SELECT prekes.pavadinimas, prekes.aprasymas, prekes.kaina, prekes.kiekis, img.img_small, img.img_big FROM prekes,img WHERE prekes.kategorija = 'klasik_gitara' AND img.prekes_id = prekes.id;
 
+SELECT prekes.kategorija, prekes.pavadinimas, prekes.aprasymas, prekes.kaina, prekes.kiekis, img.img_small, img.img_big FROM prekes,img WHERE prekes.kategorija = '$kategorija' AND img.prekes_id = prekes.id;
 
-
+SELECT prekes.kategorija, prekes.pavadinimas, prekes.aprasymas, prekes.kaina, img.img_big FROM prekes,img WHERE prekes.kategorija = '$kategorija' AND img.prekes_id = prekes.id;
