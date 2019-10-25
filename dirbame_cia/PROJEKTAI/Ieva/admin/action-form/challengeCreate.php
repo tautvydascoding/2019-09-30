@@ -2,28 +2,26 @@
 
 include("../../config/connectToDB.php");
 include("../../model/challenges.php");    
-include('../../model/img.php');
+include('../../model/challenge_images.php');
 
 $title = $_GET['title'];
 $description = $_GET['description'];
 $tag = $_GET['tag'];
 
-// echo "labas".$title.$description.$tag.$img_id;//test
-
 createChallenge($title, $description, $tag);
 
-$challengeArray = getChallenge2($title, $description, $tag);
-$challenge_id = $challengeArray['id'];
+if ($_GET['imgID1'] !='none') {
+  createChallengeIMGtable(getChallengeID(), $_GET['imgID1']);
+}
 
-// print_r($challenge_id);
+if ($_GET['imgID2'] !='none') {
+    createChallengeIMGtable(getChallengeID(), $_GET['imgID2']);
+  }
 
-$img_id = $_GET['imgID'];
-
-// print_r($img_id);
-
-createChallengeIMGtable ($challenge_id, $img_id);
-
-
+if ($_GET['imgID3'] !='none') {
+createChallengeIMGtable(getChallengeID(), $_GET['imgID3']);
+}
+  
 
 // PHP redirect
-// header("Location: index.php?zinute=Sekmingai sukurtas naujas gydytojas");
+header("Location: ../adminPanel.php");
