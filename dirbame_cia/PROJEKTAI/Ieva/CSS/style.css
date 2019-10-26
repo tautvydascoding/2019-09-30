@@ -202,4 +202,19 @@ nav.user {
     border-top: none;
   }
 
-  /* USERS DETAILS IN ADMIN PANEL*/
+  /* LOGIN TO ADMIN PANEL*/
+
+  .loginAdmin {
+    background-image: url(../IMG/eberhard-grossgasteiger-NvesrDbsrL4-unsplash.jpg);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+  }
+
+  .loginFooter {
+    background-image: url(../IMG/grass.jpg);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    z-index: 2;
+  }

@@ -41,13 +41,13 @@
                     <!--checked="checked" ideti kaip atribute kad butu pazymetas by default-->
                     <label for = "tag" class="font-weight-bold"> Tag: </label>
                     
-                        <input type="radio" name="tag" id="Active" value="Active" <?php if ($challenge['tag']=="Active"){echo "checked='checked'";} ?>>
+                        <input type="radio" name="tag" id="Active" value="Active" <?php if ($challenge['tag']=="Active"){echo "checked='checked'";} ?> required="required">
                         <label for = "Active"> Active </label>
                         
-                        <input type="radio" name="tag" id="Relaxation" value="Relaxation" <?php if ($challenge['tag']=="Relaxation"){echo "checked='checked'";} ?>>
+                        <input type="radio" name="tag" id="Relaxation" value="Relaxation" <?php if ($challenge['tag']=="Relaxation"){echo "checked='checked'";} ?> required="required">
                         <label for = "Relaxation"> Relaxation </label>
 
-                        <input type="radio" name="tag" id="Random" value="Random"<?php if ($challenge['tag']=="Random"){echo "checked='checked'";} ?>>
+                        <input type="radio" name="tag" id="Random" value="Random"<?php if ($challenge['tag']=="Random"){echo "checked='checked'";} ?> required="required">
                         <label for = "Random"> Random </label>   
                     <br>
 

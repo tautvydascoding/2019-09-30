@@ -4,8 +4,6 @@ include("../../config/connectToDB.php");
 include("../../model/challenges.php");
 include('../../model/challenge_images.php');
 
-// print_r($_GET);//test
-
 $nr = $_GET['id'];
 $title = $_GET['title'];
 $description = $_GET['description'];
@@ -15,77 +13,127 @@ $_GET['imgID1'];
 $_GET['imgID2'];
 $_GET['imgID3'];
 
+echo "<hr>";
+//--Challenge update----------------------------------------------------------------------------------
+
+updateChallenge ($nr, $title, $description, $tag);
 
 
-//echo $nr."<br>".$title."<br>".$description."<br>". $tag."<br>".$_GET['imgID1']."<br>".$_GET['imgID2']."<br>".$_GET['imgID3']."<br><hr>";//test
+//-----Challenge IMG update---------------------------------------------------------------------------
 
-// updateChallenge ($nr, $title, $description, $tag);
+//----Challenge IMG 1 update---------------------------------------------------------------------------
 
-//
+        $imgArray = [];
 
+        $IMGforChallengeObject = getImagesforChallenge($nr);
 
-    // $img = 0;
+        $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
 
-    // $img = $_GET['imgID1'];
+        while ($IMGforChallengeList) {
+            echo $IMGforChallengeList['id'];
+            $imgArray[] += $IMGforChallengeList['id'];
+            $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
 
-    // $img = $_GET['imgID2'];
+        }
 
-    // $img = $_GET['imgID3'];
-
-    // updateIMGforChallenge ($nr, $img );
-//---------------------------------------
-
+        $newIMG = $_GET['imgID1'];
    
+        if (!$imgArray && $newIMG =='none') {
+            echo "no changes";
+            } elseif (!$imgArray && $newIMG !='none') {
+                  echo "creating new"; 
+                  createChallengeIMGtable ($nr, $newIMG);
+                } elseif ($imgArray && $newIMG =='none') {
+                    echo "deleting item"; 
+                    $oldIMG = $imgArray[0];
+                    deleteChallengeWithRelatedIMGforUpdate($nr, $oldIMG);
+                        } else {
+                            echo "changing item old to new"; 
+                            $oldIMG = $imgArray[0];
+                            updateIMGforChallenge ($nr, $newIMG, $oldIMG);
+        }
+        
+   //----Challenge IMG 2 update (does not work properly)-------------------------------------------------
+  
+        // $IMGforChallengeObject = getImagesforChallenge($nr);
+
+        // $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
+
+        // while ($IMGforChallengeList) {
+        //         echo $IMGforChallengeList['id'];
+        //         $imgArray[] += $IMGforChallengeList['id'];
+        //         $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
+
+        // }
+
+        // $newIMG = $_GET['imgID2'];
+
+        // if ($imgArray<=1 && $newIMG =='none') {
+        //     echo "no changes";
+        //     } elseif ($imgArray<=1 && $newIMG !='none') {
+        //           echo "creating new"; 
+        //           createChallengeIMGtable ($nr, $newIMG);
+        //         } elseif ($imgArray<2 && $newIMG =='none') {
+        //             echo "deleting item"; 
+        //             $oldIMG = $imgArray[1];
+        //             deleteChallengeWithRelatedIMGforUpdate($nr, $oldIMG);
+        //                 } else {
+        //                     echo "changing item old to new"; 
+        //                     $oldIMG = $imgArray[1];
+        //                     updateIMGforChallenge ($nr, $newIMG, $oldIMG);
+        // }
+
+
+
+         //----Challenge IMG 3 update (does not work properly)---------------------------------------------
+
 
         // $IMGforChallengeObject = getImagesforChallenge($nr);
 
         // $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
 
-        // echo $IMGforChallengeList['id']."<br>";
-
         // while ($IMGforChallengeList) {
-        //     print_r($IMGforChallengeList);
-
-            // if ($imgList['id']==$IMGforChallengeList['id']) {
-            //     $selected = "selected='selected'";
-            //     $arRadomCHIMG = true;
-            //     break;
-            // }
-            
+        //     echo $IMGforChallengeList['id'];
+        //     $imgArray[] += $IMGforChallengeList['id'];
         //     $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
 
         // }
-          $img = 0;
 
+        // $newIMG = $_GET['imgID3'];
 
-
-            // $img = $_GET['imgID1'];
-
-            // $img = $_GET['imgID2'];
-
-            // $img = $_GET['imgID3'];
-
-        // $IMGforChallengeObject = getImagesforChallenge($nr);
-
-        // $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
-    
-        // for ($i=1; $i < 4; $i++) {
-        //     while ($IMGforChallengeList ) {
-        //         $img = $_GET["imgID$i"];
-        //         echo $img;
-
-        //             if ($IMGforChallengeList['id']!=$img) {
-
-        //                 updateIMGforChallenge ($nr, $img );
-        //                 $img=0;
-        //             }
-                    
-        //         echo "<hr>";
-
-        //         $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
-        //         }
+        // if ($imgArray<=2 && $newIMG =='none') {
+        //     echo "no changes";
+        //     } elseif ($imgArray<=2 && $newIMG !='none') {
+        //           echo "creating new"; 
+        //           createChallengeIMGtable ($nr, $newIMG);
+        //         } elseif ($imgArray<3 && $newIMG =='none') {
+        //             echo "deleting item"; 
+        //             $oldIMG = $imgArray[2];
+        //             deleteChallengeWithRelatedIMGforUpdate($nr, $oldIMG);
+        //                 } else {
+        //                     echo "changing item old to new"; 
+        //                     $oldIMG = $imgArray[2];
+        //                     updateIMGforChallenge ($nr, $newIMG, $oldIMG);
         // }
 
-    
 
-// header("Location: ../adminPanel.php");
+        //---Just in case saved code for IMG2 and IMG3 update------------------------------------------------
+
+
+        // if ($IMGforChallengeList == 0) {
+        //     createChallengeIMGtable ($nr, $newIMG);
+        // } else {
+        //     $newIMG = $_GET['imgID2'];
+        //     $oldIMG = $imgArray[1];
+        //     updateIMGforChallenge ($nr, $newIMG, $oldIMG);
+        // }
+
+        
+        // if ($IMGforChallengeList == 0) {
+        //     createChallengeIMGtable ($nr, $newIMG);
+        // } else {
+        //     $newIMG = $_GET['imgID3'];
+        //     $oldIMG = $imgArray[2];
+        //     updateIMGforChallenge ($nr, $newIMG, $oldIMG);
+        // }
+

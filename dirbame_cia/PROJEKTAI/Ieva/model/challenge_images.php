@@ -75,6 +75,23 @@ function deleteChallengeWithRelatedIMG($nr) {
 
 // deleteImagesChallengeTableRow(16);
 
+//------------------------------------------
+
+function deleteChallengeWithRelatedIMGforUpdate($nr, $oldIMG) {
+    $mySQL_string = "DELETE FROM challenge_images 
+                        WHERE challenge_id = '$nr' && img_id = $oldIMG
+                        LIMIT 1
+                        ";
+
+    $itemDeleted = mysqli_query(getConnect(), $mySQL_string);
+    if (!$itemDeleted ) {
+        echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
+        return NULL;
+    }
+}
+
+//--------------------------------------------
+
 function deleteIMGwithRelatedChallenges($nr) {
     $mySQL_string = "DELETE FROM challenge_images 
                         WHERE img_id = '$nr'
@@ -87,21 +104,18 @@ function deleteIMGwithRelatedChallenges($nr) {
     }
 }
 
-
-//---------------DELETE FUNCTION FOR IMAGES---------------------------------------------
-
 //---------------UPDATE FUNCTION--------------------------------------------- // 
 
 //update challenge (update cha-img table row)
 //challenge nr
 
-function updateIMGforChallenge ($nr, $img) {
+function updateIMGforChallenge ($nr, $img, $oldIMG) {
     $nr = htmlspecialchars(trim($nr), ENT_QUOTES);
     $name = htmlspecialchars(trim($img), ENT_QUOTES);
 
     $mySQL_string = "UPDATE challenge_images 
                         SET img_id = '$img'
-                        WHERE challenge_id = '$nr' 
+                        WHERE challenge_id = '$nr' && img_id = $oldIMG
                         LIMIT 1
                         ";
     $itemUpdated = mysqli_query(getConnect(), $mySQL_string);
@@ -148,6 +162,20 @@ function updateIMGforChallenge ($nr, $img) {
     //     $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
     //     }
 
+    function getImagesforChallengeNotOrdered($nr) {
+        $mySQL_string = "SELECT id, name
+                            FROM img 
+                            INNER JOIN challenge_images 
+                            ON img.id = challenge_images.img_id
+                            WHERE challenge_id = '$nr'
+                            ";
+        $getList = mysqli_query(getConnect(), $mySQL_string);
+        if (!$getList ) {
+            echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
+                return NULL;
+        } return  $getList;
+    } 
+
 //-------------------GET LIST FUNCTION FOR IMAGES----------------------------------// DONE - TEST - WORKS
     
 function getChallengeforImage($nr) {
@@ -175,3 +203,4 @@ function getChallengeforImage($nr) {
 //     $ChallengeforIMGlist = mysqli_fetch_assoc($ChallengeforIMGobject);
 //     }
 
+// UPDATE challenge_images SET img_id = 11 WHERE challenge_id = 30 && img_id=16 LIMIT 1;

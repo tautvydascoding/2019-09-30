@@ -38,9 +38,10 @@
                         $ChallengeforIMGlist = mysqli_fetch_assoc($ChallengeforIMGobject);
                         
                         while ($ChallengeforIMGlist) {
-                            echo "<h6> <a href=details-challenge.php?id={$ChallengeforIMGlist['id']}>
+                            echo "<a href=details-challenge.php?id={$ChallengeforIMGlist['id']} class='font-weight-bold'>
                             {$ChallengeforIMGlist['title']}
-                            </a> </h6>";
+                            </a>";
+                            echo ". ";
                         
                             $ChallengeforIMGlist = mysqli_fetch_assoc($ChallengeforIMGobject);
                             }
