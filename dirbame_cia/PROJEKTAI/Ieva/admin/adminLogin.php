@@ -16,18 +16,20 @@
                         <div class="col-12 form-group text-center">
                             <h3>Login to Challenge Yourself Admin Panel</h3>
                             <div class="row justify-content-center">
-                                <div class="col-sm-10 m-3 text-center" >
-                                    <p id="registrationErrors"><?php if(!empty($_GET['errors'])){
-                                    echo $_GET['errors'];} ?>
-                                    </p>
+                                <div class="col-10 m-3 text-center" >
+                                    <div id="loginErrors"><?php if(!empty($_GET['loginErrors'])){
+                                    echo $_GET['loginErrors'];} ?>
+                                    </div>
                                 </div>
                                 <form class="form-group row justify-content-center bg-light" id='login' action='login.php' method='post'>
-                                <div class="col-sm-10 m-3">
-                                    <input class="form-control" type="email" name="email" placeholder="E-mail" required/>
+                                <div class="col-10 m-3">
+                                    <label for="loginEmail">Email</label>
+                                    <input class="form-control" type="email" id="loginEmail" name="email" placeholder="E-mail" required/>
                                 </div>
 
-                                <div class="col-sm-10 m-3">
-                                    <input class="form-control" type="password" name="password" placeholder="Password" required/>
+                                <div class="col-10 m-3">
+                                    <label for="loginPass">Password</label>
+                                    <input class="form-control" type="password" id="loginPass" name="password" placeholder="Password" required/>
                                 </div>
 
                                     <button type="submit"  class="btn btn-outline-dark w-50 m-3">Login</button>

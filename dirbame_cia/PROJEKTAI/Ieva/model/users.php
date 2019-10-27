@@ -1,8 +1,9 @@
 <?php
 
-// include("config/connectToDB.php"); - include in every file.
+//include("../config/connectToDB.php");// - include in every file.
 
 //---------------GET FUNCTION------------------------------------------DONE - TEST - WORKS
+$nr=0;
 
 function getUser($nr) {
     $resultMysqlObject = mysqli_query(getConnect(),"SELECT * FROM users WHERE id = '$nr'");
@@ -10,7 +11,7 @@ function getUser($nr) {
             $resultArray = mysqli_fetch_assoc($resultMysqlObject);
         return $resultArray; 
         } else {
-            echo "ERROR: Cannot get user: $nr.". mysqli_error(getConnect());
+            echo "ERROR: Cannot get user: '$nr'.". mysqli_error(getConnect());
             return NULL;
         }
 }
@@ -22,7 +23,7 @@ function getUser($nr) {
 //create user (for registration)
 
 function createUser ($user_name, $email, $password, $name, $lname) {
-    $user_name = htmlspecialchars(trim($user_name), ENT_QUOTES); //strip tags
+    $user_name = htmlspecialchars(trim($user_name), ENT_QUOTES); 
     $email = htmlspecialchars(trim($email), ENT_QUOTES);
     $password = password_hash($password, PASSWORD_DEFAULT);
     $name = htmlspecialchars(trim($name), ENT_QUOTES);
@@ -48,7 +49,7 @@ function createUser ($user_name, $email, $password, $name, $lname) {
 }
 
 
-// createUser ('TestUser', 'test@test.com', 'test123', 'Tomas', 'Testauskas'); 
+// createUser ('Test_"html>', 'test@html.com', 'test1', '',''); 
 
 
 //kodavimas - kurimo ir atnaujinimo metu

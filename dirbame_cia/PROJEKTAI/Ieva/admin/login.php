@@ -4,27 +4,34 @@ require_once('../config/connectToDB.php');
 $password = $_POST['password'];
 $email = $_POST['email'];
 
-    $cryptedEmail = mysqli_real_escape_string(getLoginDB(), $email );
-    // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+//echo $password." ".$email;//test
 
-    $query = "SELECT * FROM users
-                    WHERE email = '$cryptedEmail'; ";
+$cryptedEmail = mysqli_real_escape_string(getConnect(), $email );
 
+// echo $cryptedEmail;//test
 
-    $result = mysqli_query(getLoginDB(),  $query);
+$mySQL_string = "SELECT * FROM users 
+                          WHERE email = '$cryptedEmail'";
 
-    $resultArray = mysqli_fetch_assoc($result);
-    $hashed_password = $resultArray['password'];
+$resultObject = mysqli_query(getConnect(), $mySQL_string);
 
-if(password_verify($password, $hashed_password)) {
-  header("Location: admin_panel.php");
-  $_SESSION['user_id'] = $resultArray['id'];
-  $_SESSION['user_name'] = $resultArray['name'];
+$userArray = mysqli_fetch_assoc($resultObject);
 
-} else {
-  $errors = [];
-  array_push($errors, "Wrong password or e-mail");
-  $printErrors = implode("<br />", $errors);
-  header("Location: ..\admin\admin_panel_login.php?errors=$printErrors");
-}
- ?>
+//print_r($userArray); //test
+
+$hashed_password = $userArray['password'];
+
+// print_r($hashed_password); // test
+
+if(password_verify($password, $hashed_password)) {    
+    $_SESSION['user_id'] = $userArray['id'];
+    $_SESSION['user_name'] = $userArray['user_name'];
+    header("Location: adminPanel.php");
+  
+  } else {
+    $loginErrors = [];
+    array_push($loginErrors, "Incorrect password or e-mail.<br> Try again.");
+    $printLoginErrors = implode("<br/>", $loginErrors);
+    header("Location: ../admin/adminLogin.php?loginErrors= $printLoginErrors");
+  }
+  ?>
