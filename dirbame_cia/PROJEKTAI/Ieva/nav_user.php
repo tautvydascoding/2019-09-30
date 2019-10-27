@@ -23,9 +23,7 @@
 
       </ul>
 
-      <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-primary log" type="submit">Logout</button>
-      </form>
+      <a class="btn btn btn-primary float-right m-2 log" href="logout.php">Logout</a>
 
     </div>
 </nav>

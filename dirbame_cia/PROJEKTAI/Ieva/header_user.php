@@ -6,7 +6,7 @@
         <div class="row">
             <div class = "col-md-12">
                 <h3>
-                   Hello, Ieva!
+                Hello, <?php echo $_SESSION['user_name'];?>!
                 </h3>   
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis est ipsam id repellat adipisci non laborum beatae fugit hic. Molestias error placeat dignissimos illo voluptas? Aliquam rem adipisci nemo recusandae.
 

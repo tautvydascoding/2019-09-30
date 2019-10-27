@@ -34,7 +34,7 @@ if(password_verify($password, $hashed_password)) {
       $_SESSION['user_name'] = $userArray['user_name'];
   } else {
     $loginErrors = [];
-    array_push($loginErrors, "Incorrect password or e-mail.<br> Try again.");
+    array_push($loginErrors, "Incorrect e-mail or password.<br> Try again.");
     $printLoginErrors = implode("<br/>", $loginErrors);
     header("Location: ../admin/adminLogin.php?loginErrors= $printLoginErrors");
   }
