@@ -50,13 +50,6 @@ function createUser ($user_name, $email, $password, $name, $lname) {
 
 //createUser ('IevaAdmin', 'ieva@admin.com', 'slaptazodis, 'Ieva','Gaja'); 
 
-
-//kodavimas - kurimo ir atnaujinimo metu
-// koduoti viska, slaptazodziui reiketu
-// $password = md5( $password); //senovinis budas
-// $password = md5(md5( $password."5"));// siek tiek geresnis
-// prisiloginimui if (pas destytoja 5uzd)
-
 //---------------DELETE FUNCTION--------------------------------------------- DONE - TEST - WORKS
 
 function deleteUser($nr) {

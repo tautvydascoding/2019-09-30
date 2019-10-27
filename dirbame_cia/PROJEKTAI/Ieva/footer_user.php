@@ -1,5 +1,5 @@
 
-        <footer class="">
+        <footer class="fixed-bottom">
 
             <div class="container-fluid">
                 <div class="row">

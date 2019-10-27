@@ -97,7 +97,7 @@ a.register {
 
   }
 
-a.log, button.log {
+a.log, button.log, .register {
     background-color: rgba(99, 7, 79, 0.8);
     border-color: rgb(48, 2, 38);
     color:white;
@@ -151,6 +151,8 @@ footer {
 .copyright {
   background-color: rgb(24, 19, 23);
 }
+
+/*--------------REGISTRATION-----------------*/
 
 /*---------------USER-------------------------*/
 

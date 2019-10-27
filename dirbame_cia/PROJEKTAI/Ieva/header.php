@@ -10,7 +10,7 @@
     <div class="container h-100">
         <div class="d-flex h-100 text-center align-items-center">
             <div class="w-100 text-white">
-            <div id="loginErrors"><?php if(!empty($_GET['loginErrors'])){echo $_GET['loginErrors'];} ?></div>
+            <div id="loginErrors" class="text-danger"><?php if(!empty($_GET['loginErrors'])){echo $_GET['loginErrors'];} ?></div>
                 <h1 class="display-3 main">Challenge yourself</h1>
 
                 <p class="lead mb-0">
