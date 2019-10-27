@@ -56,4 +56,4 @@
 
 
     <!-- Footer-->
-    <?php include("footer_user.php");?> 
+    <?php include("footer.php");?> 

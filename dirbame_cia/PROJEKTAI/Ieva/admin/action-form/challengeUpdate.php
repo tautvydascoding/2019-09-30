@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    if ( isset( $_SESSION['user_id'] ) ) {
+    ?>
+
 <?php
 
 include("../../config/connectToDB.php");
@@ -136,4 +141,10 @@ updateChallenge ($nr, $title, $description, $tag);
         //     $oldIMG = $imgArray[2];
         //     updateIMGforChallenge ($nr, $newIMG, $oldIMG);
         // }
+?>
 
+<? } else {
+        header("Location: ../adminLogin.php");
+        exit;
+    }
+    ?>

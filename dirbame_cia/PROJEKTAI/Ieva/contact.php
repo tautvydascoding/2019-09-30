@@ -11,19 +11,19 @@
                     <form action="#" method="post" class="contact">
             
                         <label for="subject">Subject</label><br>
-                        <input type="text" name="subject" placeholder="Subject" id = "subject">
+                        <input type="text" name="subject" placeholder="Subject" id = "subject" class="m-1" required>
                         <br>
                         
                         <label for="emailContact">Your Email</label><br>
-                        <input type="email" name="emailContact" placeholder="Enter your email" id = "emailContact">
+                        <input type="email" name="emailContact" placeholder="Enter your email" id = "emailContact" class="m-1" required>
                         <br>
 
                         <label for="name">Your name</label><br>
-                        <input type="text" name="name" placeholder="Optional" id = "name">
+                        <input type="text" name="name" placeholder="Optional" id = "name" class="m-1">
                         <br>
 
                         <label for="content">Content</label><br>
-                        <textarea name="content" id = "content" placeholder="Enter text.." rows="8" cols="90"></textarea>
+                        <textarea name="content" id = "content" placeholder="Enter text.." rows="8" cols="90" class="m-1" required></textarea>
                         <br>
 
                         <button type="submit" class="btn btn btn-primary">Send Email</button>

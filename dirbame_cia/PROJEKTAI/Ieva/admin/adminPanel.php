@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    if ( isset( $_SESSION['user_id'] ) ) {
+    ?>
+
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -13,10 +18,10 @@
 <?php include("../config/connectToDB.php");?>
     <div class="row">
         <div class="col-6">
-            <h2 class="">Hello, Ieva!</h2>
+            <h2 class="">Hello, <?php echo $_SESSION['user_name'];?>!</h2>
         </div> 
         <div class="col-6">
-            <a class="btn btn-outline-dark float-right m-2" href="logout.php">Logout</a>
+            <a class="btn btn-outline-dark float-right m-2" href="adminLogout.php">Logout</a>
         </div>
     </div>
     <div class="row">
@@ -157,4 +162,8 @@
 
 </body>
 </html>
-
+<? } else {
+        header("Location: adminLogin.php");
+        exit;
+    }
+    ?>

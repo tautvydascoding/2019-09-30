@@ -3,7 +3,6 @@
 //include("../config/connectToDB.php");// - include in every file.
 
 //---------------GET FUNCTION------------------------------------------DONE - TEST - WORKS
-$nr=0;
 
 function getUser($nr) {
     $resultMysqlObject = mysqli_query(getConnect(),"SELECT * FROM users WHERE id = '$nr'");
@@ -49,7 +48,7 @@ function createUser ($user_name, $email, $password, $name, $lname) {
 }
 
 
-// createUser ('Test_"html>', 'test@html.com', 'test1', '',''); 
+//createUser ('IevaAdmin', 'ieva@admin.com', 'slaptazodis, 'Ieva','Gaja'); 
 
 
 //kodavimas - kurimo ir atnaujinimo metu

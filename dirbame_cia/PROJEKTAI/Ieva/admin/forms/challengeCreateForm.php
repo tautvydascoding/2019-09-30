@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    if ( isset( $_SESSION['user_id'] ) ) {
+    ?>
+
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -110,3 +115,8 @@
         <script type="text/javascript" src='../../JS/main.js'> </script>
     </body>
 </html>
+<? } else {
+        header("Location: ../adminLogin.php");
+        exit;
+    }
+    ?>

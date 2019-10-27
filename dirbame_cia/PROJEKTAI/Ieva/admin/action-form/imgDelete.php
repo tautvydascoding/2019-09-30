@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+    if ( isset( $_SESSION['user_id'] ) ) {
+    ?>
 <?php
 include("../../config/connectToDB.php");
 include('../../model/img.php');
@@ -11,5 +15,9 @@ deleteIMGwithRelatedChallenges($nr);
 deleteIMG($nr);
 
 header("Location: ../adminPanel.php");
-
-// header("Location: page_adminPanel.php?zinute=Sekmingai istrintas gydytojas");
+?>
+<? } else {
+        header("Location: ../adminLogin.php");
+        exit;
+    }
+    ?>
