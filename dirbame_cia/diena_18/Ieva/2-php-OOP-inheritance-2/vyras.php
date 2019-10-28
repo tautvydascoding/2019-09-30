@@ -2,7 +2,7 @@
 
 include("zmogus.php");
 
-class Vyras  extends Zmogus {
+class Vyras extends Zmogus {
     private $testosteronas = 6122;
 
     public function setTestosterone($testo) {

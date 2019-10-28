@@ -1,5 +1,8 @@
+<?php 
+    session_start();
+    if ( isset( $_SESSION['user_id'] ) ) {
+    ?>
 <?php
-
 include("../../config/connectToDB.php");
 include("../../model/img.php");  
 
@@ -12,6 +15,9 @@ $name = $_GET['name'];
 updateIMG ($nr, $name);
 
 header("Location: ../adminPanel.php");
-
-// PHP redirect
-// header("Location: index.php?zinute=Sekmingai uzregistruotas pakeitimas");
+?>
+<? } else {
+        header("Location: ../adminLogin.php");
+        exit;
+    }
+    ?>

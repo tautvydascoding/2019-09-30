@@ -15,9 +15,9 @@ $visigydytojaiObjektas = getdoctors();
 $gydytojasArray = mysqli_fetch_assoc($visigydytojaiObjektas);
 while ($gydytojasArray){
 
-  echo "<a href='doctor.php?nr={$gydytojasArray['id']}'>
+  echo "
 
-              {$gydytojasArray['name']}  {$gydytojasArray['lname']}
+              {$gydytojasArray['name']} <a href='doctor.php?nr={$gydytojasArray['id']}'> {$gydytojasArray['lname']}
 
       </a> "; ?>
       <button class='btn btn-outline-danger' type="button"><a href='doctor.php?nr=<?php echo $gydytojasArray['id']?>'>Atnaujinti</a></button>;
@@ -30,7 +30,7 @@ while ($gydytojasArray){
 
      ?>
 
-<!-- <a href='doctor.php?nr=$gydytojasArray['id']'> -->
+<a href='doctor.php?nr=$gydytojasArray['id']'>
      <!--
      $gyt = getDoctor(6);
      <form   action="registracija.php" method="get">

@@ -1,6 +1,6 @@
 <?php
 
-// include("config/connectToDB.php"); - include in every file.
+//include("../config/connectToDB.php");// - include in every file.
 
 //---------------GET FUNCTION------------------------------------------DONE - TEST - WORKS
 
@@ -10,7 +10,7 @@ function getUser($nr) {
             $resultArray = mysqli_fetch_assoc($resultMysqlObject);
         return $resultArray; 
         } else {
-            echo "ERROR: Cannot get user: $nr.". mysqli_error(getConnect());
+            echo "ERROR: Cannot get user: '$nr'.". mysqli_error(getConnect());
             return NULL;
         }
 }
@@ -22,7 +22,7 @@ function getUser($nr) {
 //create user (for registration)
 
 function createUser ($user_name, $email, $password, $name, $lname) {
-    $user_name = htmlspecialchars(trim($user_name), ENT_QUOTES); //strip tags
+    $user_name = htmlspecialchars(trim($user_name), ENT_QUOTES); 
     $email = htmlspecialchars(trim($email), ENT_QUOTES);
     $password = password_hash($password, PASSWORD_DEFAULT);
     $name = htmlspecialchars(trim($name), ENT_QUOTES);
@@ -48,14 +48,7 @@ function createUser ($user_name, $email, $password, $name, $lname) {
 }
 
 
-// createUser ('TestUser', 'test@test.com', 'test123', 'Tomas', 'Testauskas'); 
-
-
-//kodavimas - kurimo ir atnaujinimo metu
-// koduoti viska, slaptazodziui reiketu
-// $password = md5( $password); //senovinis budas
-// $password = md5(md5( $password."5"));// siek tiek geresnis
-// prisiloginimui if (pas destytoja 5uzd)
+//createUser ('IevaAdmin', 'ieva@admin.com', 'slaptazodis, 'Ieva','Gaja'); 
 
 //---------------DELETE FUNCTION--------------------------------------------- DONE - TEST - WORKS
 

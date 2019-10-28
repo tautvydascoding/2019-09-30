@@ -11,7 +11,8 @@ $Monika = new zmogus();
 //einu();
 $Monika->setManoVardas('Monika');
 $Monika->setManoUgis(18);
-
+echo $Monika->getManoUgis();
+echo $Monika->getManoVardas();
 
 
 

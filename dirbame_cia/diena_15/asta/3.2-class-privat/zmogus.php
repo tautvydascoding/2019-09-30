@@ -1,17 +1,19 @@
 <?php
 class zmogus {
-	privat $ugis = 1;
-	privat $vardas = "nezinomas";
-	public function getManoUgis)(){
+	private $ugis = 1;
+	private $vardas = "nezinomas";
+ function getManoUgis(){
     echo $this->ugis;
+		return $this->ugis;
   }
-	public function getManoVardas)(){
+function getManoVardas(){
     echo $this->vardas;
+		 return $this->vardas;
   }
-	public function setManoUgis)($x){
+function setManoUgis($x){
     echo $this->ugis=$x;
 	}
-	public function setManoVardas)($x){
+function setManoVardas($x){
     echo $this->vardas=$x;
 	}
 }

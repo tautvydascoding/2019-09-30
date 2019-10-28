@@ -5,7 +5,7 @@
 //-------------------GET FUNCTION----------------------------------// DONE - TEST - WORKS
 
 function getIMGforChallenge($nr){
-    $resultMysqlObject = mysqli_query(getConnect(),"SELECT name
+    $resultMysqlObject = mysqli_query(getConnect(),"SELECT id, name
                                                         FROM img 
                                                         INNER JOIN challenge_images 
                                                         ON img.id = challenge_images.img_id
@@ -21,8 +21,26 @@ function getIMGforChallenge($nr){
     }
 }
 
+// print_r(getIMGforChallenge(28)); //test
+//-----------------------------------------------------------------------------
 
-// print_r(getIMGforChallenge(16)); //test
+function getIMGforChallenge2($nr){
+    $resultMysqlObject = mysqli_query(getConnect(),"SELECT id, name
+                                                        FROM img 
+                                                        INNER JOIN challenge_images 
+                                                        ON img.id = challenge_images.img_id
+                                                        WHERE challenge_id = '$nr'
+                                                        ");
+    
+    if (mysqli_num_rows($resultMysqlObject) > 0) {
+        $IMGforChallengeArray = mysqli_fetch_assoc($resultMysqlObject);
+    return $IMGforChallengeArray; 
+    } else {
+        echo "ERROR: Cannot get challenge: $nr.". mysqli_error(getConnect());
+        return NULL;
+    }
+}
+
 
 //-------------------CREATE FUNCTION----------------------------------// DONE - TEST - WORKS
 
@@ -57,6 +75,23 @@ function deleteChallengeWithRelatedIMG($nr) {
 
 // deleteImagesChallengeTableRow(16);
 
+//------------------------------------------
+
+function deleteChallengeWithRelatedIMGforUpdate($nr, $oldIMG) {
+    $mySQL_string = "DELETE FROM challenge_images 
+                        WHERE challenge_id = '$nr' && img_id = $oldIMG
+                        LIMIT 1
+                        ";
+
+    $itemDeleted = mysqli_query(getConnect(), $mySQL_string);
+    if (!$itemDeleted ) {
+        echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
+        return NULL;
+    }
+}
+
+//--------------------------------------------
+
 function deleteIMGwithRelatedChallenges($nr) {
     $mySQL_string = "DELETE FROM challenge_images 
                         WHERE img_id = '$nr'
@@ -69,20 +104,18 @@ function deleteIMGwithRelatedChallenges($nr) {
     }
 }
 
-
-//---------------DELETE FUNCTION FOR IMAGES---------------------------------------------
-
 //---------------UPDATE FUNCTION--------------------------------------------- // 
 
-//update user (admin)
+//update challenge (update cha-img table row)
+//challenge nr
 
-function updateIMGkeist ($nr, $name) {
+function updateIMGforChallenge ($nr, $img, $oldIMG) {
     $nr = htmlspecialchars(trim($nr), ENT_QUOTES);
-    $name = htmlspecialchars(trim($name), ENT_QUOTES);
+    $name = htmlspecialchars(trim($img), ENT_QUOTES);
 
-    $mySQL_string = "UPDATE img
-                        SET name = '$name'
-                        WHERE id = '$nr' 
+    $mySQL_string = "UPDATE challenge_images 
+                        SET img_id = '$img'
+                        WHERE challenge_id = '$nr' && img_id = $oldIMG
                         LIMIT 1
                         ";
     $itemUpdated = mysqli_query(getConnect(), $mySQL_string);
@@ -92,16 +125,24 @@ function updateIMGkeist ($nr, $name) {
     }
 }
 
-// updateIMG (4, "testNera.jpg");
+
+//UPDATE stock SET unit_price = unit_price * 0.95 
+  // WHERE unit_price IN
+    //  (SELECT unit_price FROM stock WHERE unit_price > 50);
+
+    //update challenge_images SET img_id = '$img'
+
+// updateIMGforChallenge ($nr, $name);
 
 //-------------------GET LIST FUNCTION FOR CHALLENGES----------------------------------// DONE - TEST - WORKS
 
     function getImagesforChallenge($nr) {
-        $mySQL_string = "SELECT name
+        $mySQL_string = "SELECT id, name
                             FROM img 
                             INNER JOIN challenge_images 
                             ON img.id = challenge_images.img_id
                             WHERE challenge_id = '$nr' 
+                            ORDER BY id ASC
                             ";
         $getList = mysqli_query(getConnect(), $mySQL_string);
         if (!$getList ) {
@@ -110,7 +151,7 @@ function updateIMGkeist ($nr, $name) {
         } return  $getList;
     } 
     
-    // $IMGforChallengeObject = getImagesforChallenge(16);
+    // $IMGforChallengeObject = getImagesforChallenge($nr);
 
     // $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
 
@@ -120,6 +161,20 @@ function updateIMGkeist ($nr, $name) {
 
     //     $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
     //     }
+
+    function getImagesforChallengeNotOrdered($nr) {
+        $mySQL_string = "SELECT id, name
+                            FROM img 
+                            INNER JOIN challenge_images 
+                            ON img.id = challenge_images.img_id
+                            WHERE challenge_id = '$nr'
+                            ";
+        $getList = mysqli_query(getConnect(), $mySQL_string);
+        if (!$getList ) {
+            echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
+                return NULL;
+        } return  $getList;
+    } 
 
 //-------------------GET LIST FUNCTION FOR IMAGES----------------------------------// DONE - TEST - WORKS
     
@@ -148,13 +203,4 @@ function getChallengeforImage($nr) {
 //     $ChallengeforIMGlist = mysqli_fetch_assoc($ChallengeforIMGobject);
 //     }
 
-
-///---pavyzdinis apacioj
-
-// function getRenginys($nr){
-//     $rezultataiMySQLObjektas = mysqli_query(getPrisijungimas(),"SELECT * FROM renginiai
-//     INNER JOIN koncerto_apras ON renginiai.aprasymo_id = koncerto_apras.id
-//     INNER JOIN nuotraukos ON renginiai.aprasymo_id = nuotraukos.koncerto_id
-//     WHERE aprasymo_id = '$nr' LIMIT 1
-//      ");
-// }
+// UPDATE challenge_images SET img_id = 11 WHERE challenge_id = 30 && img_id=16 LIMIT 1;

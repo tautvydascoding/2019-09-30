@@ -1,10 +1,10 @@
 
-        <footer class="">
+        <footer class="fixed-bottom">
 
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-7  text-md-left">
-                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Challenge Yourself</h5>
+                        <h5 class="font-weight-bold text-uppercase mt-1 mb-1">Challenge Yourself</h5>
                         <p> Challenges to make your day positive.</p>
                     </div> <!--Div col for challenge yourself is closed-->
 
@@ -12,8 +12,8 @@
 
                         <!-- Envilope for contacts-->
                         
-                        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Contact Us:</h5>
-                        <a href="index.php/#contactPage"><i class='far fa-envelope' style='font-size:36px;'></i></a>
+                        <h5 class="font-weight-bold text-uppercase mt-1 mb-1">Contact Us:</h5>
+                        <a href="index.php/#contactPage"><i class='far fa-envelope' style='font-size:28px;'></i></a>
 
                     </div> <!--Div col for contact us is closed-->
 
