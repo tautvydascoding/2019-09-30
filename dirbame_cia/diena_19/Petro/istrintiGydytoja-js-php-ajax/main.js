@@ -19,8 +19,8 @@ $.ajax({
         // $("#results").append(gryzoPaverstasIString.vardas);
                 /* OR */
         //====== jei PHP darot: echo parseTOJSON( $manoAray);====
-        gryzoPaverstasIJSON = JSON.parse(rez);
-        console.log(gryzoPaverstasIJSON);
+        // gryzoPaverstasIJSON = JSON.parse(rez);
+        // console.log(gryzoPaverstasIJSON);
         //this is what I am unsure about?
          $("#results").append(gryzoPaverstasIJSON.vardas);
   },

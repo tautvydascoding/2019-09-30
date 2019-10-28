@@ -16,13 +16,13 @@ $.ajax({
         // console.log(rez);
       $("#resultsIstrinti").append("Istrinti preke pavyko");
         // =======jei PHP darot: echo "String";================
-        // gryzoPaverstasIString = JSON.stringify(gryzo);
-        // console.log(gryzoPaverstasIString);
-        // $("#results").append(gryzoPaverstasIString.vardas);
+        gryzoPaverstasIString = JSON.stringify(rez);
+        console.log(gryzoPaverstasIString);
+        $("#resultsIstrinti").append(gryzoPaverstasIString.vardas);
                 /* OR */
         //====== jei PHP darot: echo parseTOJSON( $manoAray);====
-        gryzoPaverstasIJSON = JSON.parse(rez);
-        console.log(gryzoPaverstasIJSON);
+        // gryzoPaverstasIJSON = JSON.parse(rez);
+        // console.log(gryzoPaverstasIJSON);
   //       //this is what I am unsure about?
   //        $("#results").append(gryzoPaverstasIJSON.vardas);
   },

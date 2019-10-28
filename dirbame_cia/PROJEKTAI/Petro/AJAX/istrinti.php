@@ -6,5 +6,5 @@ include_once ("../model/db_prekes_functions.php");
 $id = $_POST["id"];
 
 
- echo "$x";
+ echo "$id";
 deletePreke('$id');
