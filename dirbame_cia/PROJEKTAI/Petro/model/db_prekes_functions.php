@@ -166,7 +166,7 @@ function getPrekes($kiekis = 9999) {
 
 
 
-//funkcija PATIKRINTA - VEIKIA
+
 // funkcija     paima prekes ir FOTO pagal kategorija
 // funkcija PATIKRINTA - VEIKIA
 function getPrekesPagalKategorija($kategorija) {
@@ -185,22 +185,81 @@ function getPrekesPagalKategorija($kategorija) {
 }
 //print_r(getPrekesPagalKategorija('bass_gitara'));
 
+
+// funkcija     paima viena preke ir FOTO pagal id (ir pavercia i masyva)
+// funkcija PATIKRINTA - VEIKIA
+function getPrekePagalId($id) {
+
+    $uzklausa2 = "SELECT * FROM prekes,img WHERE prekes.id = '$id' AND img.prekes_id = prekes.id";
+    $getPreke = mysqli_query(getPrisijungimas(), $uzklausa2);
+
+    if ($getPreke){
+        //echo "Paimti prekes ir nuotraukas pagal kategorija pavyko";
+        $prekesMasyvas = mysqli_fetch_assoc($getPreke);
+        return $prekesMasyvas;
+    } else{
+        echo "NEPAVYKO paimti prekes ir nuotraukos pagal id". mysqli_error(getPrisijungimas());
+        return NULL;
+    }
+
+}
+//print_r(getPrekePagalId('5'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+// funkcija     paima visas prekes ir FOTO
+// funkcija PATIKRINTA - VEIKIA
+function getVisosPrekes() {
+
+    $uzklausa2 = "SELECT * FROM prekes,img WHERE prekes.id = img.prekes_id";
+    $getPrekesIRFotoVisos = mysqli_query(getPrisijungimas(), $uzklausa2);
+
+    if ($getPrekesIRFotoVisos){
+        //echo "Paimti VISAS prekes ir nuotraukas pavyko";
+        return $getPrekesIRFotoVisos;
+    } else{
+        echo "NEPAVYKO paimti VISU prekiu ir nuotrauku". mysqli_error(getPrisijungimas());
+        return NULL;
+    }
+
+}
+//print_r(getVisosPrekes());
+
+
+
+
+
+
+
+
+
+
 //funkcija PATIKRINTA - VEIKIA
 // funkcija     paima viena preke pagal id
 
-function getPrekeMasyvas($id)
-{
-    $rez = mysqli_query(getPrisijungimas(), "SELECT * FROM prekes WHERE id = '$id'");
-    //tikrinam ar paememe duomenis ir jei paememe, tai duomenu  eilute paverciam i masyva su fetch
-    // mysqli_num_rows($rez)>0  - tikrina ar gauta bent viena rezultatu eilute
-    if ($rez && mysqli_num_rows($rez) > 0) {
-        $prekesMasyvas = mysqli_fetch_assoc($rez);
-        return $prekesMasyvas;
-    } else {
-        echo "ERROR: nepavyko paimti prekes, kurios id: $id. " . mysqli_error(getPrisijungimas());
-        return NULL;
-    }
-}
+//function getPrekeMasyvas($id)
+//{
+//    $rez = mysqli_query(getPrisijungimas(), "SELECT * FROM prekes WHERE id = '$id'");
+//    //tikrinam ar paememe duomenis ir jei paememe, tai duomenu  eilute paverciam i masyva su fetch
+//    // mysqli_num_rows($rez)>0  - tikrina ar gauta bent viena rezultatu eilute
+//    if ($rez && mysqli_num_rows($rez) > 0) {
+//        $prekesMasyvas = mysqli_fetch_assoc($rez);
+//        return $prekesMasyvas;
+//    } else {
+//        echo "ERROR: nepavyko paimti prekes, kurios id: $id. " . mysqli_error(getPrisijungimas());
+//        return NULL;
+//    }
+//}
 //$reiksme= getPrekeMasyvas(15);
 //  print_r($reiksme);
 

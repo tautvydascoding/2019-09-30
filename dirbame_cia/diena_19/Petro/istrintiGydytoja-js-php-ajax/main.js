@@ -1,7 +1,9 @@
 function trinti(){
 
 console.log("ar veikia!!!?");
-let ivedamaReiksme = document.getElementById('gyd').value;
+    //NEAISKU AR PAIMAMI VISI  BUTTON TAGAI IS FAILO AR IS EKRANO
+    let ivedamaReiksme = document.getElementsByTagName("button")[0].getAttribute("class");
+// let ivedamaReiksme = document.getElementsByName('13').;
     console.log(ivedamaReiksme);
 $.ajax({
   url: "test.php",

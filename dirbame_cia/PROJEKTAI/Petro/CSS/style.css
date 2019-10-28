@@ -1,0 +1,112 @@
+
+div.template_preke_pagal_kategorija {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 250px;
+}
+
+div.template_preke_pagal_kategorija:hover {
+    border: 1px solid #777;
+}
+
+div.template_preke_pagal_kategorija img {
+    width: 100%;
+    height: auto;
+}
+
+div.pavadinimas {
+     padding: 15px;
+     text-align: center;
+ }
+div.kaina {
+    padding: 15px;
+    text-align: center;
+}
+
+
+div.template_preke {
+    margin: 5px;
+    border: 2px solid #ccc;
+    width: 400px;
+}
+
+div.template_preke img {
+    width: 100%;
+    height: auto;
+}
+
+div.aprasymas {
+    padding: 15px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*body {background-color: grey;}*/
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.navbar-inverse{
+    background-color: plum;
+
+}
+
+li {
+    color: black;
+
+}
+.col-sm-3 {
+    background-color: plum;
+    height: 450px;
+    /*border: 5px solid grey;*/
+}
+.col-sm-9 {
+    background-color: white;
+    height: 450px;
+    /*border: 5px solid grey;*/
+
+}
+.col-sm-12 {
+    background-color: green;
+    height: auto;
+    /*border: 5px solid grey;*/
+
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+
+
+
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

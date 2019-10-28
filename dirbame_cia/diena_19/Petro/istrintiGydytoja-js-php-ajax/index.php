@@ -16,12 +16,60 @@
 
         <h1> Isijunk Inspect-console (mokomes js!) </h1>
 
-        <input id="gyd" type="text" name="vardas" placeholder="gydytojo id">
-        <button type="button" onclick="trinti()">Trinti gydytoja</button>
+<!--        <input id="gyd" type="text" name="13" placeholder="gydytojo id">-->
+        <button type="button" class="16" id="gyd" onclick="trinti()">mygtukas</button>
         <div id='results'> AAA: </div>
 
+<!---->
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>name</th>
+                <th>lname</th>
+
+            </tr>
+
+            <?php
+
+            include ('db_functions.php');
+            $visosPrekesMYSQL_Objektas = getDoctors();
 
 
+            // su fetch paimam pirma MYSQL objekto eilute ir paverciam i tvarkinga pirmos eilutes masyva
+            $preke_Masyvas = mysqli_fetch_assoc($visosPrekesMYSQL_Objektas);
+
+            // su while ciklu atspausdinsim visas prekes
+
+            while ($preke_Masyvas) {
+
+                $prekeCikle = $preke_Masyvas['id'];
+//                        $foteCikle = $preke_Masyvas['foto'];
+
+                echo"<tr>";
+                echo "<td>{$preke_Masyvas['id']} </td> ";
+                echo "<td>{$preke_Masyvas['name']} </td> ";
+                echo "<td>{$preke_Masyvas['lname']} </td> ";
+
+//
+                echo "<td><button type='button' class='{$prekeCikle}' onclick='keisti()' > update </button> </td> ";
+                echo "<td><button type='button' class='{$prekeCikle}' onclick='trinti()' > delete </button> </td> ";
+//                        <button type="button" class="16" id="gyd" onclick="trinti()">mygtukas</button>
+                echo "</tr>";
+                $preke_Masyvas = mysqli_fetch_assoc($visosPrekesMYSQL_Objektas);
+            }
+
+
+            ?>
+            </tr>
+
+
+        </table>
+
+
+
+
+<!--        -->
         <!-- ------------------------ -->
         <script type="text/javascript"  src="libs/bootstrap-4/js/bootstrap.min.js">      </script>
 
