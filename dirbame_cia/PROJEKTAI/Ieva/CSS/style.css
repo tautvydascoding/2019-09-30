@@ -231,6 +231,26 @@ nav.user {
     border-top: none;
   }
 
+  a.Active {
+    background-color: rgba(76, 22, 163, 0.795);
+    border-color: rgb(28, 4, 59);
+    color:white;
+  }
+
+  a.Relaxation {
+    background-color: rgba(30, 99, 93, 0.795);
+    border-color: rgb(3, 46, 42);
+    color:white;
+  }
+
+  a.Random {
+    background-color: rgba(150, 33, 101, 0.795);
+    border-color: rgb(39, 2, 13);
+    color:white;
+  }
+  
+
+
   /* LOGIN TO ADMIN PANEL*/
 
   .loginAdmin, .registerForm {

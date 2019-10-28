@@ -73,7 +73,7 @@
                             $challengesList = mysqli_fetch_assoc($challengeObject);
                             
                             while ($challengesList) {
-                                echo "<a class='btn btn-dark w-25 m-1' href='details-challenge.php?id={$challengesList['id']}'>
+                                echo "<a class='btn btn-secondary w-25 m-1 {$challengesList['tag']}' href='details-challenge.php?id={$challengesList['id']}'>
                                 {$challengesList['title']}
                                 {$challengesList['tag']}
                                 </a>";

@@ -30,7 +30,7 @@
                                         <p class="card-text">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita blanditiis vel facere! Possimus tempore rerum, sed accusamus voluptatem, mollitia dignissimos nobis architecto animi ratione exercitationem ullam quasi magnam.
                                         </p>
-                                        <a href="#!" class="btn btn-primary w-100 startCha">Start</a>
+                                        <a href="page_challenges.php" class="btn btn-primary w-100 startCha">Start</a>
                                     </div>
                             </div>
                         </div>   

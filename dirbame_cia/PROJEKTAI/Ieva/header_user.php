@@ -1,5 +1,5 @@
 <header>
-    <!--Navgation included-->
+    <!--Navigation included-->
     <?php include("nav_user.php");?>
 
     <div class="container">
