@@ -2,6 +2,7 @@
         <footer class="fixed-bottom">
 
             <div class="container-fluid">
+                <div class="container">
                 <div class="row">
                     <div class="col-md-7  text-md-left">
                         <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Challenge Yourself</h5>
@@ -18,7 +19,7 @@
                     </div> <!--Div col for contact us is closed-->
 
                 </div> <!--Div row is closed-->
-
+                </div>
                 <div class="row copyright">
                     <div class="col-md-12 text-center">
                         <div class=""> &copy; 2019. Copyright: Challenge Yourself. </div>

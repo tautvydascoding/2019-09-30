@@ -131,4 +131,17 @@ function getChallenges($count = 9999) {
 //    $challengesList = mysqli_fetch_assoc($challengeObject);
 // }
 
+//challenge list random by tag
 
+function getChallengesActive() {
+    $mySQL_string = "SELECT * FROM challenges 
+                                WHERE tag = 'Active'
+                                ORDER BY RAND()
+                                LIMIT 15
+                                ";
+    $getList = mysqli_query(getConnect(), $mySQL_string);
+    if (!$getList ) {
+        echo "ERROR. My SQl syntax errors: ".mysqli_error(getConnect());
+            return NULL;
+    } return  $getList;
+} 

@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+    if ( isset( $_SESSION['user_id'] ) ) {
+    ?>
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -9,42 +13,44 @@
         <link rel="stylesheet" href="../../CSS/style.css">
     </head>
     <body>
-
         <?php
-       
-        $nr = $_GET['id'];
-        // print_r($nr); //test
-
-        include("../../config/connectToDB.php");
-        include("../../model/img.php");  
-        
-        $img = getIMG($nr);
-        
-        echo "<a href='../details-img.php?id=$nr' class='btn btn-outline-warning'> Back </a><hr>";
-
+            include("../../config/connectToDB.php");
+            include("../../model/img.php");  
+            $nr = $_GET['id'];
+            $img = getIMG($nr);
         ?>
 
-        <img src="../../IMG/<?= $img['name'];?>" placeholder="<?= $img['name'];?>">
-        <h4> <?= $img['name'];?></h4>
-        <hr>
+        <div class="row bg-dark text-white">
+            <div class="col-12">
+                <a href='../details-img.php?id=<?=$nr?>' class='btn btn-outline-warning m-2'> Back </a>
+                <h3 class="text-center"> Image <?= $img['name'];?></h3>
+            </div>
+        </div>
 
-        <form action = "../action-form/imgUpdate.php" method = "get">
-           
-            <label for = "name"> Name: </label>
-            <input name = "name" type = "text" id = "name" value="<?=$img['name']?>">
-            <br>
-
-            <input name = "id" type = "hidden" value="<?= $img['id']?>">
-            <hr>
-            <button type = "Submit" name = "updateIMG" class="btn btn-outline-success">Update</button>
+        <div class="row text-center m-3">
+            <div class="col-12">
+                <img src="../../IMG/Challenges/<?= $img['name'];?>" placeholder="<?= $img['name'];?>" style="height: 250px;">
                 
-        </form>
+                <form action = "../action-form/imgUpdate.php" method = "get">
+                
+                    <label for = "name" class="font-weight-bold"> Name: </label>
+                    <input name = "name" type = "text" id = "name" class="rounded m-1" value="<?=$img['name']?>">
+                    <br>
 
-        <hr>
+                    <input name = "id" type = "hidden" value="<?= $img['id']?>">
+                    <br>
+                    <button type = "Submit" name = "updateIMG" class="btn btn-outline-success m-2 w-25">Update Image Name</button>       
+                </form>
+            </div>
+        </div>
 
-        
         <script type="text/javascript" src='../../libs/jquery-3.4.1.min.js'> </script>
 
         <script type="text/javascript" src='../../JS/main.js'> </script>
     </body>
 </html>
+<? } else {
+        header("Location: ../adminLogin.php");
+        exit;
+    }
+    ?>

@@ -1,5 +1,8 @@
 console.log("Labas :)");
 
+
+
+
 //--------ADMIN PANEL TABS----------------------------------------------
 
 function openInfo(evt, infoName) {

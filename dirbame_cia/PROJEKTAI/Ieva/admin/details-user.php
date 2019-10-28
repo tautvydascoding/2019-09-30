@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    if ( isset( $_SESSION['user_id'] ) ) {
+    ?>
+
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -11,38 +16,51 @@
     <body>
 
         <?php
+            include("../config/connectToDB.php");
+            include("../model/users.php");  
 
-        include("../config/connectToDB.php");
-        include("../model/users.php");  
-
-        $nr = $_GET['id'];
-        // print_r($id); //test
-        $user = getUser($nr);
-        // print_r($user);//test
+            $nr = $_GET['id'];
+            $user = getUser($nr);
         ?>
 
-        <a href='adminPanel.php' class='btn btn-outline-warning'> Back </a>
-        <hr/>
-
-        <div class="userDetails">
-            <h3> <?= $user['user_name'];?> </h3>
-            <h4> Email: <?= $user['email']; ?> </h4>
-            <h4> Password: <?= $user['password']; ?> </h4>
-            <h4> Name: <?= $user['name']; ?> </h4>
-            <h4> Last Name: <?= $user['lname']; ?> </h4>
-            <h4> Rights: <?= $user['rights']; ?> </h4>
-            <h4> Registration time: <?= $user['registration_time']; ?> </h4>
-            <h4> Last login: <?= $user['last_login']; ?> </h4>
+        <div class="row bg-dark text-white">
+            <div class="col-12">
+                <a href='adminPanel.php' class='btn btn-outline-warning m-2'> Back </a>
+                <h3 class="text-center"> User Details: </h3>
+            </div>
         </div>
-        <hr/>
         
-        <?php 
-
-            echo "<a href='forms/userUpdateForm.php?id={$user['id']}' class='btn btn-outline-primary'> Update </a>";
-            echo "<a href='action-form/userDelete.php?id={$user['id']}' class='btn btn-outline-danger'> Delete </a>";
-            
-        ?>
-
+        <div class="row text-center m-3">
+            <div class="col-12">
+                <div class="userDetails">
+                    <h3> <?= $user['user_name'];?> </h3>
+                    <h4> Email: <span class="text-primary"><?= $user['email']; ?></span></h4>
+                    <h4> Password: <span class="text-primary"><?=$user['password']; ?></span> </h4>
+                    <h4> Name: <span class="text-primary"><?= $user['name']; ?></span></h4>
+                    <h4> Last Name: <span class="text-primary"><?= $user['lname']; ?></span> </h4>
+                    <h4> Rights: <span class="text-primary"><?= $user['rights']; ?></span> </h4>
+                    <h4> Registration time: <span class="text-primary"><?= $user['registration_time']; ?></span> </h4>
+                    <h4> Last login: <span class="text-primary"><?= $user['last_login']; ?></span> </h4>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <?php 
+                    echo "<a href='forms/userUpdateForm.php?id={$user['id']}' class='btn btn-outline-primary m-2 w-25'> Update </a>";
+                ?>
+            </div>  
+            <div class="col-12 d-flex justify-content-center">
+                <?php echo "<a href='action-form/userDelete.php?id={$user['id']}' class='btn btn-outline-danger m-1 w-25'> Delete </a>";
+                ?>
+            </div>
+        </div>
 
     </body>
 </html>
+<? } else {
+        header("Location: adminLogin.php");
+        exit;
+    }
+    ?>

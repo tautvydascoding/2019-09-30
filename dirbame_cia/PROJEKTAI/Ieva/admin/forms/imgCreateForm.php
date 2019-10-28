@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+    if ( isset( $_SESSION['user_id'] ) ) {
+    ?>
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -9,31 +13,39 @@
         <link rel="stylesheet" href="../../CSS/style.css">
     </head>
     <body>
+        <?php
+            include("../../config/connectToDB.php");
+            include("../../model/img.php");    
+        ?>
 
-<?php
-       
-        include("../../config/connectToDB.php");
-        include("../../model/img.php");    
+        <div class="row bg-dark text-white">
+            <div class="col-12">
+                <a href='../adminPanel.php' class='btn btn-outline-warning m-2'> Back </a>
+                <h3 class="text-center"> Create new image </h3>
+            </div>
+        </div>
 
-        echo "<a href='../adminPanel.php' class='btn btn-outline-warning'> Back </a><hr>";
-?>
+        <div class="row text-center m-3">
+            <div class="col-12">
+                <form action = "../action-form/imgCreate.php" method = "get">
+                
+                    <label for = "name" class="font-weight-bold"> Title: </label>
+                    <input name = "name" type = "text" id = "name" class="rounded m-1" placeholder="Enter img name..">
+                    <br>
 
-        <h3> Create new image</h3>
+                    <button type = "Submit" name = "createIMG" class="btn btn-outline-success m-3 w-25">Create Image</button>
 
-        <form action = "../action-form/imgCreate.php" method = "get">
-           
-            <label for = "name"> Title: </label>
-            <input name = "name" type = "text" id = "name" placeholder="Enter img name..">
-            <br>
-
-            <button type = "Submit" name = "createIMG" class="btn btn-outline-success">Create</button>
-
-        </form>
-
-        <hr>
+                </form>
+            </div>
+        </div>
 
         <script type="text/javascript" src='../../libs/jquery-3.4.1.min.js'> </script>
 
         <script type="text/javascript" src='../../JS/main.js'> </script>
     </body>
 </html>
+<? } else {
+        header("Location: ../adminLogin.php");
+        exit;
+    }
+    ?>

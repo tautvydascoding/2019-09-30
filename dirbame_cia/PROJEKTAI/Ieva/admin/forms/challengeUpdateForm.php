@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    if ( isset( $_SESSION['user_id'] ) ) {
+    ?>
+
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -11,56 +16,176 @@
     <body>
         <?php
        
-        $nr = $_GET['id'];
-        // print_r($nr); //test
-        include("../../config/connectToDB.php");
-        include("../../model/challenges.php");   
-        
-        $user = getUser($nr);
-        // print_r( $user ); //test
-        echo "<a href='details-challenge.php?id=$nr' class='btn btn-outline-warning'> Back </a><hr>";
-
-        ?>
-        
-        <h3> <?= $user['user_name'];?></h3>
-
-        <form action = "userUpdate.php" method = "get">
-           
-            <label for = "user_name"> User Name: </label>
-            <input name = "user_name" type = "text" id = "user_name" value="<?=$user['user_name']?>">
-            <br>
+            $nr = $_GET['id'];
+            // print_r($nr); //test
+            include("../../config/connectToDB.php");
+            include("../../model/challenges.php");
+            include('../../model/challenge_images.php');  
+            include("../../model/img.php");
             
-            <label for = "email"> Email: </label>
-            <input name = "email" type = "email" id = "email" value="<?=$user['email']?>">
-            <br>
+            $challenge = getChallenge($nr);
+    
+        ?>
 
-            <label for = "name"> Name: </label>
-            <input name = "name" type = "text" id = "name" value="<?=$user['name']?>">
-            <br>
+         <div class="row bg-dark text-white">
+            <div class="col-12">
+                <a href='../details-challenge.php?id=<?=$nr?>' class='btn btn-outline-warning m-2'> Back </a>
+                <h3 class="text-center"> Challenge <?= $challenge['title'];?></h3>
+            </div>
+        </div>
 
-            <label for = "lname"> Last Name: </label>
-            <input name = "lname" type = "text" id = "lname" value="<?=$user['lname']?>">
-            <br>
+        <div class="row text-center m-3">
+            <div class="col-12">
+                <form action = "../action-form/challengeUpdate.php" method = "get">
+                    <label for = "title" class="font-weight-bold"> Title: </label>
+                    <input name = "title" type = "text" id = "title" class="rounded m-1" value='<?= $challenge['title'];?>'>
+                    <br>
+                    <textarea name="description" id = "description" class="rounded m-1" rows="10" cols="100" placeholder="Enter challenge description.."><?= $challenge['description'];?></textarea>
+                    <br>
 
-            <label for = "rights"> Rights: </label>
-            <select name = "rights" id = "rights">
-                <option value="default">Default</option>
-                <option value="admin">Admin</option>
-            </select>
+                    <!--checked="checked" ideti kaip atribute kad butu pazymetas by default-->
+                    <label for = "tag" class="font-weight-bold"> Tag: </label>
+                    
+                        <input type="radio" name="tag" id="Active" value="Active" <?php if ($challenge['tag']=="Active"){echo "checked='checked'";} ?> required="required">
+                        <label for = "Active"> Active </label>
+                        
+                        <input type="radio" name="tag" id="Relaxation" value="Relaxation" <?php if ($challenge['tag']=="Relaxation"){echo "checked='checked'";} ?> required="required">
+                        <label for = "Relaxation"> Relaxation </label>
 
-            <input name = "id" type = "hidden" value="<?= $user['id']?>">
-            <hr>
-            <button type = "Submit" name = "updateUser" class="btn btn-outline-success">Update</button>
+                        <input type="radio" name="tag" id="Random" value="Random"<?php if ($challenge['tag']=="Random"){echo "checked='checked'";} ?> required="required">
+                        <label for = "Random"> Random </label>   
+                    <br>
+
+                    <label for = "imgID1" class="font-weight-bold"> Images for challenges: </label>
+                    <select name = "imgID1" id = "imgID1">
+                        <option value='none'>none</option>
+                        <?php   
+                                $imgObject = getIMGlist();
+
+                                $imgList = mysqli_fetch_assoc($imgObject);
+                                
+                                $selected='';
+                                $arRadomCHIMG=false;
+
+                                
+                                while ($imgList) {
+
+                                    $IMGforChallengeObject = getImagesforChallenge($nr);
+
+                                    $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
+
+                                    echo $IMGforChallengeList['id']."<br>";
+
+                                    while ($IMGforChallengeList &&  $arRadomCHIMG==false ) {
+
+                                        if ($imgList['id']==$IMGforChallengeList['id']) {
+                                            $selected = "selected='selected'";
+                                            $arRadomCHIMG = true;
+                                            break;
+                                        }
+                                        
+                                        $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
+                    
+                                    }
+                                    echo "<option value='{$imgList['id']}' $selected>{$imgList['name']}</option>";
+                                    $selected = "";
+                                    $imgList = mysqli_fetch_assoc($imgObject);                            
+                                }
+
+                        ?>                 
+                    </select>
+
+                    <select name = "imgID2" id = "imgID2">
+                        <option value='none'>none</option>
+                        <?php  
+                            $imgObject = getIMGlist();
+
+                            $imgList = mysqli_fetch_assoc($imgObject);
+                            
+                            $selected='';
+                            $arRadomCHIMG=false;
+                            while ($imgList) {
+
+                                $IMGforChallengeObject = getImagesforChallenge($nr);
+
+                                $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
+                                $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
+                                
+
+                                echo $IMGforChallengeList['id']."<br>";
+
+                                while ($IMGforChallengeList &&  $arRadomCHIMG==false ) {
+
+                                    if ($imgList['id']==$IMGforChallengeList['id']) {
+                                        $selected = "selected='selected'";
+                                        $arRadomCHIMG = true;
+                                        break;
+                                    }
+                                    
+                                    $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
                 
+                                }
+                                echo "<option value='{$imgList['id']}' $selected>{$imgList['name']}</option>";
+                                $selected = "";
+                                $imgList = mysqli_fetch_assoc($imgObject);                            
+                            }
+                                
+                        ?>                 
+                    </select>
 
-        </form>
+                    <select name = "imgID3" id = "imgID3">
+                        <option value='none'>none</option>
+                        <?php  
+                            $imgObject = getIMGlist();
 
-        <br>
-        <hr>
+                            $imgList = mysqli_fetch_assoc($imgObject);
+                            
+                            $selected='';
+                            $arRadomCHIMG=false;
+                            while ($imgList) {
 
-        
+                                $IMGforChallengeObject = getImagesforChallenge($nr);
+
+                                $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
+                                $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
+                                $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
+
+                                echo $IMGforChallengeList['id']."<br>";
+
+                                while ($IMGforChallengeList &&  $arRadomCHIMG==false ) {
+
+                                    if ($imgList['id']==$IMGforChallengeList['id']) {
+                                        $selected = "selected='selected'";
+                                        $arRadomCHIMG = true;
+                                        break;
+                                    }
+                                    
+                                    $IMGforChallengeList = mysqli_fetch_assoc($IMGforChallengeObject);
+                
+                                }
+                                echo "<option value='{$imgList['id']}' $selected>{$imgList['name']}</option>";
+                                $selected = "";
+                                $imgList = mysqli_fetch_assoc($imgObject);                            
+                            }
+                        ?>                 
+                    </select>
+
+                    <input name = "id" type = "hidden" value="<?= $challenge['id'];?>">
+                    <br>
+                    <button type = "Submit" name = "updateChallenge" class="btn btn-outline-success m-2 w-25">Update Challenge</button>
+
+                </form>
+
+            </div>
+        </div>
+
         <script type="text/javascript" src='../../libs/jquery-3.4.1.min.js'> </script>
 
         <script type="text/javascript" src='../../JS/main.js'> </script>
     </body>
 </html>
+<? } else {
+        header("Location: ../adminLogin.php");
+        exit;
+    }
+    ?>
