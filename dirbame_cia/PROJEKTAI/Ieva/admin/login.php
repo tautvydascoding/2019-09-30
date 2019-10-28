@@ -7,7 +7,7 @@ $email = $_POST['email'];
 //echo $password." ".$email;//test
 
 //i DB uzkoduotas email lyginimui
-$cryptedEmail = mysqli_real_escape_string(getConnect(), $email );
+$cryptedEmail = htmlspecialchars(trim($email), ENT_QUOTES);
 
 // echo $cryptedEmail;//test
 
