@@ -19,20 +19,21 @@
       <?php
 
       include_once('db-functions.php');
-?>
+      ?>
 
-        <div class="container">
+<div class="container">
 
 
-<div class="stulpelio container" style="background-color:white;">
-<div class="row">
-  <div class="col-sm-12 pasirod" style="background-color:#F9F9F9;">
+  <div class="stulpelio container" style="background-color:white;">
+      <div class="row">
+        <div class="col-sm-12 pasirod" style="background-color:#F9F9F9;">
 
-    <p><b><i>Būsimi renginiai</i></b>
+          <p><b><i>Būsimi renginiai</i></b>
 
-    </p>
-    <br />
-<div class="row">
+          </p>
+          <br />
+
+      <div class="row">
 
 
     <?php
@@ -41,41 +42,45 @@
 
   $renginysArray = mysqli_fetch_assoc($visirenginiaiObjektas);
   while ($renginysArray){
-if ($renginysArray['metai']>=date("Y-m-d")){
+    if ($renginysArray['metai']>=date("Y-m-d")){
 ?>
-<div class="col-sm-2">
-  <?php echo "{$renginysArray['metai']}" ?>
+  <div class="col-sm-2">
+    <?php echo "{$renginysArray['metai']}" ?>
   </div>
+
   <div class="col-sm-1">
     <?php echo "{$renginysArray['valanda']}" ?>
-</div>
-<div class="col-sm-3">
-  <?php echo "{$renginysArray['vieta']}" ?>
-</div>
-<div class="col-sm-3">
-  <?php echo "<a href='koncerto-aprasymas.php?nr={$renginysArray['id']}'> {$renginysArray['pavadinimas'] } </a>";?>
-</div>
+  </div>
+
+  <div class="col-sm-3">
+    <?php echo "{$renginysArray['vieta']}" ?>
+  </div>
+
+  <div class="col-sm-3">
+    <?php echo "<a href='koncerto-aprasymas.php?nr={$renginysArray['id']}'> {$renginysArray['pavadinimas'] } </a>";?>
+  </div>
+
   <div class="col-sm-2">
 
- <button type="button"><a href="<?php  echo $renginysArray['bilietai']?>">Pirkti bilietus</a></button>
-</div>
-<div class="col-sm-1">
+    <button type="button"><a href="<?php  echo $renginysArray['bilietai']?>">Pirkti bilietus</a></button>
+  </div>
 
-</div>
-<?php } ?>
+  <div class="col-sm-1">
+
+  </div>
+<?php                                           } ?>
 </br>
   <?php $renginysArray = mysqli_fetch_assoc($visirenginiaiObjektas);
-    }
+                            }
 
     ?>
     </br>
 </div>
 
   </br>
-    </br>
-<p><b><i>Praėję renginiai</i></b>
+  </br>
+<p><b><i>Praėję renginiai</i></b></p>
 
-</p>
 <br />
 <div class="row">
 
@@ -85,28 +90,28 @@ if ($renginysArray['metai']>=date("Y-m-d")){
 $visirenginiaiObjektas = visirenginiai();
 
 $renginysArray = mysqli_fetch_assoc($visirenginiaiObjektas);
-while ($renginysArray){
-if ($renginysArray['metai']<date("Y-m-d")){
+  while ($renginysArray){
+      if ($renginysArray['metai']<date("Y-m-d")){
 ?>
-<div class="col-sm-2">
-<?php echo "{$renginysArray['metai']}" ?>
-</div>
-<div class="col-sm-1">
-<?php echo "{$renginysArray['valanda']}" ?>
-</div>
-<div class="col-sm-3">
-<?php echo "{$renginysArray['vieta']}" ?>
-</div>
-<div class="col-sm-3">
-<?php echo "<a href='koncerto-aprasymas.php?nr={$renginysArray['id']}'> {$renginysArray['pavadinimas'] } </a>";?>
-</div>
-<div class="col-sm-2">
+  <div class="col-sm-2">
+    <?php echo "{$renginysArray['metai']}" ?>
+  </div>
+  <div class="col-sm-1">
+    <?php echo "{$renginysArray['valanda']}" ?>
+  </div>
+  <div class="col-sm-3">
+    <?php echo "{$renginysArray['vieta']}" ?>
+  </div>
+  <div class="col-sm-3">
+    <?php echo "<a href='koncerto-aprasymas.php?nr={$renginysArray['id']}'> {$renginysArray['pavadinimas'] } </a>";?>
+  </div>
+  <div class="col-sm-2">
 
 <!-- <button type="button"><a href="<?php  echo $renginysArray['bilietai']?>">Pirkti bilietus</a></button> -->
-</div>
-<div class="col-sm-1">
+  </div>
+  <div class="col-sm-1">
 
-</div>
+  </div>
 <?php } ?>
 </br>
 <?php $renginysArray = mysqli_fetch_assoc($visirenginiaiObjektas);
@@ -117,25 +122,7 @@ if ($renginysArray['metai']<date("Y-m-d")){
 </br>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   </div>
-
-
 
     </div>
 </div>

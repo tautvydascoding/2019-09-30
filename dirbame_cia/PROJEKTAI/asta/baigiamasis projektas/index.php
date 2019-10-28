@@ -13,14 +13,15 @@
       <?php
 
       include_once('db-functions.php');
-?>
+      ?>
 
         <div class="container">
 
           <?php
 
           include_once('navigacija.php');
-    ?>
+          ?>
+
 <div class="stulpelio container" style="background-color:white;">
 <div class="row">
   <div class="col pagr text-center" style="background-color:white;">
@@ -53,9 +54,7 @@
 
 include_once('naujienlaiskiouzsakymas.php');
 ?>
-<?php
 
- ?>
 
 
         <script type="text/javascript" src='libs/jquery-3.4.1.min.js'> </script>

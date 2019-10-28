@@ -38,6 +38,7 @@ function issaugotiZinute($vardas, $elpastas, $zinute){
   }
 
 }
+//funkcija, kad renginiu puslapyje atspausdintu info apie visus renginius
 function visirenginiai( $kiekis = 100){
 
   $rezultataiMySQLObjektas = mysqli_query(getPrisijungimas(),"SELECT * FROM renginiai INNER JOIN koncerto_apras ON renginiai.aprasymo_id = koncerto_apras.id ORDER BY renginiai.metai, renginiai.valanda  ");
