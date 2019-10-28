@@ -19,7 +19,7 @@ print_r($target_file);
 if (move_uploaded_file($_FILES['file']["tmp_name"][$i], $target_file)) {
 echo "The file ". basename( $_FILES['file']['name'][$i]). " has been uploaded.";
 } else {
-echo "Sorry, there was an error uploading your file.";
+//echo "Sorry, there was an error uploading your file.";
 }
 // Check if file already exists
 if (file_exists($target_file)) {
@@ -40,7 +40,7 @@ if (file_exists($target_file)) {
 issaugotinaujasnuotraukas($nuotrauka1, $nuotrauka2, $nuotrauka3, $nuotrauka4, $nuotrauka5, $nuotraukupasirinkimas );
 
 ?>
-<!-- <h2>Jūs sėkmingai užregistravote naują renginį</h2> -->
+<h2>Jūs sėkmingai įkėlėte nuotraukas</h2> -->
 <?php
-//header('refresh:3; url=admin.php');
+header('refresh:3; url=admin.php');
 ?>

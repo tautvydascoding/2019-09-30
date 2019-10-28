@@ -40,7 +40,7 @@ function issaugotiZinute($vardas, $elpastas, $zinute){
 }
 function visirenginiai( $kiekis = 100){
 
-  $rezultataiMySQLObjektas = mysqli_query(getPrisijungimas(),"SELECT * FROM renginiai INNER JOIN koncerto_apras ON renginiai.aprasymo_id = koncerto_apras.id ");
+  $rezultataiMySQLObjektas = mysqli_query(getPrisijungimas(),"SELECT * FROM renginiai INNER JOIN koncerto_apras ON renginiai.aprasymo_id = koncerto_apras.id ORDER BY renginiai.metai, renginiai.valanda  ");
 //pasitikrinam ar grizo kazkas is DB,  kad zinot ar nepadarem klaidu
   if ($rezultataiMySQLObjektas){  //mysqli_num_rows($rezultataiMySQLObjektas) galima tikrinti ar gavome duomenu, sia komanda reiketu ikelti i if vidu su dar vienu if
 

@@ -27,23 +27,11 @@
 <div class="stulpelio container" style="background-color:white;">
 <div class="row">
   <div class="col-sm-12 pasirod" style="background-color:#F9F9F9;">
-    <!-- Ikeliame tabus, kad butu galima pasirinkti koki sarasa issivesti -->
-    <!-- <div class="tab">
-      <button class="tablinks" onclick="rusiuotisarasa(event, 'busimi')">Būsimi pasirodymai</button>
-      <button class="tablinks" onclick="rusiuotisarasa(event, 'praeje')">Praėję pasirodymai</button>
 
-    </div> -->
+    <p><b><i>Būsimi renginiai</i></b>
 
-    <!-- <div id="busimi" class="tabcontent">
-      <h3>Būsimi renigniai</h3>
-      <p>London is the capital city of England.</p>
-    </div>
-
-    <div id="praeje" class="tabcontent">
-      <h3>Praėję renginiai</h3>
-      <p>Paris is the capital of France.</p>
-    </div> -->
-
+    </p>
+    <br />
 <div class="row">
 
 
@@ -53,7 +41,7 @@
 
   $renginysArray = mysqli_fetch_assoc($visirenginiaiObjektas);
   while ($renginysArray){
-    
+if ($renginysArray['metai']>=date("Y-m-d")){
 ?>
 <div class="col-sm-2">
   <?php echo "{$renginysArray['metai']}" ?>
@@ -74,16 +62,76 @@
 <div class="col-sm-1">
 
 </div>
-
+<?php } ?>
 </br>
   <?php $renginysArray = mysqli_fetch_assoc($visirenginiaiObjektas);
     }
 
-
     ?>
     </br>
 </div>
-<!-- <a href='renginiai.php?nr=$renginysArray['id']'> -->
+
+  </br>
+    </br>
+<p><b><i>Praėję renginiai</i></b>
+
+</p>
+<br />
+<div class="row">
+
+
+<?php
+
+$visirenginiaiObjektas = visirenginiai();
+
+$renginysArray = mysqli_fetch_assoc($visirenginiaiObjektas);
+while ($renginysArray){
+if ($renginysArray['metai']<date("Y-m-d")){
+?>
+<div class="col-sm-2">
+<?php echo "{$renginysArray['metai']}" ?>
+</div>
+<div class="col-sm-1">
+<?php echo "{$renginysArray['valanda']}" ?>
+</div>
+<div class="col-sm-3">
+<?php echo "{$renginysArray['vieta']}" ?>
+</div>
+<div class="col-sm-3">
+<?php echo "<a href='koncerto-aprasymas.php?nr={$renginysArray['id']}'> {$renginysArray['pavadinimas'] } </a>";?>
+</div>
+<div class="col-sm-2">
+
+<!-- <button type="button"><a href="<?php  echo $renginysArray['bilietai']?>">Pirkti bilietus</a></button> -->
+</div>
+<div class="col-sm-1">
+
+</div>
+<?php } ?>
+</br>
+<?php $renginysArray = mysqli_fetch_assoc($visirenginiaiObjektas);
+}
+
+
+?>
+</br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </div>
 
