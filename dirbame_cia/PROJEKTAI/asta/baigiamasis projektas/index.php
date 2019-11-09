@@ -5,22 +5,23 @@
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet"  href="libs/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- mano css failas visada pats zemiausias -->
         <link rel="stylesheet"  href="css/style.css">
     </head>
     <body>
-      <h2></h2>
+
       <?php
 
       include_once('db-functions.php');
-      ?>
+
+
+      include_once('navigacija.php');
+
+?>
 
         <div class="container">
 
-          <?php
-
-          include_once('navigacija.php');
-          ?>
 
 <div class="stulpelio container" style="background-color:white;">
 <div class="row">
@@ -39,7 +40,7 @@
   AKVILĖ GARBENČIŪTĖ
 </h1>
 </p>
-<button type="button" class="btn btn-light btn-lg"><a href="pasirodymai.php">Išgirskite gyvai</a></button>
+<button type="button" class="btn btn-light btn-lg "><a href="pasirodymai.php">Išgirskite gyvai</a></button>
 
 
   </div>

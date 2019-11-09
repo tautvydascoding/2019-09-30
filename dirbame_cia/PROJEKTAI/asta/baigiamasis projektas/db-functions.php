@@ -38,10 +38,12 @@ function issaugotiZinute($vardas, $elpastas, $zinute){
   }
 
 }
-//funkcija, kad renginiu puslapyje atspausdintu info apie visus renginius
 function visirenginiai( $kiekis = 100){
 
-  $rezultataiMySQLObjektas = mysqli_query(getPrisijungimas(),"SELECT * FROM renginiai INNER JOIN koncerto_apras ON renginiai.aprasymo_id = koncerto_apras.id ORDER BY renginiai.metai, renginiai.valanda  ");
+  $rezultataiMySQLObjektas = mysqli_query(getPrisijungimas(),"SELECT * FROM renginiai INNER JOIN koncerto_apras
+  ON renginiai.aprasymo_id = koncerto_apras.id
+  WHERE renginiai.metai >= CURDATE()
+  ORDER BY renginiai.metai ");
 //pasitikrinam ar grizo kazkas is DB,  kad zinot ar nepadarem klaidu
   if ($rezultataiMySQLObjektas){  //mysqli_num_rows($rezultataiMySQLObjektas) galima tikrinti ar gavome duomenu, sia komanda reiketu ikelti i if vidu su dar vienu if
 
@@ -51,6 +53,23 @@ function visirenginiai( $kiekis = 100){
   return NULL;
 }
 }
+
+function visipraejerenginiai( $kiekis = 100){
+
+  $rezultataiMySQLObjektas = mysqli_query(getPrisijungimas(),"SELECT * FROM renginiai INNER JOIN koncerto_apras
+  ON renginiai.aprasymo_id = koncerto_apras.id
+  WHERE renginiai.metai < CURDATE()
+  ORDER BY renginiai.metai DESC");
+//pasitikrinam ar grizo kazkas is DB,  kad zinot ar nepadarem klaidu
+  if ($rezultataiMySQLObjektas){  //mysqli_num_rows($rezultataiMySQLObjektas) galima tikrinti ar gavome duomenu, sia komanda reiketu ikelti i if vidu su dar vienu if
+
+      return $rezultataiMySQLObjektas;
+} else {
+  echo "Duomenu negavau  $nr".mysqli_error(getPrisijungimas());
+  return NULL;
+}
+}
+
 
 //funkcija, kad vieno renginio puslapyje atspausdintu info apie rengini
 function getRenginys($nr){

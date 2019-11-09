@@ -15,7 +15,7 @@
     include_once('navigacija.php');
       include_once('db-functions.php');
 ?>
-  <h2 class="galerijah2"><br /><br /><br /><br /><br /><br />
+  <h2 class="galerijah2" style="color:#F35211"><br /><br /><br /><br /><br /><br />
     <i>Koncertų akimirkos</i></h2>
         <div class="container">
 

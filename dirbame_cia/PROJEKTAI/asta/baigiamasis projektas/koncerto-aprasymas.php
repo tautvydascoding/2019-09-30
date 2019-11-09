@@ -76,8 +76,8 @@
       ?>
         </br>
           </br>
-          
-  <button type="button"><a href="pasirodymai.php">Grįžti</a></button>
+
+  <button type="button"><a href="pasirodymai.php">&nbsp Grįžti &nbsp</a></button>
 </div>
 
 </div>

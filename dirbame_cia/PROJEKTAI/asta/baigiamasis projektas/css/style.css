@@ -9,6 +9,25 @@ background-image: url("img/akvile2.jpg");
   padding-right: 0;
       padding-left: 0; }
 
+/*spalva pasirinktam punktui*/
+a{
+  color: black;
+}
+a:hover {
+        color: #F35211;
+      }
+.nav-link{
+  color: black;
+}
+/* .fixed{
+  position: fixed;
+  top: 2px;
+  } */
+.btn-lg{
+  color: black;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
 /*naudoju index failo placiajam stulpeliui*/
 .pagr{
     height: 525px;
@@ -17,11 +36,12 @@ background-image: url("img/akvile2.jpg");
 /*naudoju pagrindinio puslapio uzrasui*/
 .pradinish1{
   font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #F35211;
 }
 .pradinish2 {
     font-size: 20px;
      font-family: "Comic Sans MS", italic, sans-serif;
-    color: grey;
+    color: black;
 }
 /* Klase index failo nuotraukai*/
 .responsive {
@@ -33,22 +53,25 @@ background-image: url("img/akvile2.jpg");
 .pasirodymaih2{
   height: 300px;
   width: 100%;
-  background-image: url('../img/akvile-kolez2.jpg');
-
-}
-
-.apieh2{
-  height: 300px;
-  width: 100%;
-  background-image: url('../img/akvile-kolez1.jpg');
+  background-image: url('../img/akvile7.jpg');
 
 }
 .galerijah2{
 
  /* margin-left: 100px; */
-   height: 260px;
+   height: 300px;
  width: 100%;
- background-image: url('../img/koncertusales.jpg');
+ background-image: url('../img/akvile8.jpg');
+}
+.apieh2{
+  height: 280px;
+  width: 100%;
+  color: #F35211;
+  background-image: url('../img/akvile-kolez3.jpg');
+
+}
+.kontaktaih1{
+  color: #F35211;
 }
 
 .apacia{
@@ -57,13 +80,13 @@ background-image: url("img/akvile2.jpg");
     margin-top: 10px;
   align-content: center;
 }
-.pasirod{
+/* .pasirod{
   height: 600px;
 
-}
+} */
 
 .apie{
-  height: 500px;
+
 
 }
 .apiespauda{
@@ -74,8 +97,8 @@ background-image: url("img/akvile2.jpg");
 /* Style the tab */
 .tab {
   overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+  border: none;
+  /* background-color: #f1f1f1; */
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -83,26 +106,28 @@ background-image: url("img/akvile2.jpg");
   background-color: inherit;
   float: left;
   border: none;
+  /* border-bottom: 5px solid red; */
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
+  padding: 8px 10px;
   transition: 0.3s;
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: #ddd;
+  background-color: #F9F9F9;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: #ccc;
+  /* background-color: #EAECEE; */
+  border-bottom: 5px solid #F35211;
 }
 
 /* Style the tab content */
-.tabcontent {
+/* .tabcontent {
   display: none;
   padding: 6px 12px;
-  border: 1px solid #ccc;
+  border: none;
   border-top: none;
-}
+} */

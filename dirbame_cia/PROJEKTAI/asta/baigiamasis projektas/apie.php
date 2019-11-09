@@ -39,10 +39,7 @@
        2012m. už Rouzės vaidmenį muzikiniame reviu „Zygfrydo Vernerio kabaretas“ (rež. K.St.Jakštas, Kauno Valst.muzikinis teatras) buvo apdovanota Auksiniu scenos kryžiumi. <br />
        Akvilė yra įvairių muzikinių projektų dalyvė, iniciatorė ir organizatorė
   </p>
-<br />
-<br />
-<br />
-<br />
+<br /><br /><br /><br />
 
 <hr />
 <p>
@@ -55,7 +52,7 @@
     </div>
 <div class="row">
 
-<div class="col-sm-5 apiespauda" style="background-color:white">
+<div class="col-xs-12 col-sm-5 col-md-5 apiespauda" style="background-color:white">
   <a href="http://ukininkopatarejas.lt/akvile-garbenciute-buciene-manyje-yra-mistiskumo/">
   <img src="img/iskarpos2.jpg" ></a>
 <hr />
@@ -65,7 +62,7 @@
 
 </div>
 
-  <div class="col apiespauda" style="background-color:white;">
+  <div class="col-xs-12 col-sm-5 col-md-5 apiespauda" style="background-color:white;">
 
   <a href="https://kamane.lt/Kamanes-tekstai/Scena/Dainininkes-sokejos-aktores-vienaty-Akvile-Garbenciute-Buciene">
   <img src="img/iskarpa.jpg" >
