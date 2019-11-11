@@ -6,11 +6,12 @@
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet"  href="libs/bootstrap/css/bootstrap.min.css">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- mano css failas visada pats zemiausias -->
         <link rel="stylesheet"  href="css/style.css">
     </head>
     <body>
-
+      <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
       <?php
 
       include_once('db-functions.php');
@@ -60,14 +61,10 @@
          </form>
 
 
-
-
-
-
     </div>
 </div>
-<?php
 
+<?php
 include_once('naujienlaiskiouzsakymas.php');
 ?>
 

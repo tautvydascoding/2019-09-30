@@ -12,9 +12,8 @@
     <body>
       <h1>koncerto aprašymas</h1>
       <?php
-
       include_once('db-functions.php');
-?>
+      ?>
 
         <div class="container">
 
@@ -27,10 +26,8 @@
     include_once('db-functions.php');
 
     $numeris = $_GET['nr'];
-    //print_r($numeris);  //renginio id DBazeje
 
   $visirenginiaiObjektas = getRenginys($numeris);
-
   $renginysArray = mysqli_fetch_assoc($visirenginiaiObjektas);
   while ($renginysArray){
 ?>
@@ -47,11 +44,8 @@
 </br>
   <?php $renginysArray = mysqli_fetch_assoc($visirenginiaiObjektas);
 
-    }
+    }?>
 
-
-
-?>
 </div>
 <div class="row">
 <div class="col-sm-12 " style="background-color:#F9F9F9;">
@@ -63,19 +57,16 @@
 
     $renginysArray = mysqli_fetch_assoc($visirenginiaiObjektas);
     while ($renginysArray){
-    if ($renginysArray['metai']>=date("Y-m-d")){
+   if ($renginysArray['metai']>=date("Y-m-d")){
     echo "{$renginysArray['metai']} {$renginysArray['valanda']} {$renginysArray['vieta']}";
-  }
+   }
     ?>
 
     </br>
     <?php $renginysArray = mysqli_fetch_assoc($visirenginiaiObjektas);
-      }
-
-
-      ?>
+      }   ?>
         </br>
-          </br>
+        </br>
 
   <button type="button"><a href="pasirodymai.php">&nbsp Grįžti &nbsp</a></button>
 </div>
@@ -83,20 +74,10 @@
 </div>
 </div>
 
-</p>
-</p>
-</p>
-
   </div>
 
 
-    </div>
-</div>
-
-
-
-
-        <script type="text/javascript" src='libs/jquery-3.4.1.min.js'> </script>
+            <script type="text/javascript" src='libs/jquery-3.4.1.min.js'> </script>
         <!-- mano js failas visada pats zemiausias -->
         <script type="text/javascript" src='main.js'> </script>
     </body>

@@ -93,8 +93,7 @@ function getRenginioVietos($nr){
   $rezultataiMySQLObjektas = mysqli_query(getPrisijungimas(),"SELECT * FROM renginiai
   INNER JOIN koncerto_apras ON renginiai.aprasymo_id = koncerto_apras.id
   INNER JOIN nuotraukos ON renginiai.aprasymo_id = nuotraukos.koncerto_id
-  WHERE aprasymo_id = '$nr'
-   ");
+  WHERE aprasymo_id = '$nr'  ");
 //pasitikrinam ar grizo kazkas is DB,  kad zinot ar nepadarem klaidu
   if ($rezultataiMySQLObjektas){  //mysqli_num_rows($rezultataiMySQLObjektas) galima tikrinti ar gavome duomenu, sia komanda reiketu ikelti i if vidu su dar vienu if
 

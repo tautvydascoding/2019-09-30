@@ -6,18 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet"  href="libs/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!-- mano css failas visada pats zemiausias -->
+        <!-- mano css failas  -->
         <link rel="stylesheet"  href="css/style.css">
     </head>
     <body>
-
+      <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
       <?php
-
       include_once('db-functions.php');
-
-
       include_once('navigacija.php');
-
 ?>
 
         <div class="container">
@@ -59,7 +55,7 @@ include_once('naujienlaiskiouzsakymas.php');
 
 
         <script type="text/javascript" src='libs/jquery-3.4.1.min.js'> </script>
-        <!-- mano js failas visada pats zemiausias -->
+
         <script type="text/javascript" src='main.js'> </script>
     </body>
 </html>
