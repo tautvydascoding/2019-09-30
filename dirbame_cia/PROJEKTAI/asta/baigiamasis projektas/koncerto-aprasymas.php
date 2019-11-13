@@ -10,7 +10,8 @@
         <link rel="stylesheet"  href="css/style.css">
     </head>
     <body>
-      <h1>koncerto aprašymas</h1>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+      <h1>Koncerto aprašymas</h1>
       <?php
       include_once('db-functions.php');
       ?>
@@ -19,7 +20,7 @@
 
 
 <div class="stulpelio container" style="background-color:white;">
-<div class="row">
+<div class="row" >
 
 
     <?php
@@ -31,15 +32,24 @@
   $renginysArray = mysqli_fetch_assoc($visirenginiaiObjektas);
   while ($renginysArray){
 ?>
-<div class="col-sm-4 " style="background-color:#F9F9F9;">
-<img src="<?php echo $renginysArray['nuotrauka1'];?>" />
+<div class="col nuotrstulpelis">
+  <img src="<?php echo $renginysArray['nuotrauka1'];?>" />&nbsp &nbsp</div>
+<div class="col nuotrstulpelis" >
+  <img src="<?php echo $renginysArray['nuotrauka2'];?>" /></div>
+  <div class="col  nuotrstulpelis" >
+<img src="<?php echo $renginysArray['nuotrauka3'];?>" /></div>
+<div class="col  nuotrstulpelis" >
+<img src="<?php echo $renginysArray['nuotrauka4'];?>" /></div>
 </div>
-<div class="col-sm-8 " style="background-color:#F9F9F9;">
+<div class="row">
+<div class="col-sm-12 " style="background-color:#F9F9F9;">
+
 <?php
-  echo "<b>{$renginysArray['pavadinimas']}</b> </br> {$renginysArray['aprasymas']}"
+  echo "<b>{$renginysArray['pavadinimas']}</b></br>";
+
+  echo nl2br($renginysArray['aprasymas']);
 
 ?>
-
   </div>
 </br>
   <?php $renginysArray = mysqli_fetch_assoc($visirenginiaiObjektas);

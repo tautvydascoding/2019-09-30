@@ -6,7 +6,7 @@
     <a class="nav-link" href="pasirodymai.php">PASIRODYMAI</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="galerija.php">GALERIJA</a>
+    <a class="nav-link" href="galerija.php">ĮRAŠAI</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="apie.php">APIE</a>

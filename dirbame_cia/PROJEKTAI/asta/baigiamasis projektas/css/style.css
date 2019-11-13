@@ -25,7 +25,7 @@ a:hover {
   } */
 .btn-lg{
   color: black;
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: "Arial", cursive, sans-serif;
 }
 
 /*naudoju index failo placiajam stulpeliui*/
@@ -35,12 +35,12 @@ a:hover {
 }
 /*naudoju pagrindinio puslapio uzrasui*/
 .pradinish1{
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: "Arial", cursive, sans-serif;
   color: #F35211;
 }
 .pradinish2 {
     font-size: 20px;
-     font-family: "Comic Sans MS", italic, sans-serif;
+     font-family: "Arial",  italic, sans-serif;
     color: black;
 }
 /* Klase index failo nuotraukai*/
@@ -60,6 +60,14 @@ a:hover {
 font-size: 20px;
 
 }
+.nuotrstulpelis{
+  /* padding-right: 2px; */
+  margin-right: : 1px;
+  margin-left: 1px;
+  margin-top: 1px;
+  margin-bottom: 1px
+      /* padding-left: 5px; */
+}
 .galerijah2{
 
  /* margin-left: 100px; */
@@ -67,6 +75,7 @@ font-size: 20px;
  width: 100%;
  background-image: url('../img/akvile8.jpg');
 }
+
 .apieh2{
   height: 280px;
   width: 100%;

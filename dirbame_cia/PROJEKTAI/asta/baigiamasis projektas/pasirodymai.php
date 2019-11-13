@@ -52,7 +52,7 @@
                 </div>
                 <div class="col-sm-4">
                     <h1 class="pasirodymaih1">
-                  <?php echo "<a href='koncerto-aprasymas.php?nr={$renginysArray['id']}'> <i>{$renginysArray['pavadinimas'] }</i> </a>";?>
+                  <?php echo "<a href='koncerto-aprasymas.php?nr={$renginysArray['id']}'> {$renginysArray['pavadinimas'] } </a>";?>
                 </h1></div>
                 <div class="col-sm-2">
 

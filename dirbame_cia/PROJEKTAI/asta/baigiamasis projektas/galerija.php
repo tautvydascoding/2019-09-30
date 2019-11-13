@@ -17,44 +17,49 @@
     include_once('db-functions.php');
       ?>
   <h2 class="galerijah2" style="color:#F35211"><br /><br /><br /><br /><br /><br />
-    <i>Koncertų akimirkos</i></h2>
-        <div class="container">
+    <i>Paklausykite</i></h2>
+        <div class="container" >
 
 
-<div class="stulpelio container" style="background-color:white;">
+<div class="stulpelio container" style="background-color:#F9F9F9;">
 <div class="row">
-  <div class="col-sm-12 " style="background-color:#F9F9F9;">
+  <div class="col centered" >
 
 <p>
+
   <br /><br />
- <a href="https://soundcloud.com/user-545844746/akvile-only-hope">Paklausykit Akvilės atliekamos dainos "Only hope"</a>
+ <br /><br />
+ <a href="https://soundcloud.com/user-545844746/akvile-only-hope" target="_blank">
+<img src="img/akvile10.jpg" title="Always">
+</a></br>
+ &nbsp &nbsp Always
+</div>
+ <div class="col centered" style="background-color:#F9F9F9;">
+   <br /><br />
+  <br /><br />
+ <a href="https://soundcloud.com/user-545844746/akvile-only-hope" target="_blank">
+<img src="img/akvile11.jpg" title="Only hope">
+
+ </a></br>
+ &nbsp &nbsp Only hope
+ </div>
+  <div class="col centered" style="background-color:#F9F9F9;">
+    <br /><br />
+   <br /><br />
+ <video width="320" height="240" controls>
+  <source src="img/video-rock.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</br>
+&nbsp &nbsp Pairuošimas koncertui "Rock and lipstick"
+</div>
+
  <br />
  <br />
 </p>
 
 
-    <?php
 
-  $visirenginiaiObjektas = getRenginioNuotraukos();
-
-  $nuotraukosArray = mysqli_fetch_assoc($visirenginiaiObjektas);
-  while ($nuotraukosArray){
-
-  echo "Koncerto <b>{$nuotraukosArray['pavadinimas']}</b> nuotraukos" ?><br/>
-
-</br/>
-   <img src="<?php echo $nuotraukosArray['nuotrauka2'];?>" />
-   <img src="<?php echo $nuotraukosArray['nuotrauka1'];?>" />
-   <img src="<?php echo $nuotraukosArray['nuotrauka3'];?>" />
-   <img src="<?php echo $nuotraukosArray['nuotrauka4'];?>" />
-   <img src="<?php echo $nuotraukosArray['nuotrauka5'];?>" />
-
-</br>
-</br>
-  <?php $nuotraukosArray = mysqli_fetch_assoc($visirenginiaiObjektas);
-    }  ?>
-
-  </div>
 
     </div>
 </div>
